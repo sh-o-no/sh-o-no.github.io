@@ -1,0 +1,48 @@
+<!DOGTYPE html> ドックタイプ バージョンを指定(HTML5)
+<html lang="ja"></html> 言語を指定
+<head> ページに関する情報
+  <meta charset=utf-8> 文字コードの指定 終了タグ不要
+  <title>タイトル</title>
+  <link rel="shortcut icon" href="ファイルの場所"> ファビコンの設定
+  <link rel="apple-touch-icon" href="ファイルの場所"> iPhone用のタッチアイコンの設定
+  <link rel="stylesheet" href"ファイル名.css"> CSSの読み込み
+
+<body> 画面に表示したい内容
+  <header>文章上部のヘッダー</header>
+  <main>文章中部のメイン(本文)</main>
+  <section>内容ごとに区切る</section>
+  <footer>画面下部のフッター</footer>
+
+<h> heading 見出し分 1=大6=小 <ヘディング>
+
+<a> anchor リンクの出発点・到着店を指定 <アンカー>
+  hrefと一緒に使う <a href="リンク先">
+
+<img> image 画像 
+   <img src="画像のファイルパス" alt="代替テキスト”>※終了タグ不要
+
+<p> paragtaph 段落 <パラグラフ>
+<br> Break 改行 <ブレイク>
+<small>細目・注釈</small>
+<li> リスト
+<ul>黒点がつく
+
+
+
+
+<dfn> Definition 定義する用語を明示 <ディフィニション>
+
+
+
+スマホからの見栄えを確認する方法
+  メニューから「その他のツール」→「デベロッパーツール」
+  デバイス切り替えアイコンクリック
+  プルダウンから端末を選択
+  倍率をFit to windowへ
+
+vew port設定を用いることで画面の表示サイズを調整できる
+  <meta name="viewport" content="width=device-width,user-scalable=yes,initial-scale=1.0">
+
+internet explorer で正常に表示されるための設定
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
