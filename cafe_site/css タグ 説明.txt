@@ -1,0 +1,53 @@
+ブラウザごとの違いを無くす→リセットcss
+  reset.css ブラウザごとの違いを修正してくれる。ダウンロードできる
+  common.css サイト全体で共通するスタイルを指定する。
+  tops.css トップページにしかないスタイルを指定。
+
+要素セレクタ
+  要素名{}
+
+クラスセレクタ
+  .クラス名{}
+  ※クラス名の前にドットをつける
+
+idセレクタ
+  #id{}
+  id名は自由に決めることができるが1つのwebページに1つしか付与できないため
+  基本的にはclassセレクタを使う
+
+子孫セレクタ
+  例えばmenuクラスの中の<P>要素にのみ設定したい場合
+  .menu p{}とする
+
+子セレクタ
+  menu classの中に div要素もあった場合
+  .menu p{}にするとどちらにも適用される
+  直下のp要素にのみ適用させたい場合は
+  .menu > p{}とする
+
+異なる要素に同じスタイルを適用
+  menuクラスの中のh2要素とp要素どちらも適用される場合には
+  .menu p, .menu h2{}とする
+
+
+color: 色; / 色の変更
+bockground-color: 色; / 背景色の変更
+font-size: サイズpx; / 文字サイズの変更
+font-weight: bold; / 文字を太字に
+line-height: 倍率; / 行の高さをフォントサイズの何倍にするか
+text-align: 場所; / 文字の位置
+font-family: フォントの種類;
+margin: サイズpx; / 外余白
+padding: サイズpx; / 内余白
+border-bottom: サイズpx 種類 色; / 下線
+display: block; / 表示形式をブロックに
+width: 200px; / 要素の横幅を指定
+text-decoration: ; / テキストの装飾
+background: url(画像の保存場所) no-repeat(繰り返さない) center(真ん中に) center/cover(真ん中/隙間を埋めるように); / 背景画像の指定
+position: / 画像のプロパティ
+  static; / 無指定
+  relative / 相対 staticの位置が基準位置
+  absolute / 絶対 親要素の positionプロパティがstatic以外の場合、親要素の左上が基準位置
+  fixed / 基本はabsoluteと同じ。スクロールしても位置が固定されたまま
+
+
