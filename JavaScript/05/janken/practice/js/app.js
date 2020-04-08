@@ -57,7 +57,22 @@ function janken () {
   } else {
     let com = getComHand();
     alert(getResultMsg(com, hum));
+    return getResult(com, hum);//結果を求める
   }
 }
+let win = 0;//変数win
+let isLose = false;// 変数isLose
+while (!isLose) {//isLoseがfalseじゃなくなるまで繰り返す
+  let result = janken();//関数呼び出し(じゃんけんのプログラム)
+  if (result === '結果はあいこでした。') {// もしリザルトで結果はあいこです(isLoseはture)とでたら
+    continue;// 終了に進まず繰り返す
+  }
+  if (result === '勝ちました。') {// もしリザルトで勝ちました(isLoseはture)とでたら
+    win++;// winの数を増やして
+    alert('ただいま「' + win + '」勝です。');// アラートにこの文を出力
+    continue;// まだfalseなので終了に進まず繰り返す
+  }
+  alert('連勝はストップです。記録は「' + win + '」勝でした。');// 上記に該当しなくなったらアラートにこの文章を出力
+  isLose = true;// isLoseをtureにする
+}
 
-janken();
