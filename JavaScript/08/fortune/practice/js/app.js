@@ -1,19 +1,18 @@
 // 要素オブジェクトの取得
-let getResult = document.getElementById('getResult');
-let results = document.getElementById('result');
+let btnElementOmikuji = document.getElementById('btnDoOmikuji');
+let divElementResultArea = document.getElementById('resultArea');
 
 // イベントの登録
-getResult.addEventListener('click', function () {
-  result.innerHTML = '結果は「' + omikuji.getResult() + '」でした。';
+btnElementOmikuji.addEventListener('click', function () {
+  divElementResultArea.innerHTML = '結果は「' + omikuji.loterry() + '」でした。';
 });
 
 // おみくじオブジェクトの定義
 let omikuji = {
-  results: ["大吉", "吉", "中吉", "小吉", "凶"],
-  getResult: function () {
-    let results = this.results;
-    return results[Math.floor(Math.random() * results.length)];
+  kujiArray: ["大吉", "吉", "中吉", "小吉", "凶"],
+  loterry: function () {
+    return this.kujiArray[Math.floor(Math.random() * this.kujiArray.length)];
   }
 }
 
-console.log(omikuji.getResult());
+console.log(omikuji.loterry());

@@ -8,6 +8,11 @@ console.log(results);
 console.log(results[0]);
 
 // 配列に所属するデータをfor文ですべて表示
-for (let i = 0; i < results.length; i++) {
-  console.log('index:' + i + 'データ:' + results[i]);
-}
+// for (let i = 0; i < results.length; i++) {
+//   console.log('index:' + i + 'データ:' + results[i]);
+// }
+
+// 配列を全部ぶん回すループはfor文じゃなくてこっちが主流
+results.forEach((value, index) => {
+  console.log('index' + index + ':' + value);
+});

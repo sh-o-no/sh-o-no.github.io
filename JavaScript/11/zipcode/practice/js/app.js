@@ -7,7 +7,7 @@ $(function() {
     }).done(function(data) {// 通信処理に成功した場合の処理
       if (data.results) { // もしdata.resultsが取得できたら
         //この時関数の引数(data)にはレスポンスで得たデータが自動的に格納される
-        setData(data.results[0]); //この関数で処理(19~24行目)
+        setData(data.results[0]); // result配列の先頭に目当てのデータが入ってる
       } else { //そうでない場合
         alert('該当するデータがみつかりませんでした'); // アラートにこの文章を出力
       }
