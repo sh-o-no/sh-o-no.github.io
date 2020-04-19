@@ -1,15 +1,3 @@
 div {
   padding: 5px 10px;
-  /* border: 1px solid lightgray; */
-}
-
-.container .row div, .container-fruid .row div {
-/* .container .row div{ */
-  border: 1px solid lightgray;
-}
-
-.container .row div div, .container-fruid .row div div {
-/* .container .row div div{ */
-  color: darkblue;
-  background-color: lightblue;
 }
