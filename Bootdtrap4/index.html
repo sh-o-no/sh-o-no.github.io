@@ -33,55 +33,30 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col">
-        <form method="post" action="#">
-          <div class="form-row my-3">
-            <div class="col">
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" id="cb1" class="custom-control-input">
-                <label class="custom-control-label" for="cb1">check box</label>
-              </div>
-            </div>
+    <div class="row m-3">
+      <div class="col-4">
+        <div class="list-group" role="tablist">
+          <a class="list-group-item list-group-item-action active" data-toggle="list" href="#list-contact-windows" role="tab">Windows</a>
+          <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-contact-mac" role="tab">macOS</a>
+          <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-contact-linux" role="tab">Linux</a>
+        </div>
+      </div>
+
+      <div class="col-8">
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="list-contact-windows" role="tabpanel" aria-labelledby="list-home-list">
+            this is contact for windows. this is contact for windows. this is contact for windows. this is contact for windows.
+          </div>
+          <div class="tab-pane fade" id="list-contact-mac" role="tabpanel" aria-labelledby="list-profile-list">
+            this is contact for macOS. this is contact for macOS. this is contact for macOS. this is contact for macOS.
+          </div>
+          <div class="tab-pane fade" id="list-contact-linux" role="tabpanel" aria-labelledby="list-message-list">
+            this is contact for Linux. this is contact for Linux. this is contact for Linux. this is contact for Linux.
           </div>
 
-          <div class="form-row my-3">
-            <div class="col">
-              <div class="custom-control custom-radio">
-                <input type="radio" id="rb1" name="radio" class="custom-control-input">
-                <label class="custom-control-label" for="rb1">radio A</label>
-              </div>
 
-              <div class="custom-control custom-radio">
-                <input type="radio" id="rb2" name="radio" class="custom-control-input">
-                <label class="custom-control-label" for="rb2">radio B</label>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-row my-3">
-            <div class="col">
-              <div class="input-group">
-                <select class="custom-select">
-                  <option>one</option>
-                  <option>two</option>
-                  <option>three</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-            <div class="form-row my-3">
-              <div class="col form-group">
-                <input type="submit" class="btn btn-primary" value="send form">
-              </div>
-            </div>
-          
-        </form>
+        </div>
       </div>
     </div>
-
-
-
   </div>
 </body>
