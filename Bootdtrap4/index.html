@@ -29,34 +29,61 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <h1>GUI Sample</h1>
+        <h1 class="h4 mb-4">navigation</h1>
       </div>
     </div>
 
-    <div class="row m-3">
-      <div class="col-4">
-        <div class="list-group" role="tablist">
-          <a class="list-group-item list-group-item-action active" data-toggle="list" href="#list-contact-windows" role="tab">Windows</a>
-          <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-contact-mac" role="tab">macOS</a>
-          <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-contact-linux" role="tab">Linux</a>
+    <div class="row">
+      <div class="col-12">
+        <div id="controllers" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="./img/sample.jpg" alt="first">
+              <div class="carousel-caption d-none d-sm-block text-primary">
+                <h3 class="display-4">First Image</h3>
+                <p>This Is First Image Caption.</p>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img class="d-block w-100" src="./img/sample2.jpg" alt="second">
+              <div class="carousel-caption d-none d-sm-block text-danger">
+                <h3 class="display-4">Second Image</h3>
+                <p>This Is Second Image Caption.</p>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img class="d-block w-100" src="./img/sample3.jpg" alt="third">
+              <div class="carousel-caption d-none d-sm-block text-light">
+                <h3 class="display-4">Third Image</h3>
+                <p>THIS IS THIRD IMAGE CAPTION.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <a class="carousel-control-prev" href="#controllers" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </a>
+          <a class="carousel-control-next" href="#controllers" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </a>
+          <ol class="carousel-indicators">
+            <li dara-target="#controllers" data-slide-to="0" class="active"></li>
+            <li dara-target="#controllers" data-slide-to="1"></li>
+            <li dara-target="#controllers" data-slide-to="2"></li>
+          </ol>
+
+
         </div>
       </div>
 
-      <div class="col-8">
-        <div class="tab-content">
-          <div class="tab-pane fade show active" id="list-contact-windows" role="tabpanel" aria-labelledby="list-home-list">
-            this is contact for windows. this is contact for windows. this is contact for windows. this is contact for windows.
-          </div>
-          <div class="tab-pane fade" id="list-contact-mac" role="tabpanel" aria-labelledby="list-profile-list">
-            this is contact for macOS. this is contact for macOS. this is contact for macOS. this is contact for macOS.
-          </div>
-          <div class="tab-pane fade" id="list-contact-linux" role="tabpanel" aria-labelledby="list-message-list">
-            this is contact for Linux. this is contact for Linux. this is contact for Linux. this is contact for Linux.
-          </div>
 
-
-        </div>
-      </div>
     </div>
   </div>
 </body>
+
+
+
