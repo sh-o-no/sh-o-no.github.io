@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/common.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+</head>
+
+<body>
+<div class="sample-box">
+
+    <div class="container-fruid">
+        <u><h3>コンテナのネスト</h3></u>
+        <p>ネスト→入れ子にする事。</p>
+        <p>ネストしたレイアウトを行う場合はclass="row"のタグをネストするのが一般的</p><br>
+
+        <div class="container-fruid">
+
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm 4">
+                    <!--lgの時7 mdの時6 smの時4のサイズに変動-->
+                    <div class="row">
+                        <!--rowの中にrowを作り更に12個に分けている-->
+                        <div class="col-md-6">
+                            <div>main content A</div>
+                        </div>
+                        <div class="col-md-6">
+                            <div>main content B</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-4">
+                    <!--lgの時3 mdの時3 smの時4のサイズに変動-->
+                    <div>col sub</div>
+                </div>
+
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <!--lgの時2 mdの時3 smの時4のサイズに変動-->
+                    <div>col sub</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="sample-box">
+
+    <div class="container-fruid">
+        <u><h3>自動調整とauto</h3></u>
+        <p>コンテンツを12頭分しなくても1つ目の列数が決まれば2つ目の列数は自動的に決まる。</p><br>
+
+        <div class="container-fruid">
+
+            <div class="row">
+                <div class="col-lg-8 col-md-7 col-sm6">
+                    <div>Main content</div>
+                </div>
+                <div class="col">
+                    <div>col sub A</div>
+                </div>
+            </div>
+
+            <p>col-autoを使った場合</p>
+            <div class="row">
+                <div class="col-lg-8 col-md-7 col-sm6">
+                    <div>Main content</div>
+                </div>
+                <div class="col-auto">
+                    <div>col sub A</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<hr>
+<div class="sample-box">
+
+    <div class="container-fruid">
+        <u><h3>余白列の利用</h3></u>
+        <p>間をあけて配置したい場合に、空のコンテンツを配置するという方法がある。</p><br>
+
+        <div class="container-fruid">
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div>Main content A</div>
+                </div>
+                <div class="col-sm-1"></div>
+                <div class="col-sm-2">
+                    <div>Sub content A</div>
+                </div>
+                <div class="col-sm-1"></div>
+                <div class="col-sm-2">
+                    <div>Sub content B</div>
+                </div>
+            </div>
+
+            <p>この他にもパーセントの指定で余白を作ることも可能！</p><br>
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <div>Main content A</div>
+                </div>
+                <div class="col-sm-3">
+                    <div>Main content B</div>
+                </div>
+                <div class="w-25"></div>
+                <div class="col-sm-2">
+                    <div>Sub content A</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<hr>
+<div class="sample-box">
+
+    <div class="container-fruid">
+        <u><h3>両端に配置するml/mr</h3></u>
+        <p>端に余白をいれるクラス。</p>
+        <p>ml[margin-left]左側に余白が入る</p>
+        <p>mr[margin-right]右側に余白が入る</p><br>
+
+        <div class="container-fruid">
+
+            <div class="row">
+                <div class="w-100">
+                    <p>lg-2 lg-2 lg-2 lg-2</p>
+                </div>
+                <div class="mr-lg-2">
+                    <div>Main content A</div>
+                </div>
+                <div class="mr-lg-2">
+                    <div>Main content B</div>
+                </div>
+                <div class="mr-lg-2">
+                    <div>sub content A</div>
+                </div>
+                <div class="mr-lg-2">
+                    <div>sub content B</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="w-100">
+                    <p>auto lg-2 lg-2 auto</p>
+                </div>
+                <div class="mr-auto">
+                    <div>Main content A</div>
+                </div>
+                <div class="mr-lg-2">
+                    <div>Main content B</div>
+                </div>
+                <div class="mr-lg-2">
+                    <div>sub content A</div>
+                </div>
+                <div class="mr-auto">
+                    <div>sub content B</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="w-100">
+                    <p>lg-2 auto auto lg-2</p>
+                </div>
+                <div class="mr-lg-2">
+                    <div>Main content A</div>
+                </div>
+                <div class="mr-auto">
+                    <div>Main content B</div>
+                </div>
+                <div class="mr-auto">
+                    <div>sub content A</div>
+                </div>
+                <div class="mr-lg-2">
+                    <div>sub content B</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="w-100">
+                    <p>auto auto auto auto</p>
+                </div>
+                <div class="mr-auto">
+                    <div>Main content A</div>
+                </div>
+                <div class="mr-auto">
+                    <div>Main content B</div>
+                </div>
+                <div class="mr-auto">
+                    <div>sub content A</div>
+                </div>
+                <div class="mr-auto">
+                    <div>sub content B</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<hr>
+<div class="sample-box">
+    <div class="container">
+        <u><h3>コンテンツの位置揃え</h3></u>
+        <p>位置は水平と垂直がある。</p><br><p>水平方向</p>
+
+        <div class="row justify-content-end">
+        <!--右に揃える-->
+            <div class="col-auto">
+                <div>main content A</div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <!--中央に揃える-->
+            <div class="col-auto">
+                <div>main content B</div>
+            </div>
+        </div>
+
+        <div class="row justify-content-start">
+            <!--右に揃える-->
+            <div class="col-auto">
+                <div>main content C</div>
+            </div>
+        </div>
+        <p>垂直方向</p>
+        <div class="row" style="height: 200px;">
+            <!--上に揃える-->
+            <div class="col-sm-4 align-self-start">
+                <div>main content A</div>
+            </div>
+
+            <!--真ん中に揃える-->
+            <div class="col-sm-4 align-self-center">
+                <div>main content B</div>
+            </div>
+
+            <!--下に揃える-->
+            <div class="col-sm-4 align-self-end">
+                <div>main content C</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sample-box">
+
+    <div class="container">
+            <u><h3>余白の取り消し</h3></u>
+        <p>cssにpaddingやmarginが設定されていると微妙にずれが出てしまう場合がある。</P>
+        <p>そんなときにno-guttersというクラスで余白を取り除ける。</p><br>
+        <p>余白なし</p>
+
+        <div class="row no-gutters">
+            <div class="col-sm-4">
+                <div>main content A</div>
+            </div>
+            <div class="col-sm-4">
+                <div>main content B</div>
+            </div>
+            <div class="col-sm-4">
+                <div>main content C</div>
+            </div>
+        </div>
+        <p>余白あり</p>
+        <div class="row">
+            <div class="col-sm-4">
+                <div>main content A</div>
+            </div>
+            <div class="col-sm-4">
+                <div>main content B</div>
+            </div>
+            <div class="col-sm-4">
+                <div>main content C</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sample-box">
+
+    <div class="container">
+        <u><h3>並び順の変更</h3></u>
+        <p>rowタグに組み込まれるコンテンツは基本的に、組み込んだものから順に上あるいは左から並ぶ。</p>
+        <p>oderクラスを使うことで割り当てる列の順番を指定している。</p>
+        <p>下記はA→B→Cの順に組み込んでいる。</p><br>
+
+        <div class="row">
+            <div class="col-sm-4 order-9">
+                <div>main content A</div>
+            </div>
+            <div class="col-sm-4 order-5">
+                <div>main content B</div>
+            </div>
+            <div class="col-sm-4 order-1">
+                <div>main content C</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

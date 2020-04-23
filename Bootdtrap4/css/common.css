@@ -1,0 +1,17 @@
+.container {
+    margin: 0 0;
+}
+
+
+.sample-box {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    border: double 5px #4ec4d3;
+}
+
+.sample-box p {
+    font-size: 15px;
+    text-indent: 1em;
+    margin: 4px;
+    padding: 0;
+}
