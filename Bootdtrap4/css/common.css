@@ -1,8 +1,3 @@
-.container {
-    margin: 0 0;
-}
-
-
 .study_section {
     /*padding: 0.5em 1em;*/
     margin: 12px;
@@ -19,4 +14,9 @@
 .section_title {
     text-decoration: underline;
     font-size: 1.75rem;
+}
+
+.study_section div.row form {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
 }

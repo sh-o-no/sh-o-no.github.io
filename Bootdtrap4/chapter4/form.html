@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--    <link rel="stylesheet" href="../css/chapter2.css">-->
+    <link rel="stylesheet" href="../css/common.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+
+    <title>フォームの基本</title>
+</head>
+
+<body>
+
+<div class="container study_section">
+    <span class="section_title">フォーム</span>
+    <div class="section_description">
+        ユーザーとやり取りを行いたい時の基本となる。<br>
+        なにも設定しなくてもある程度の調整はされている。
+    </div>
+    <p>・土台のスタイル</p>
+    <div class="row">
+        <form method="post" action="#">
+            <input type="email" id="mail1"><br>
+            <input type="password" id="pass1"><br>
+            <input type="submit" value="send">
+        </form>
+    </div>
+    <hr>
+    <p>・フォームとボタンにクラスを指定</p>
+    <div class="row">
+        <form method="post" action="#">
+            <input type="email" class="form-control" id="mail2"><br>
+            <input type="password" class="form-control" id="pass2"><br>
+            <input type="submit" class="btn btn-primary" value="send">
+            <!--            フォームにはform-control、ボタンにはbtn-->
+        </form>
+    </div>
+</div>
+<div class="container study_section">
+    <span class="section_title">ラベルとヒント</span>
+    <div class="section_description">
+        ユーザーがどこに何を入力すべきかを明確にする為に記述する。
+    </div>
+    <div class="row">
+        <form method="post" action="#">
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" class="form-control" aria-describedby="email-tip"
+                       placeholder="your address">
+                <!--                aria-describedby属性は、id 属性を使って要素を関連付けることができる。-->
+                <!--                placeholderはフォームの中に表示されているが、実際に入力すると消える。-->
+                <small id="email-tip" class="form-text text-muted">Please type your email address.</small>
+            </div>
+            <div class="form-group">
+                <label>Pass word</label>
+                <input type="password" class="form-control" aria-describedby="pass-tip"
+                       placeholder="password">
+                <small class="form-text text-muted">Please type your password.</small>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="send" aria-describedby="btn-tip">
+                <small class="form-text text-muted">Please click here!</small>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">form-controlクラスについて</span>
+    <div class="section_description">
+        form-controlを使用するとこのフォームが何を入力するためのフォームか判断しやすい。
+    </div>
+    <div class="row">
+        <form method="post" action="#">
+            <div class="form-group">
+                <label>text</label>
+                <input type="text" class="form-control" placeholder="message">
+            </div>
+            <div class="form-group">
+                <label>email</label>
+                <input type="email" class="form-control" placeholder="mail address">
+            </div>
+            <div class="form-group">
+                <label>password</label>
+                <input type="password" class="form-control" placeholder="password">
+            </div>
+            <div class="form-group">
+                <label>number</label>
+                <input type="number" class="form-control" value="100">
+            </div>
+            <div class="form-group">
+                <label>date</label>
+                <input type="date" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>time</label>
+                <input type="time" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>color</label>
+                <input type="color" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>select(サイズ1)</label>
+                <select class="form-control">
+                    <!--                    form-controlはselectタグにのみ記述-->
+                    <option>one</option>
+                    <option>two</option>
+                    <option>three</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>select(サイズ3)</label>
+                <select class="form-control" size="3">
+                    <!--                    form-controlはselectタグにのみ記述-->
+
+                    <option>one</option>
+                    <option>two</option>
+                    <option>three</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>text area</label>
+                <textarea class="form-control"></textarea>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">チェックボックスとラジオボタン</span>
+    <div class="section_description">
+        この2つにはform-control以外のクラスが用意されている。
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-dark table-sm table-bordered">
+                    <tbody>
+                    <tr>
+                        <th>チェックボックスとラジオボタンのグループ</th>
+                        <td>form-check</td>
+                        <td>最初のdivクラス</td>
+                    </tr>
+                    <tr>
+                        <th>チェックボックスとラジオボタンのラベル</th>
+                        <td>form-check-label</td>
+                        <td>labelタグ</td>
+                    </tr>
+                    <tr>
+                        <th>チェックボックスとラジオボタンのコントロール</th>
+                        <td>form-check-input</td>
+                        <td>inputタグ</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <form method="post" action="#">
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input">
+                    checkbox control
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="radio">
+                    radio button A
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="radio">
+                    radio button B
+                </label>
+            </div>
+            <div class="form-check disabled">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="radio" disabled>
+                    radio button C (disabled)
+                </label>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">コントロールのサイズ指定</span>
+    <div class="section_description">
+        入力フィールドのサイズは3種類用意されている。
+    </div>
+
+    <div class="row">
+        <form method="post" action="#">
+            <div class="form-group">
+                <label>form-control-lg</label>
+                <input type="text" class="form-control form-control-lg">
+            </div>
+            <div class="form-group">
+                <label>form-control</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>form-control-sm</label>
+                <input type="text" class="form-control form-control-sm">
+            </div>
+        </form>
+    </div>
+
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">ボタンのサイズ指定</span>
+    <div class="section_description">
+        ボタンのサイズも3種類用意されている。
+    </div>
+
+    <div class="row">
+        <form method="post" action="#">
+            <div class="form-group">
+                <input type="submit" class="btn btn-lg btn-primary" value="btn-lg">
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="btn">
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-sm btn-primary" value="btn-sm">
+            </div>
+        </form>
+    </div>
+
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">フォームを利用不可にする</span>
+    <div class="section_description">
+        コントロールのタグにdisabledを追加すると必要に応じて使えないように出来る。
+    </div>
+
+    <div class="row">
+        <form method="post" action="#">
+            ・利用可
+            <div class="form-group">
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="send">
+            </div>
+            ・利用不可
+            <div class="form-group">
+                <input type="text" class="form-control" disabled>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="send" disabled>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+</body>
+</html>
