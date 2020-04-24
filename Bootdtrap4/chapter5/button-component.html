@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/common.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+
+    <title>ボタンコンポーネント</title>
+</head>
+
+<body>
+
+<div class="container study_section">
+    <span class="section_title">色指定</span>
+    <div class="section_description">
+        ボタンの色は[btn btn-色名]で指定できる。
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-sm-12">
+            <form method="post" action="#">
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="primary">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-secondary" value="secondary">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success" value="success">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-info" value="info">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-warning" value="warning">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-danger" value="danger">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-light" value="light">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-dark" value="dark">
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">ボタン：アウトライン</span>
+    <div class="section_description">
+        ボタンのアウトライン(枠線のみ)表示は[btn btn-outline-色名]で指定できる。
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-sm-12">
+            <form method="post" action="#">
+                <div class="form-group">
+                    <input type="submit" class="btn btn-outline-primary" value="primary">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-outline-secondary" value="secondary">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-outline-success" value="success">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-outline-info" value="info">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-outline-warning" value="warning">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-outline-danger" value="danger">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-outline-light" value="light">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-outline-dark" value="dark">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">リンクとボタン</span>
+    <div class="section_description">
+        btnクラスはボタン以外にも、使うことができる。<br>
+        ※aタグをボタン化する機会が一番多いので覚えておく！
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col">
+            <a href="#" class="btn btn-danger" role="button">
+                &lt;a&gt;tag.</a>
+            <input type="button" class="btn btn-link btn-warning" value="&lt;input type=&quot;button&quot;&gt;">
+            <p class="btn btn-success" style="cursor: default;" role="button">&lt;p&gt; tag.</p>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">アクティブと非アクティブ</span>
+    <div class="section_description">
+        アクティブ(active)：マウスポインタが上にあって選択されようとしている状態<br>
+        非アクティブ(disabled)：利用不可<br>
+    </div>
+    <hr>
+    <div class="row m-3">
+        <div class="col-sm-12">
+            <button href="#" class="btn btn-primary active" role="button" aria-pressed="true">active button</button>
+            <button href="#" class="btn btn-primary" role="button" aria-pressed="true">default button</button>
+            <button href="#" class="btn btn-primary" role="button" aria-pressed="true" disabled>disabled button</button>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">ボタンの丸みを変える</span>
+    <div class="section_description">
+        楕円形ボタン：rounded-circle<br>
+        ピル型ボタン：badge-pill<br>
+        角を丸くする：rounded(デフォルト)<br>
+        角の丸みを無くす：rounded-0
+    </div>
+    <hr>
+    <div class="row m-3">
+        <div class="col-sm-12">
+            <button href="#" class="btn btn-primary m-2 rounded-circle" role="button" aria-pressed="true">rounded-circle
+                button
+            </button>
+            <button href="#" class="btn btn-primary m-2 badge-pill" role="button" aria-pressed="true">badge-pill
+                button
+            </button>
+            <button href="#" class="btn btn-primary m-2 rounded" role="button" aria-pressed="true">rounded
+                button
+            </button>
+            <button href="#" class="btn btn-primary m-2 rounded-0" role="button" aria-pressed="true">rounded-0
+                button
+            </button>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">トグルボタン</span>
+    <div class="section_description">
+        チェックボックスのボタン版のようなもので、クリックしてon/offするボタン。<br>
+        ボタンタグにdata-toggle="button"を適応すると設定できる。<br>
+        activeクラスを追加するとonの状態、しないとoffの状態で表示される。<br>
+
+    </div>
+    <hr>
+    <div class="row m-3">
+        <div class="col-sm-12">
+            <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">Toggle button(off)
+            </button>
+            <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="true"  active>Toggle
+                button(on)
+            </button>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">ボタングループ</span>
+    <div class="section_description">
+        複数のボタンをひとまとめにて表示させられる。
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-sm-12 m-3">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-info">Left</button>
+                <button type="button" class="btn btn-info">Middle</button>
+                <button type="button" class="btn btn-info">Right</button>
+            </div>
+        </div>
+        <div class="col-sm-12 m-3">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-primary">Left</button>
+                <button type="button" class="btn btn-warning">Middle</button>
+                <button type="button" class="btn btn-danger">Right</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">チェックボックスグループ</span>
+    <div class="section_description">
+        複数のチェックボックスをひとまとめにて表示させられる。
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="btn-group" data-toggle="buttons">
+                <div class="btn btn-info active">
+                    <input type="checkbox" id="ck1" class="form-input" checked autocomplete="off">
+                    <label for="ck1" class="active">Checkbox 1</label>
+                </div>
+                <div class="btn btn-info">
+                    <input type="checkbox" id="ck2" class="form-input" autocomplete="off">
+                    <label for="ck2">Checkbox 2</label>
+                </div>
+                <div class="btn btn-info">
+                    <input type="checkbox" id="ck3" class="form-input" autocomplete="off">
+                    <label for="ck3">Checkbox 3</label>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">ラジオボタングループ</span>
+    <div class="section_description">
+        複数のラジオボタンをひとまとめにて表示させられる。
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="btn-group" data-toggle="buttons">
+                <div class="btn btn-info active">
+                    <input type="radio" name="radio" id="rd1" class="form-input" checked autocomplete="off">
+                    <label for="rd" class="active">radio 1</label>
+                </div>
+                <div class="btn btn-info">
+                    <input type="radio" name="radio" id="rd2" class="form-input" autocomplete="off">
+                    <label for="rd2">radio 2</label>
+                </div>
+                <div class="btn btn-info">
+                    <input type="radio" name="radio" id="rd3" class="form-input" autocomplete="off">
+                    <label for="rd3">radio 3</label>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">ボタンの垂直表示</span>
+    <div class="section_description">
+        btn-groupクラスをbtn-group-verticalにすると縦に並ぶ。
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="btn-group-vertical" data-toggle="buttons">
+                <div class="btn btn-info active">
+                    <input type="radio" name="radio" class="form-input" checked autocomplete="off">
+                    <label class="active">radio 1</label>
+                </div>
+                <div class="btn btn-info">
+                    <input type="radio" name="radio" class="form-input" autocomplete="off">
+                    <label>radio 2</label>
+                </div>
+                <div class="btn btn-info">
+                    <input type="radio" name="radio" class="form-input" autocomplete="off">
+                    <label>radio 3</label>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+</body>
+</html>
