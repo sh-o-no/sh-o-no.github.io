@@ -7,7 +7,6 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!--    <link rel="stylesheet" href="../css/chapter2.css">-->
     <link rel="stylesheet" href="../css/common.css">
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -27,12 +26,11 @@
 <body>
 
 <div class="container study_section">
-    <span class="section_title">フォーム</span>
+    <span class="section_title">フォームの基本スタイル</span>
     <div class="section_description">
-        ユーザーとやり取りを行いたい時の基本となる。<br>
-        なにも設定しなくてもある程度の調整はされている。
+        formタグでテキストボックスを作ることが出来る。<br>
     </div>
-    <p>・土台のスタイル</p>
+    <p>・HTMLのみ</p>
     <div class="row">
         <form method="post" action="#">
             <input type="email" id="mail1"><br>
@@ -41,7 +39,7 @@
         </form>
     </div>
     <hr>
-    <p>・フォームとボタンにクラスを指定</p>
+    <p>・Bootstrap使用(form-control,btnクラスを追加)</p>
     <div class="row">
         <form method="post" action="#">
             <input type="email" class="form-control" id="mail2"><br>
@@ -54,7 +52,12 @@
 <div class="container study_section">
     <span class="section_title">ラベルとヒント</span>
     <div class="section_description">
-        ユーザーがどこに何を入力すべきかを明確にする為に記述する。
+        ユーザーがどこに何を入力すべきかを明確にする為に記述する。<br>
+        ・ラベルにはlabelタグをつける。<br>
+        ・aria-describedby属性は、id 属性を使って要素を関連付けることができる。<br>
+        ・placeholderはフォームの中に表示されているヒントを表示する(実際に入力すると消える)。<br>
+        　基本構成
+        <pre>　　&lt;label&gt;ラベル用テキスト&lt;/label&gt;<br>　　&lt;input type="ラベル" class="form-control"&gt;<br>　　&lt;small class="form-text">説明用テキスト&lt;/small&gt;</pre>
     </div>
     <div class="row">
         <form method="post" action="#">
@@ -62,12 +65,10 @@
                 <label>Email Address</label>
                 <input type="email" class="form-control" aria-describedby="email-tip"
                        placeholder="your address">
-                <!--                aria-describedby属性は、id 属性を使って要素を関連付けることができる。-->
-                <!--                placeholderはフォームの中に表示されているが、実際に入力すると消える。-->
                 <small id="email-tip" class="form-text text-muted">Please type your email address.</small>
             </div>
             <div class="form-group">
-                <label>Pass word</label>
+                <label>Password</label>
                 <input type="password" class="form-control" aria-describedby="pass-tip"
                        placeholder="password">
                 <small class="form-text text-muted">Please type your password.</small>
@@ -85,7 +86,7 @@
 <div class="container study_section">
     <span class="section_title">form-controlクラスについて</span>
     <div class="section_description">
-        form-controlを使用するとこのフォームが何を入力するためのフォームか判断しやすい。
+        form-controlを使用した場合の各コントロール類の表示一覧。
     </div>
     <div class="row">
         <form method="post" action="#">
@@ -137,7 +138,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <label>text area</label>
+                <label>textarea</label>
                 <textarea class="form-control"></textarea>
             </div>
         </form>
@@ -149,30 +150,12 @@
 <div class="container study_section">
     <span class="section_title">チェックボックスとラジオボタン</span>
     <div class="section_description">
-        この2つにはform-control以外のクラスが用意されている。
-        <div class="row">
-            <div class="col-sm-12">
-                <table class="table table-dark table-sm table-bordered">
-                    <tbody>
-                    <tr>
-                        <th>チェックボックスとラジオボタンのグループ</th>
-                        <td>form-check</td>
-                        <td>最初のdivクラス</td>
-                    </tr>
-                    <tr>
-                        <th>チェックボックスとラジオボタンのラベル</th>
-                        <td>form-check-label</td>
-                        <td>labelタグ</td>
-                    </tr>
-                    <tr>
-                        <th>チェックボックスとラジオボタンのコントロール</th>
-                        <td>form-check-input</td>
-                        <td>inputタグ</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        この2つにはform-control以外のクラスが用意されている。<br>
+        チェックボックスとラジオボタンのグループ：form-check<br>
+        チェックボックスとラジオボタンのラベル：form-check-label<br>
+        チェックボックスとラジオボタンのコントロール：form-check-input<br>
+        を使用する。<br>
+        Bootstrap4からクラスのdisabledは不要になった為記述はinputタグのみ。（<a href="https://cccabinet.jpn.org/bootstrap4/components/forms">詳細</a>）
     </div>
     <div class="row">
         <form method="post" action="#">
@@ -194,7 +177,7 @@
                     radio button B
                 </label>
             </div>
-            <div class="form-check disabled">
+            <div class="form-check">
                 <label class="form-check-label">
                     <input type="radio" class="form-check-input" name="radio" disabled>
                     radio button C (disabled)
@@ -209,7 +192,7 @@
 <div class="container study_section">
     <span class="section_title">コントロールのサイズ指定</span>
     <div class="section_description">
-        入力フィールドのサイズは3種類用意されている。
+        入力フィールドの高さ(height)は3種類用意されている。
     </div>
 
     <div class="row">
@@ -236,7 +219,7 @@
 <div class="container study_section">
     <span class="section_title">ボタンのサイズ指定</span>
     <div class="section_description">
-        ボタンのサイズも3種類用意されている。
+        ボタンの高さ(height)は3種類用意されている。
     </div>
 
     <div class="row">

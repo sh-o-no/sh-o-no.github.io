@@ -20,7 +20,7 @@
             crossorigin="anonymous"></script>
     <script src="../js/script.js"></script>
 
-    <title>グリッドレイアウト（基礎）</title>
+    <title>フォームレイアウト</title>
 </head>
 
 <body>
@@ -97,6 +97,7 @@
                     <input type="submit" class="btn btn-primary" value="send" aria-describedby="btn-tip">
                 </div>
             </div>
+            <div class="col text-right text-danger">だがしかし、こうは使わない！</div>
         </div>
     </form>
 </div>
@@ -107,9 +108,11 @@
 <div class="container study_section">
     <span class="section_title">form-rowによるrow設定</span>
     <div class="section_description">
-        フォームのグリッド表示の記述はrowの外側にformを置く構成になっているが、<br>
-        本来formも全てrowもcolも置くのが基本である。<br>
-        formの内側にrowを置くためにform-rowというクラスが用意されている。
+        フォームのグリッド表示の記述はrowの外側にformを置く構成になっているが<br>
+        この構成はグリッドレイアウトの設計の外側にタグを置くということである。<br>
+        本来formはグリッドレイアウト上にコントロール類を表示していくやり方になる為<br>
+        この構成では気持ち悪くなってしまう。<br>
+        そこでform-rowというクラスを使うと構成にも違和感なくフォーム内をグリッドレイアウトすることが出来るようになる。
     </div>
 
     <div class="row">
@@ -166,7 +169,7 @@
     <div class="section_description">
         ボタンはインラインのコントロールのためグリッドレイアウトによる<br>
         サイズ調整が効かない。サイズを自動調整したい場合には<br>
-        ボタンをブロックにすることで対応できる。
+        ボタンのスタイルにbtn-blockクラスを適応することでボタンがブロック要素になる。
     </div>
 
     <div class="row">
@@ -189,13 +192,13 @@
 <div class="container study_section">
     <span class="section_title">インライン表示について</span>
     <div class="section_description">
-        Bootstrapを指定したコンテンツは全て縦に並べられるようになっている。<br>
+        Bootstrapのクラスを指定したコントロールは全て縦に並べられるようになっている。<br>
         インライン表示にすることで、横一列に並ぶようになる。<br>
         clearfixを使用する場合は、formタグにform-inlineを使ってはいけない。<br>
-        form-check-inlineでコントロールに個別に指定しなければ使用は不可。
+        inputタグにform-check-inlineでコントロールに個別に指定しなければ使用は不可。
     </div>
 
-    <p>・フォーム(formタグ内にform-inlineクラス指定)</p>
+    <p>・フォーム全体にインライン指定(formタグ内にform-inlineクラス指定)</p>
     <div class="row">
         <form method="post" action="#" class="form-inline">
             <div class="form-group">
@@ -213,7 +216,7 @@
         </form>
     </div>
     <hr>
-    ・チェックボックスとラジオボタン
+    ・個別にインライン指定(inputタグにform-check-inline指定)
     <div class="row">
         <form method="post" action="#">
             <div class="form-check form-check-inline">
