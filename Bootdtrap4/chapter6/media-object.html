@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/common.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+
+    <title>メディアオブジェクト</title>
+</head>
+
+<body>
+
+<div class="container study_section">
+    <span class="section_title">メディアオブジェクトとは</span>
+    <div class="section_description">
+        イメージとテキストを小さくまとめるといった場合によく使われる。<br>
+        mediaクラスを指定した中にmedia-bodyを指定したタグを記述。<br>
+        イメージを配置する場合はmedia-bodyクラスを指定したタグの前後に用意する。<br>
+        ■基本構成
+        <pre class="table-bordered border-primary pl-2 pt-2">
+&lt;div class="media"&gt;
+    &lt;div class="media-body"&gt;
+        コンテンツの内容
+    &lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+    </div>
+    <hr>
+    <div class="row m-3">
+        <div class="media">
+            <img class="mr-3" src="../img/sample.jpg" style="width: 100px;">
+            <div class="media-body">
+                <h5 class="text-capitalize">Media heading</h5>
+                <p>this is media object content. this is media object content.</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row m-3">
+        <div class="media">
+            <div class="media-body">
+                <h5 class="text-capitalize">Media heading</h5>
+                <p>this is media object content. this is media object content.</p>
+            </div>
+            <img class="mr-3" src="../img/sample.jpg" style="width: 100px;">
+
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">カラー指定</span>
+    <div class="section_description">
+        カラー指定をするとメディアオブジェクトのエリアがわかりやすくなり<br>
+        他のコンテンツの中にいれても目立たせることができる。<br>
+        ただし、背景色をつける場合、メディアオブジェクトのパディングを<br>
+        指定したほうがより分かりやすくなる。mediaクラスに続けてbg-色名で<br>
+        背景色を指定し 、続けてp-幅でパディングを指定すると良い。
+    </div>
+    <hr>
+    <div class="row m-3">
+        <div class="media bg-info p-3">
+            <img class="mr-3" src="../img/sample.jpg" style="width: 100px;">
+            <div class="media-body">
+                <h5 class="text-capitalize">Media heading</h5>
+                <p>this is media object content. this is media object content.</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row m-3">
+        <div class="media bg-warning p-3">
+            <div class="media-body">
+                <h5 class="text-capitalize">Media heading</h5>
+                <p>this is media object content. this is media object content.</p>
+            </div>
+            <img class="mr-3" src="../img/sample.jpg" style="width: 100px;">
+
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">楕円形のオブジェクト</span>
+    <div class="section_description">
+        カラー指定をする仕組みを利用するとオブジェクト自体に形状をつけることが出来る。<br>
+        ただし、イメージをいれると恐らくはみでるため文章だけのコンテンツ向きである。<br>
+        クラスはmediaに続けて記述すると良い。
+    </div>
+    <hr>
+    <p>・rounded-circle</p>
+    <div class="row m-3">
+        <div class="col-sm-12">
+            <div class="media bg-danger p-3 rounded-circle">
+                <div class="media-body text-center">
+                    <h5 class="text-uppercase">caution!!</h5>
+                    <p>this is media object content.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>・rounded-pill</p>
+    <div class="row m-3">
+        <div class="col-sm-12">
+            <div class="media bg-success p-3 rounded-pill">
+                <div class="media-body text-center">
+                    <h5 class="text-uppercase">caution!!</h5>
+                    <p>this is media object content.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">メディアオブジェクトのリスト化</span>
+    <div class="section_description">
+        メディアオブジェクトは多数のデータを表示するようなケースで用いられる。 <br>
+        下記はリスト化されたメディアオブジェクトのサンプルである。 <br>
+        ulタグにlist-nustyled(リスト特有のスタイルが適用されないようにするクラス) <br>
+        liタグにmediaクラスを指定。中身は通常のメディアオブジェクトと変わらない。
+    </div>
+    <hr>
+    <div class="row m-3">
+        <div class="col-sm-12">
+            <ul class="list-unstyled">
+                <li class="media m-2">
+                    <img class="mr-3" src="../img/sample2.jpg" style="width: 100px;">
+                    <div class="media-body">
+                        <h5 class="text-uppercase">content 1</h5>
+                        <p>this is media object content.this is media object content.</p>
+                    </div>
+                </li>
+                <li class="media m-2">
+                    <img class="mr-3" src="../img/sample3.jpg" style="width: 100px;">
+                    <div class="media-body">
+                        <h5 class="text-uppercase">content 2</h5>
+                        <p>this is media object content.this is media object content.</p>
+                    </div>
+                </li>
+                <li class="media m-2">
+                    <img class="mr-3" src="../img/sample4.jpg" style="width: 100px;">
+                    <div class="media-body">
+                        <h5 class="text-uppercase">content 3</h5>
+                        <p>this is media object content.this is media object content.</p>
+                    </div>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">メディアオブジェクトの階層化</span>
+    <div class="section_description">
+        メディアオブジェクトのmedia-body内に更にオブジェクトを記述していくと、階層化されていく。<br>
+        あまり階層を深くしすぎるとコンテンツの表示幅が足りなくなるので注意。
+    </div>
+    <hr>
+    <div class="row m-3">
+        <div class="col-sm-12">
+            <!--外側のメディアオブジェクト-->
+            <div class="media">
+                <img class="mr-3" src="../img/sample.jpg" style="width: 100px;">
+                <div class="media-body">
+                    <h5 class="text-uppercase">content 1</h5>
+                    <p>this is media object content.this is media object content.</p>
+                    <!--内側のメディアオブジェクト-->
+                    <div class="media">
+                    <img class="mr-3" src="../img/sample3.jpg" style="width: 100px;">
+                    <div class="media-body">
+                        <h5 class="text-uppercase">content 2</h5>
+                        <p>this is media object content.this is media object content.</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">メディアの整列</span>
+    <div class="section_description">
+        テキストとイメージをまとめて表示する際に、テキストの量が多くなってくると<br>
+        イメージをどこに配置するかを考えるようになる。<br>
+        上部、中央、下部から選ぶことが出来る。<br>
+        align-self-start：上部<br>
+        align-self-center：中央<br>
+        align-self-end：下部<br>
+        下記は3種類のサンプルである。
+    </div>
+    <hr>
+    <div class="row m-3">
+        <div class="col-sm-12">
+            <p>・align-self-start</p>
+            <div class="media p-3 bg-info">
+                <img class="align-self-start mr-3" src="../img/sample.jpg" style="width: 100px;">
+                <div class="media-body">
+                    <h5 class="text-uppercase">content 1</h5>
+                    <p>
+                        this is media object content.<br>
+                        this is media object content.<br>
+                        this is media object content.<br>
+                        this is media object content.<br>
+                        this is media object content.<br>
+                        this is media object content.<br>
+                        this is media object content.<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row m-3">
+        <div class="col-sm-12">
+            <p>・align-self-center</p>
+            <div class="media p-3 bg-secondary">
+                <img class="align-self-center mr-3" src="../img/sample.jpg" style="width: 100px;">
+                <div class="media-body">
+                    <h5 class="text-uppercase">content 1</h5>
+                    <p>
+                        this is media object content.<br>
+                        this is media object content.<br>
+                        this is media object content.<br>
+                        this is media object content.<br>
+                        this is media object content.<br>
+                        this is media object content.<br>
+                        this is media object content.<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row m-3">
+        <div class="col-sm-12">
+            <p>・align-self-end</p>
+            <div class="media p-3 bg-danger">
+                <img class="align-self-end mr-3" src="../img/sample.jpg" style="width: 100px;">
+                <div class="media-body">
+                    <h5 class="text-uppercase">content 1</h5>
+                    <p>
+                        this is media object content.<br>
+                        this is media object content.<br>
+                        this is media object content.<br>
+                        this is media object content.<br>
+                        this is media object content.<br>
+                        this is media object content.<br>
+                        this is media object content.<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+</body>
+</html>
