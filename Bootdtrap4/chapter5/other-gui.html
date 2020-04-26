@@ -32,7 +32,7 @@
         「メニューを呼び出すためのボタン」と「メニューとして現れる項目類」から構成される。
     </div>
     ■ドロップダウンメニューの構造
-    <pre  class="table-bordered border-primary pl-2 pt-2">
+    <pre  class="table-bordered border-primary pl-2 pt-2 small">
 &lt;div class="dropdown"&gt;
     &lt;button class="btn dropdown-toggle" id="項目に紐づくID" data-toggle="dropdown" aria-haspopup="true"
     aria-expanded="false"&gt;ボタンの表示&lt;/button&gt;
@@ -50,7 +50,7 @@
                 <button class="btn btn-info dropdown-toggle" id="dropdown1" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">Dropdown
                 </button>
-                <!-- class:ボタンとして表示ょするためのbtn、ドロップダウンメニューを表示するための専用クラスのdropdown-toggle
+                <!-- class:ボタンとして表示するためのbtn、ドロップダウンメニューを表示するための専用クラスのdropdown-toggle
                      data=toggle="dropdown":dataで始まる属性は独自のデータを追加する場合に用いる。
                                             ドロップダウン用のボタンはdropdownを指定
                      aria-haspopup="true":ドロップダウンメニューをもつタグを示す
@@ -87,10 +87,10 @@
         <div class="col-12">
             ・仕切り付き
             <div class="dropdown">
-                <button class="btn btn-info dropdown-toggle" id="dropdown2" data-toggle="dropdown" aria-haspopup="true"
+                <button class="btn btn-info dropdown-toggle" id="dropdown5" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">Dropdown
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdown2">
+                <div class="dropdown-menu" aria-labelledby="dropdown5">
                     <button class="dropdown-item">Action 1</button>
                     <div class="dropdown-divider"></div>
 
@@ -106,10 +106,10 @@
         <div class="col-12">
             ・ディスエーブル(Action 2のみdisable)
             <div class="dropdown">
-                <button class="btn btn-info dropdown-toggle" id="dropdown2" data-toggle="dropdown" aria-haspopup="true"
+                <button class="btn btn-info dropdown-toggle" id="dropdown4" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">Dropdown
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdown2">
+                <div class="dropdown-menu" aria-labelledby="dropdown4">
                     <button class="dropdown-item">Action 1</button>
                     <button class="dropdown-item disabled">Action 2</button>
                     <button class="dropdown-item">Action 3</button>
@@ -129,7 +129,7 @@
         メニューが表示されるものもある。
     </div>
     ■スプリットボタンの構造
-    <pre  class="table-bordered border-primary pl-2 pt-2">
+    <pre  class="table-bordered border-primary pl-2 pt-2 small">
 &lt;div class="dropdown btn-group"&gt;
     &lt;button class="btn"&gt;ボタンの表示&lt;/button&gt;
         &lt;button data-toggle="dropdown" aria-haspopup="true"
@@ -145,14 +145,14 @@
 <hr>
     <div class="row">
         <div class="col-12">
-            <div class="dropdown btn-group">
                 <!--                １つのボタングループにしている-->
-                <button class="btn btn-info">Dropdown</button>
+            <div class="dropdown btn-group">
                 <!--                左側のボタン-->
+                <button class="btn btn-info">Dropdown</button>
+                <!--                右側のボタン dropdown-toggle-splitを追加すると▼が表示される-->
                 <button data-toggle="dropdown" aria-haspopup="true"
                         class="btn btn-info dropdown-toggle dropdown-toggle-split" id="dropdown3"
                         aria-expanded="false"></button>
-                <!--                右側のボタン dropdown-toggle-splitを追加すると▼が表示される-->
                 <div class="dropdown-menu" aria-labelledby="dropdown3">
                     <button class="dropdown-item">Action 1</button>
                     <button class="dropdown-item">Action 2</button>
@@ -236,7 +236,7 @@
         <div class="col-12">
             <p>・ボタンとの組み合わせ</p>
             <button class="btn btn-lg btn-primary">&lt;button&gt; <span class="badge badge-dark">click</span> </button>
-            <a href="#" class="btn btn-lg btn-secondary">&lt;a&gt; <span class="badge badge-light">click</span> </a>
+            <a href="javascript:undefined" class="btn btn-lg btn-secondary">&lt;a&gt; <span class="badge badge-light">click</span> </a>
         </div>
     </div>
 <hr>
