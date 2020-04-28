@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/common.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+
+    <title>navコンポーネント</title>
+</head>
+
+<body>
+
+<div class="container study_section">
+    <span class="section_title">navコンポーネントの基本スタイル</span>
+    <div class="section_description">
+        navクラスを指定することでナビゲーション関係のリンクを<br>
+        綺麗にまとめることが出来る。<br>
+        navクラスを指定したタグの中にnav-linkクラスのリンクを並べていく。<br>
+        ■構成
+        <pre class="table-bordered border-primary pl-2 pt-2">
+&lt;nav class="nav"&gt;
+    &lt;a class="nav-link" href="リンク先URL"&gt;リンク&lt;/a&gt;
+
+    ･･･必要な数だけリンクを用意･･･
+
+&lt;/nav&gt;
+        </pre>
+    </div>
+    <div class="row m-3">
+        <div class="col-sm-12">
+            <nav class="nav">
+                <a class="nav-link" href="javascript:undefined">Page A</a>
+                <a class="nav-link" href="javascript:undefined">Page B</a>
+                <a class="nav-link" href="javascript:undefined">Page C</a>
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">navのリスト</span>
+    <div class="section_description">
+        navクラスはnavタグだけでなく、uiやolタグにも使う事ができる。<br>
+        ui,olタグにnavクラス、liタグにnav-itemクラスを指定し<br>
+        その中にnav-linkクラスのリンクを置く。<br>
+        navタグと変わりはなく、uiやol特有のスタイルは反映されないようになっている。<br>
+        ■構成
+        <pre class="table-bordered border-primary pl-2 pt-2">
+&lt;ul または ol class="nav"&gt;
+    &lt;li class="nav-item"&gt;
+        &lt;a class="nav-link" href="リンク先URL"&gt;リンク&lt;/a&gt;
+
+    ･･･必要な数だけリンクを用意･･･
+
+    &lt;/li&gt;
+&lt;/ul または ol&gt;
+        </pre>
+    </div>
+    <hr>
+    <div class="row m-3">
+        <div class="col-sm-12">
+            ・横並びのリスト
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:undefined">Page A</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:undefined">Page B</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:undefined">Page C</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <div class="row m-3">
+        <div class="col-sm-12">
+            ・縦並びのリスト(navクラスに続けてflex-columnクラスを指定)
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:undefined">Page A</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:undefined">Page B</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript:undefined">Page C</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">ナビゲーションメニューとコンテンツ</span>
+    <div class="section_description">
+        コンテンツも一緒に配置する場合は下記のようにグリッドレイアウトを上手く使う。<br>
+        ■ナビゲーションの右にコンテンツ(1つのrowの中にcolを２つ置き、配置する。)
+        <pre class="table-bordered border-primary pl-2 pt-2">
+&lt;div class="row"&gt;
+    &lt;div class="col- colサイズ指定"&gt;
+        <span class="text-danger">左右に配置する場合リストは垂直(flex-column)にするといい。</span>
+        &lt;nav class="nav flex-column border"&gt;
+
+           ･･･ナビゲーションのリンク･･･
+
+        &lt;/nav&gt;
+    &lt;/div&gt;
+    &lt;div class="col- colサイズ指定 border"&gt;
+
+        ･･･コンテンツの内容･･･
+
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+        ■ナビゲーションの下にコンテンツ(2つのrowにそれぞれ配置する)
+        <pre class="table-bordered border-primary pl-2 pt-2">
+&lt;div class="row"&gt;
+    &lt;div class="col- colサイズ指定"&gt;
+        <span class="text-danger">上下に配置するときはborderクラスがない方が綺麗。</span>
+        &lt;nav class="nav"&gt;
+
+           ･･･ナビゲーションのリンク･･･
+
+        &lt;/nav&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col- colサイズ指定"&gt;
+
+        ･･･コンテンツの内容･･･
+
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-3">
+            <nav class="nav flex-column border">
+                <a class="nav-link" href="javascript:undefined">Page A</a>
+                <a class="nav-link" href="javascript:undefined">Page B</a>
+                <a class="nav-link" href="javascript:undefined">Page C</a>
+            </nav>
+        </div>
+        <div class="col-9 border">
+            <h2 class="display-3">Sample</h2>
+            <p class="lead">
+                this is navigation sample page.
+                this is navigation sample page.
+                this is navigation sample page.<br><br>
+                this is navigation sample page.
+                this is navigation sample page.
+            </p>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-3">
+            <nav class="nav">
+                <a class="nav-link" href="javascript:undefined">Page A</a>
+                <a class="nav-link" href="javascript:undefined">Page B</a>
+                <a class="nav-link" href="javascript:undefined">Page C</a>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-9">
+            <h2 class="display-3">Sample</h2>
+            <p class="lead">
+                this is navigation sample page.
+                this is navigation sample page.
+                this is navigation sample page.<br><br>
+                this is navigation sample page.
+                this is navigation sample page.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">タブ表示</span>
+    <div class="section_description">
+        ナビゲーションのリンクはただリンクを並べるだけでなく<br>
+        タブを切り替えて移動する仕様にもできる。<br>
+        navクラスに続けてnav-tagsと指定するだけで可能。<br>
+        activeクラスを指定するとインターフェイスのデザインを変更することも出来る。<br>
+        下記はPage Aのみactiveクラス指定。
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <nav class="nav nav-tabs">
+                <a class="nav-link active" href="javascript:undefined">Page A</a>
+                <a class="nav-link" href="javascript:undefined">Page B</a>
+                <a class="nav-link" href="javascript:undefined">Page C</a>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h2 class="display-3">Sample</h2>
+            <p class="lead">
+                this is navigation sample page.
+                this is navigation sample page.
+                this is navigation sample page.<br><br>
+                this is navigation sample page.
+                this is navigation sample page.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">ピル型ボタン</span>
+    <div class="section_description">
+        ナビゲーションのリンクをボタンのように表示させる。<br>
+        navクラスに続けてnav-pillsクラスを指定。
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <nav class="nav nav-pills">
+                <a class="nav-link active" href="javascript:undefined">Page A</a>
+                <a class="nav-link" href="javascript:undefined">Page B</a>
+                <a class="nav-link" href="javascript:undefined">Page C</a>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h2 class="display-3">Sample</h2>
+            <p class="lead">
+                this is navigation sample page.
+                this is navigation sample page.
+                this is navigation sample page.<br><br>
+                this is navigation sample page.
+                this is navigation sample page.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">幅いっぱいに表示</span>
+    <div class="section_description">
+        いままでのタブやピル型ボタンの幅はテキストに応じて自動調整されていたが<br>
+        nav-fillクラスを指定することで端から端まで均等にボタンが割り付けられるようになる。<br>
+        ただし、navタグにこのクラスを指定する場合は中に入れるaタグにnav-itemクラスを指定しないと反映されない。<br>
+        nav-fillクラスはnav-itemの幅を指定するクラスだからである。<br>
+        ol,ulを使うときにはliにnav-itemを指定するのでそのままで問題ない。<br>
+        ■navタグを使う場合のaタグ
+        <pre class="table-bordered border-primary pl-2 pt-2">
+&lt;a class="nav-link active" href="#"&gt;Page A&lt;/a&gt;
+
+    <span class="text-danger">↓↓nav-fillを使う場合↓↓</span>
+
+&lt;a class="nav-link nav-item active" href="#"&gt;Page A&lt;/a&gt;
+        </pre>
+        ■ol,ulを使う場合
+        <pre class="table-bordered border-primary pl-2 pt-2">
+<span class="text-danger">※nav-item指定済みのためこのまま使う</span>
+
+&lt;li class="nav-item"&gt;
+    &lt;a class="nav-link active" href="#"&gt;Page A&lt;/a&gt;
+&lt;/li&gt;
+        </pre>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <nav class="nav nav-tabs nav-fill">
+                <a class="nav-item nav-link active" href="javascript:undefined">Page A</a>
+                <a class="nav-item nav-link" href="javascript:undefined">Page B</a>
+                <a class="nav-item nav-link" href="javascript:undefined">Page C</a>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-9">
+            <h2 class="display-3">Sample</h2>
+            <p class="lead">
+                this is navigation sample page.
+                this is navigation sample page.
+                this is navigation sample page.<br><br>
+                this is navigation sample page.
+                this is navigation sample page.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="container study_section">
+    <span class="section_title">フレックスによる整列調整</span>
+    <div class="section_description">
+        navタグにflex-column flex-ブラウザサイズ-row と指定すると<br>
+        指定したブラウザサイズのときは垂直表示、それ以外は横一列の表示になる。
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <nav class="nav nav-pills nav-fill flex-column flex-sm-row">
+                <a class="nav-item nav-link active" href="javascript:undefined">Page A</a>
+                <a class="nav-item nav-link" href="javascript:undefined">Page B</a>
+                <a class="nav-item nav-link" href="javascript:undefined">Page C</a>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-9">
+            <h2 class="display-3">Sample</h2>
+            <p class="lead">
+                this is navigation sample page.
+                this is navigation sample page.
+                this is navigation sample page.<br><br>
+                this is navigation sample page.
+                this is navigation sample page.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+</body>
+</html>
