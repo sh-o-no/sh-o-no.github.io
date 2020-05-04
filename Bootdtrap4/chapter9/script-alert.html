@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/common.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+
+    <title>アラートのスクリプト操作</title>
+</head>
+
+<body>
+
+<div class="container study_section">
+    <span class="section_title">&lt;div&gt;タグをアラートにする</span>
+    <div class="section_description">
+        アラートは&lt;div&gt;を使って作成されている為<br>
+        &lt;div&gt;を使って表示されているコンテンツを<br>
+        後からスクリプトでアラートに変更することも可能ということである。<br>
+    </div>
+    ■scriptの内容
+    <pre class="table-bordered border-primary pl-2 pt-2">
+$(function () {<span class="text-success">// DOM構造が解析された後に動く</span>
+    $('#alertのID').addClass('alert alert-info');<span class="text-success">// IDの要素に対してクラスを追加</span>
+    $('#alertのID').addClass('alert alert-warning');
+    $('#alertのID').addClass('alert alert-danger');
+});</pre>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            ・スクリプト未使用
+            <div id="alert1" class="lead">this is info alert message.</div>
+            <div id="alert2" class="lead">this is warning alert message.</div>
+            <div id="alert3" class="lead">this is danger alert message.</div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            ・スクリプト使用
+            <div id="alert4" class="lead">this is info alert message.</div>
+            <div id="alert5" class="lead">this is warning alert message.</div>
+            <div id="alert6" class="lead">this is danger alert message.</div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">アラートを閉じる</span>
+    <div class="section_description">
+        アラートはスクリプトの操作で閉じることも可能である。<br>
+        $('ID').alert('close');でアラートを閉じる。<br>
+    </div>
+    ■scriptの内容
+    <pre class="table-bordered border-primary pl-2 pt-2">
+$(function () {<span class="text-success">// DOM構造が解析された後に動く</span>
+    let counter = 0;<span class="text-success">// alertにalert1.2.3と順番に番号がついてることとする。</span>
+
+        $('#btnにつけたID').click(function () {<span class="text-success">// 指定したIDのボタンがクリックされた時の処理</span>
+            counter ++;<span class="text-success">// counterに1ずつ足す</span>
+            $('#alert' + counter).alert('close');<span
+            class="text-success">// alertにcounterを足したIDが指定されている要素をcloseする。</span>
+        });
+
+});</pre>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <div id="alert7" class="alert alert-info">this is info alert message.</div>
+            <div id="alert8" class="alert alert-danger">this is warning alert message.</div>
+            <div id="alert9" class="alert alert-warning">this is danger alert message.</div>
+            <div>
+                <button class="btn btn-primary" id="closeBtn">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">アラートを生成する</span>
+    <div class="section_description">
+        スクリプトでタグそのものを生成することで<br>
+        新しくアラートを作って表示させることが出来る。<br>
+    </div>
+    ■scriptの内容
+    <pre class="table-bordered border-primary pl-2 pt-2">
+$(function () {<span class="text-success">// DOM構造が解析された後に動く</span>
+
+    let counter = 0;<span class="text-success">// alertにalert1.2.3と順番に番号がついてることとする。</span>
+
+        $('#ボタンに指定したID').click(function () {<span class="text-success">// 指定したIDのボタンがクリックされた時の処理</span>
+            $('#alertのID').append(<span class="text-success">// 指定の要素の子要素に挿入</span>
+                $('&lt;div&gt;')<span class="text-success">// divタグ</span>
+                .attr('role', 'alert')<span class="text-success">// 属性を指定</span>
+                .addClass('alert alert-primary alert-dismissible')<span class="text-success">// クラスを指定</span>
+                .text('No,' + ++counter + '.This is alert!')<span class="text-success">// テキストを指定</span>
+                .append(<span class="text-success">// divタグの子要素に挿入</span>
+                    $('&lt;button&gt;')<span class="text-success">// buttonタグ</span>
+                    .addClass('close')<span class="text-success">// クラスを指定</span>
+                    .attr('data-dismiss', 'alert')<span class="text-success">// 属性を指定</span>
+                    .append(<span class="text-success">// buttonタグの子要素に挿入</span>
+                        $('&lt;span&gt;')<span class="text-success">// spanタグ</span>
+                        .attr('aria-hidden', true)<span class="text-success">// 属性を指定</span>
+                        .text('✕')<span class="text-success">// テキストを指定</span>
+                    )
+                )
+            );
+        });
+
+});</pre>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <div id="alert10">Alert will appear here!</div>
+            <button type="button" class="btn btn-secondary" id="appearAlertBtn">button</button>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+
+    $(function () {//DOM構造が解析された後に動く
+
+        //------------------------------
+        // &lt;div&gt;タグをアラートにする
+        //------------------------------
+        $('#alert4').addClass('alert alert-info');
+        $('#alert5').addClass('alert alert-warning');
+        $('#alert6').addClass('alert alert-danger');
+
+        //--------------------
+        // アラートを閉じる
+        //--------------------
+        let closeAlertCounter = 6;
+
+        $('#closeBtn').click(function () {
+            closeAlertCounter++;
+            $('#alert' + closeAlertCounter).alert('close');
+        });
+
+        //--------------------
+        // アラートを生成する
+        //--------------------
+        let appearAlertCounter = 9;
+
+        $('#appearAlertBtn').click(function () {
+            $('#alert10').append(
+                $('<div>').attr('role', 'alert')
+                    .addClass('alert alert-primary alert-dismissible')
+                    .text('No,' + ++appearAlertCounter + '.This is alert!')
+                    .append(
+                        $('<button>')
+                            .addClass('close')
+                            .attr('data-dismiss', 'alert')
+                            .append(
+                                $('<span>')
+                                    .attr('aria-hidden', true)
+                                    .text('✕')
+                            )
+                    )
+            );
+        });
+
+    });
+</script>
