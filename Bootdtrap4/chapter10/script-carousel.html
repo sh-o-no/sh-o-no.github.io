@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/common.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+
+    <title>カルーセルのスクリプト操作</title>
+</head>
+
+<body>
+
+<div class="container study_section">
+    <span class="section_title">カルーセルの開始と一時停止</span>
+    <div class="section_description">
+        カルーセルは単純にスライド表示するだけではスクリプトは不要であるが<br>
+        必要に応じて停止させたり再開させたりするにはスクリプトの力を借りなければならない。<br>
+        スクリプト内からスライドを実行させるにはcarouselメソッドを呼び出す。<br>
+        carouselメソッドの引数のオプションが多数存在する。<br>
+        interval：スライドショーの間隔（ミリ数秒）を指定<br>
+        keyboard：trueならキーボード関係のイベントに対応させる<br>
+        pause：trueなら一時停止、falseなら解除、'hover'ならホバー時は一時停止外すと解除<br>
+        ride：'carousel'でカルーセル開始<br>
+        wrap：trueなら最後まで表示し最初に戻り、エンドレス表示<br>
+        下記のサンプルはボタンをクリックするとカルーセル開始、イメージをクリックすると一時停止となる<br>
+        ■Scriptの内容
+        <pre class="table-bordered border-primary pl-2 pt-2">
+<span class="text-success">// スライド表示させる処理</span>
+$('&lt;selector&gt;').click(function () {
+    $('&lt;carousel&gt;').carousel({
+        'ride': 'carousel',<span class="text-success">// カルーセル開始</span>
+        'interval': 1000,<span class="text-success">// 1000ミリ秒（1秒）でスライド</span>
+    });
+});
+
+<span class="text-success">// スライドを停止させる処理</span>
+$('&lt;selector&gt;').click(function () {
+    $('&lt;carousel&gt;').carousel('pause');<span class="text-success">// カルーセルを一時停止</span>
+});</pre>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <div class="carousel slide" id="carousel1">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../img/sample.jpg" class="d-block w-75" alt="sample1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../img/sample2.jpg" class="d-block w-75" alt="sample2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../img/sample3.jpg" class="d-block w-75" alt="sample3">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-primary" id="carouselBtn">Click!</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">手動で移動する</span>
+    <div class="section_description">
+        カルーセルは初期化してアニメーションを開始しなければスライドが使えないわけでなく<br>
+        carouselメソッドを使うことで前後にスライドさせたり指定の番号の<br>
+        イメージを表示させたりできる。<br>
+        手動で移動させる場合はその都度カルーセルを一時停止しないとそのままスライドが始まってしまう。<br>
+        ■Scriptの内容
+        <pre class="table-bordered border-primary pl-2 pt-2">
+<span class="text-success">//#carouselのjQueryオブジェクトを代入</span>
+let 変数名 = $('&lt;carousel&gt;');
+
+<span class="text-success">// 前のイメージを表示したいときの処理</span>
+$('&lt;selector&gt;').click(function () {
+    変数名.carousel('prev');<span class="text-success">// 前のイメージに移動</span>
+    変数名.carousel('pause');<span class="text-success">// 一時停止</span>
+});
+
+<span class="text-success">// 次のイメージを表示したいときの処理</span>
+$('&lt;selector&gt;').click(function () {
+    変数名.carousel('next');<span class="text-success">// 次のイメージに移動</span>
+    変数名.carousel('pause');<span class="text-success">// 一時停止</span>
+});
+
+<span class="text-success">// 指定した番号のイメージを表示したいときの処理</span>
+$('&lt;selector&gt;').click(function () {
+    変数名.carousel(1);<span class="text-success">// 1つ目のイメージに移動</span>
+    変数名.carousel('pause');<span class="text-success">// 一時停止</span>
+});</pre>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <div class="carousel slide" id="carousel2">
+                <div class="carousel-inner" id="carousel_inner1">
+                    <div class="carousel-item active">
+                        <img src="../img/sample.jpg" class="d-block w-75" alt="sample1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../img/sample2.jpg" class="d-block w-75" alt="sample2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../img/sample3.jpg" class="d-block w-75" alt="sample3">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-primary" id="prevBtn">《Prev</button>
+                <button class="btn btn-primary" id="nextBtn">Next》</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">スライドイベント</span>
+    <div class="section_description">
+        カルーセルはスライドでイメージが変わる際に発生するイベントが用意されている。<br>
+        slide.bs.carousel：スライドによる表示の切り替えが開始された<br>
+        slid.bs.carousel：スライドによる表示の切り替えが完了した<br>
+        更に独自のプロパティも用意されている。<br>
+        direction：スライドの方向。right,leftのどちらか<br>
+        relatedTarget：現在アクティブになっているタグのDOMオブジェクト<br>
+        from：移動前に表示されていたイメージのインデックス番号<br>
+        to：移動後に表示するイメージのインデックス番号<br>
+        ■Scriptの内容
+        <pre class="table-bordered border-primary pl-2 pt-2">
+(function () {
+    let num = 0;
+    let 変数名 = $('&lt;carousel&gt;');
+
+    <span class="text-success">// スライドが開始したときの処理</span>
+    変数名.on('slide.bs.carousel', function (event) {
+        let msg = event.from + ' →' + event.to;
+        $('#msg').text(msg);<span class="text-success">// #msgの要素のテキストを書き換える</span>
+    });
+
+    <span class="text-success">// スライドが完了したときの処理</span>
+    変数名.on('slid.bs.carousel', function (event) {
+        $('#msg').text('count: ' + ++num + '(' + event.relatedTarget.id + ')');<span class="text-success">// #msgの要素のテキストを書き換える</span>
+    });
+})();</pre>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <p class="lead" id="msg">slide!</p>
+            <div class="carousel slide" data-ride="carousel" data-interval="3000" id="carousel3">
+                <div class="carousel-inner" id="carousel_inner2">
+                    <div class="carousel-item active" id="image1">
+                        <img class="d-block w-75" src="../img/sample.jpg" alt="sample1">
+                    </div>
+                    <div class="carousel-item" id="image2">
+                        <img class="d-block w-75" src="../img/sample2.jpg" alt="sample1">
+                    </div>
+                    <div class="carousel-item" id="image3">
+                        <img class="d-block w-75" src="../img/sample3.jpg" alt="sample1">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+
+    $(function () {//DOM構造が解析された後に動く
+
+        //-------------------
+        // カルーセルの表示
+        //-------------------
+
+        // スライド表示させる（ボタンをクリックしたときの）処理
+        $('#carouselBtn').click(function () {
+            $('#carousel1').carousel({
+                'ride': 'carousel',// カルーセル開始
+                'interval': 1000,// 1000ミリ秒（1秒）でスライド
+            });
+        });
+
+        // スライドを停止させる（画像をクリックしたときの）処理
+        $('#carousel1').click(function () {
+            $('#carousel1').carousel('pause');// カルーセルを一時停止
+        });
+
+        //-------------------
+        // 手動で移動する
+        //-------------------
+
+        //#carouselのjQueryオブジェクトを変数に代入
+        let carouselSample = $('#carousel2');
+
+        // 前のイメージを表示したいときの処理
+        $('#prevBtn').click(function () {
+            carouselSample.carousel('prev');// 前のイメージに移動
+            carouselSample.carousel('pause');// 一時停止
+        });
+
+        // 次のイメージを表示したいときの処理
+        $('#nextBtn').click(function () {
+            carouselSample.carousel('next');// 次のイメージに移動
+            carouselSample.carousel('pause');// 一時停止
+        });
+
+        //-------------------
+        // スライドイベント
+        //-------------------
+
+        (function () {
+            let num = 0;
+            let carouselSlideEventSample = $('#carousel3');
+
+            // スライドが開始したときの処理
+            carouselSlideEventSample.on('slide.bs.carousel', function (event) {
+                let msg = event.from + ' →' + event.to;
+                $('#msg').text(msg);
+            });
+
+            // スライドが完了したときの処理
+            carouselSlideEventSample.on('slid.bs.carousel', function (event) {
+                $('#msg').text('count: ' + ++num + '(' + event.relatedTarget.id + ')');
+            });
+
+        })();
+    });
+</script>
+</html>

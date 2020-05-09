@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/common.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+
+    <title>Navのスクリプト操作</title>
+</head>
+
+<body>
+
+<div class="container study_section">
+    <span class="section_title">Navのタブ表示を切り替える</span>
+    <div class="section_description">
+        Navのタブ表示を切り替えたい場合にはtebメソッドを使うことで可能となる。<br>
+        tabメソッドの引数に'show'を指定して呼び出すとそのタブが選択される。<br>
+        下記のサンプルはwindows以外を選択している場合でもボタンをクリックするとwindowsタブに戻る。<br>
+        ■Scriptの内容
+        <pre class="table-bordered border-primary pl-2 pt-2">
+<span class="text-success">// 要素をクリックしたときの処理</span>
+$('&lt;selector&gt;').click(function () {
+    $('&lt;tab&gt;').tab('show');<span class="text-success">// 指定のタブを選択する</span>
+});</pre>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="row m-3">
+                <div class="col-12">
+                    <div class="nav nav-tabs" role="tablist" id="tab1">
+                        <a class="nav-link active" id="link-windows1" data-toggle="tab" href="#list-content-windows1"
+                           role="tab">Windows</a>
+                        <a class="nav-link" id="link-mac1" data-toggle="tab" href="#list-content-mac1"
+                           role="tab">macOS</a>
+                        <a class="nav-link" id="link-linux1" data-toggle="tab" href="#list-content-linux1" role="tab">Linux</a>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="list-content-windows1" role="tabpanel">
+                            This is content for Windows. This is content for Windows.
+                            This is content for Windows. This is content for Windows.
+                        </div>
+                        <div class="tab-pane fade" id="list-content-mac1" role="tabpanel">
+                            This is content for macOS. This is content for macOS.
+                            This is content for macOS. This is content for macOS.
+                        </div>
+                        <div class="tab-pane fade" id="list-content-linux1" role="tabpanel">
+                            This is content for Linux. This is content for Linux.
+                            This is content for Linux. This is content for Linux.
+                        </div>
+                    </div>
+                    <hr>
+                    <button class="btn btn-primary" id="navBtn1">default tab</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">タブの切替イベント</span>
+    <div class="section_description">
+        タブの切替に関する独自のイベントが4種類用意されている。<br>
+        show.bs.tab：タブが選択された（切り替わりの開始）<br>
+        shown.bs.tab：タブが選択された状態に切り替わった（切り替わりの完了）<br>
+        hide.bs.tab：タブが非選択になった（切り替わりの開始）<br>
+        hidden.bs.tab：タブが非選択状態に切り替わった（切り替わりの完了）<br>
+        ■Scriptの内容
+        <pre class="table-bordered border-primary pl-2 pt-2">
+(function () {
+    <span class="text-success">// タブの背景色をつける</span>
+    let tab_list = $('&lt;selector&gt;');
+    tab_list.addClass('bg-info text-dark');<span class="text-success">// 要素にクラスを付け加える</span>
+    $('#tab2 a.active')
+        .removeClass('bg-info text-dark')<span class="text-success">// クラスを削除</span>
+        .addClass('bg-primary text-white');<span class="text-success">// 更にクラスを付け加える</span>
+
+    <span class="text-success">// 指定のタブが選択されたときの処理</span>
+    tab_list.on('show.bs.tab',function (event) {
+        $(event.target)<span class="text-success">// そのイベントが起こった要素に</span>
+            .addClass('bg-primary text-white');<span class="text-success">// クラスを付け加える</span>
+            .removeClass('bg-info text-dark');<span class="text-success">// 更にクラスの削除</span>
+    });
+
+    <span class="text-success">// 指定のタブが非表示になったときの処理</span>
+    tab_list.on('hide.bs.tab',function (event) {
+        $(event.target)<span class="text-success">// そのイベントが起こった要素に</span>
+            .addClass('bg-info text-dark');<span class="text-success">// クラスを付け加える</span>
+            .removeClass('bg-primary text-white');<span class="text-success">// 更にクラスの削除</span>
+    });
+})();</pre>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="row m-3">
+                <div class="col-12">
+                    <div class="nav nav-tabs" role="tablist" id="tab2">
+                        <a class="nav-link active" id="link-windows2" data-toggle="tab" href="#list-content-windows2"
+                           role="tab">Windows</a>
+                        <a class="nav-link" id="link-mac2" data-toggle="tab" href="#list-content-mac2"
+                           role="tab">macOS</a>
+                        <a class="nav-link" id="link-linux2" data-toggle="tab" href="#list-content-linux2" role="tab">Linux</a>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="list-content-windows2" role="tabpanel">
+                            This is content for Windows. This is content for Windows.
+                            This is content for Windows. This is content for Windows.
+                        </div>
+                        <div class="tab-pane fade" id="list-content-mac2" role="tabpanel">
+                            This is content for macOS. This is content for macOS.
+                            This is content for macOS. This is content for macOS.
+                        </div>
+                        <div class="tab-pane fade" id="list-content-linux2" role="tabpanel">
+                            This is content for Linux. This is content for Linux.
+                            This is content for Linux. This is content for Linux.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+
+    $(function () {//DOM構造が解析された後に動く
+
+        //--------------------------
+        // Navのタブ表示を切り替える
+        //--------------------------
+
+        // ボタンをクリックしたときの処理
+        $('#navBtn1').click(function () {
+            $('#link-windows1').tab('show');// 指定のタブを選択する
+        });
+
+        //-------------------
+        // タブの切替イベント
+        //-------------------
+        (function () {
+            // タブの背景色をつける
+            let tab_list = $('#tab2 a');
+            tab_list.addClass('bg-info text-dark');
+            $('#tab2 a.active')
+                .removeClass('bg-info text-dark')
+                .addClass('bg-primary text-white');
+
+            // 指定のタブが選択されたときの処理
+            tab_list.on('show.bs.tab', function (event) {
+                $(event.target)// そのイベントが起こった要素に対して
+                    .addClass('bg-primary text-white')
+                    .removeClass('bg-info text-dark');
+            });
+
+            // 指定のタブが非表示になったときの処理
+            tab_list.on('hide.bs.tab', function (event) {
+                $(event.target)// そのイベントが起こった要素に対して
+                    .addClass('bg-info text-dark')
+                    .removeClass('bg-primary text-white');
+            });
+        })();
+
+    });
+
+</script>
