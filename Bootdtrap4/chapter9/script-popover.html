@@ -34,13 +34,12 @@
         content：ポップオーバーのコンテンツ<br>
         ■scriptの内容
         <pre class="table-bordered border-primary pl-2 pt-2">
-$(function () {<span class="text-success">// DOM構造が解析された後に動く</span>
-
-    $('#ID')<span class="text-success">// 指定したIDの要素を取得</span>
-    .popover({'placement': 'bottom', 'title': 'This is Popover!',
-            'content': 'This is popover sample content.'})<span class="text-success">// 引数にplacement,title,contentを指定し、popoverを生成</span>
-
-});</pre>
+$('&lt;selector&gt;')<span class="text-success">// 要素を取得</span>
+    .popover({<span class="text-success">// ポップオーバーにする</span>
+        'placement': 'bottom', <span class="text-success">// 位置</span>
+        'title': 'This is Popover!',<span class="text-success">// コンテンツタイトル</span>
+        'content': 'This is popover sample content.'<span class="text-success">// コンテンツ</span>
+    });</pre>
     </div>
     <hr>
     <div class="row">
@@ -64,13 +63,13 @@ $(function () {<span class="text-success">// DOM構造が解析された後に�
         ボタン以外の場所をクリックするだけでポップオーバーを非表示にできる。<br>
         ■scriptの内容
         <pre class="table-bordered border-primary pl-2 pt-2">
-$(function () {<span class="text-success">// DOM構造が解析された後に動く</span>
-
-    $('#ID')<span class="text-success">// 指定したIDの要素を取得</span>
-    .popover({'placement': 'bottom', 'trigger': 'focus', 'title': 'This is Popover!',
-            'content': 'This is popover sample content.'})<span class="text-success">// 引数にplacement,title,content,triggerを指定し、popoverを生成</span>
-
-});</pre>
+$('&lt;selector&gt;')<span class="text-success">// 要素を取得</span>
+    .popover({<span class="text-success">// ポップオーバーにする</span>
+        'placement': 'bottom', <span class="text-success">// 位置</span>
+        'trigger': 'focus', <span class="text-success">// ON/OFF表示</span>
+        'title': 'This is Popover!',<span class="text-success">// コンテンツタイトル</span>
+        'content': 'This is popover sample content.'<span class="text-success">// コンテンツ</span>
+    })</pre>
     </div>
     <hr>
     <div class="row">
@@ -93,25 +92,24 @@ $(function () {<span class="text-success">// DOM構造が解析された後に�
         'html':trueを指定するとtitleやcontentにHTMLコードを記述出来るようになる。（「''」不要）<br>
         ■scriptの内容
         <pre class="table-bordered border-primary pl-2 pt-2">
-$(function () {<span class="text-success">// DOM構造が解析された後に動く</span>
-
-    (function () {<span class="text-success">// 即時関数を利用</span>
-        let img = '&lt;img id="popoverImg" src="../img/sample.jpg" alt="sample" style="width: 75px;"&gt;';<span class="text-success">// 変数imgにimgタグを代入</span>
-        let title = '&lt;div&gt;This is popover!&lt;/div&gt;';<span class="text-success">// 変数titleに代入</span>
-        let content = 'This is &lt;b&gt;popover&lt;/b&gt; sample content.';<span class="text-success">// 変数contentに代入</span>
-        let html = '&lt;div class="row"&gt;&lt;div class="col-4"&gt;' + img + '&lt;/div&gt;' + '&lt;div class="col-8 lead"&gt;' + content + '&lt;/div&gt;&lt;/div&gt;';<span class="text-success">// 変数htmlに代入</span>
-        $('#popoverBtn3 > button').popover({<span class="text-success">// 引数を指定し、popoverを生成</span>
-            'placement': 'top',
-            'trigger': 'focus',
-            'title': title,
-            'html': true,
-            'content': $($.parseHTML(html)),
-            <span class="text-success">// JQueryオブジェクトで渡さないと、imgのstyleが無視される（多分Bootstrapのバグ）</span>
-            <span class="text-danger">'content':html, 本来はこれでいけるはず。</span>
-        });
-    })();
-
-});</pre>
+(function () {<span class="text-success">// 即時関数を利用</span>
+    <span class="text-success">// 変数を定義</span>
+    let img = '&lt;img id="popoverImg" src="../img/sample.jpg" alt="sample" style="width: 75px;"&gt;';
+    let title = '&lt;div&gt;This is popover!&lt;/div&gt;';
+    let content = 'This is &lt;b&gt;popover&lt;/b&gt; sample content.';
+    let html = '&lt;div class="row"&gt;&lt;div class="col-4"&gt;' + img + '&lt;/div&gt;' + '&lt;div class="col-8 lead"&gt;' + content + '&lt;/div&gt;&lt;/div&gt;';
+    $('&lt;selector&gt;').popover({<span class="text-success">// 要素を取得、引数を指定し、popoverを生成</span>
+        'placement': 'top',<span class="text-success">// 位置</span>
+        'trigger': 'focus',<span class="text-success">// ON/OFF表示</span>
+        'title': title,<span class="text-success">// コンテンツタイトル</span>
+        'html': true,<span class="text-success">// htmlコードを設定可</span>
+        'content': $($.parseHTML(html)),<span class="text-success">// コンテンツ</span>
+        -------------------------------------------------------------------------
+        <span class="text-success">// JQueryオブジェクトで渡さないと、imgのstyleが無視される（多分Bootstrapのバグ）</span>
+        <span class="text-danger">'content':html, 本来はこれでいけるはず。</span>
+        -------------------------------------------------------------------------
+    });
+})();</pre>
     </div>
     <hr>
     <div class="row">
@@ -135,22 +133,32 @@ $(function () {<span class="text-success">// DOM構造が解析された後に�
         //--------------------------
         // ポップオーバーの表示
         //--------------------------
-        $('#popoverBtn > button')
-            .popover({
-                'placement': 'bottom',
-                'title': 'This is Popover!',
-                'content': 'This is popover sample content.'
-            });
+        let elements = $('#popoverBtn > button');
+        let placements = ['top','bottom','left','right'];
+        elements.each(function (i) {
+            $(this).popover({
+                'placement': placements[i],//位置
+                'title': 'This is Popover!',// タイトルテキスト
+                'content': 'This is popover sample content.'// コンテンツ
+            })
+            $(this).text($(this).text() + ':' + placements[i]);
+        });
+        // $('#popoverBtn > button')
+        //     .popover({
+        //         'placement': 'bottom',//位置
+        //         'title': 'This is Popover!',// タイトルテキスト
+        //         'content': 'This is popover sample content.'// コンテンツ
+        //     });
 
         //--------------------------
         // フォーカスによる非表示
         //--------------------------
         $('#popoverBtn2 > button')
             .popover({
-                'placement': 'bottom',
-                'trigger': 'focus',
-                'title': 'This is Popover!',
-                'content': 'This is popover sample content.'
+                'placement': 'bottom',// 位置
+                'trigger': 'focus',// ON/OFF表示
+                'title': 'This is Popover!',// コンテンツタイトル
+                'content': 'This is popover sample content.'// コンテンツ
             });
 
         //------------------------------------

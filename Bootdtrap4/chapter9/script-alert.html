@@ -34,27 +34,28 @@
     </div>
     ■scriptの内容
     <pre class="table-bordered border-primary pl-2 pt-2">
-$(function () {<span class="text-success">// DOM構造が解析された後に動く</span>
-    $('#alertのID').addClass('alert alert-info');<span class="text-success">// IDの要素に対してクラスを追加</span>
-    $('#alertのID').addClass('alert alert-warning');
-    $('#alertのID').addClass('alert alert-danger');
-});</pre>
+<span class="text-success">// IDの要素に対してクラスを追加</span>
+$('&lt;selector&gt;').addClass('alert alert-info');
+$('&lt;selector&gt;').addClass('alert alert-warning');
+$('&lt;selector&gt;').addClass('alert alert-danger');</pre>
     <hr>
     <div class="row">
         <div class="col-12">
             ・スクリプト未使用
-            <div id="alert1" class="lead">this is info alert message.</div>
-            <div id="alert2" class="lead">this is warning alert message.</div>
-            <div id="alert3" class="lead">this is danger alert message.</div>
+            <div class="lead">this is info alert message.</div>
+            <div class="lead">this is warning alert message.</div>
+            <div class="lead">this is danger alert message.</div>
         </div>
     </div>
     <hr>
     <div class="row">
         <div class="col-12">
             ・スクリプト使用
-            <div id="alert4" class="lead">this is info alert message.</div>
-            <div id="alert5" class="lead">this is warning alert message.</div>
-            <div id="alert6" class="lead">this is danger alert message.</div>
+            <div id="scriptAlerts">
+                <div class="lead">this is info alert message.</div>
+                <div class="lead">this is warning alert message.</div>
+                <div class="lead">this is danger alert message.</div>
+            </div>
         </div>
     </div>
 </div>
@@ -65,28 +66,24 @@ $(function () {<span class="text-success">// DOM構造が解析された後に�
     <span class="section_title">アラートを閉じる</span>
     <div class="section_description">
         アラートはスクリプトの操作で閉じることも可能である。<br>
-        $('ID').alert('close');でアラートを閉じる。<br>
+        $('&lt;selector&gt;').alert('close');でアラートを閉じる。<br>
     </div>
     ■scriptの内容
     <pre class="table-bordered border-primary pl-2 pt-2">
-$(function () {<span class="text-success">// DOM構造が解析された後に動く</span>
-    let counter = 0;<span class="text-success">// alertにalert1.2.3と順番に番号がついてることとする。</span>
-
-        $('#btnにつけたID').click(function () {<span class="text-success">// 指定したIDのボタンがクリックされた時の処理</span>
-            counter ++;<span class="text-success">// counterに1ずつ足す</span>
-            $('#alert' + counter).alert('close');<span
-            class="text-success">// alertにcounterを足したIDが指定されている要素をcloseする。</span>
-        });
-
+$('&lt;button&gt;').click(function () {<span class="text-success">// ボタンがクリックされた時の処理</span>
+    $('&lt;alert&gt;').alert('close');<span
+            class="text-success">// alertをcloseする。</span>
 });</pre>
     <hr>
     <div class="row">
         <div class="col-12">
-            <div id="alert7" class="alert alert-info">this is info alert message.</div>
-            <div id="alert8" class="alert alert-danger">this is warning alert message.</div>
-            <div id="alert9" class="alert alert-warning">this is danger alert message.</div>
+            <div id="closeAlert">
+                <div class="alert alert-info">this is info alert message.</div>
+                <div class="alert alert-danger">this is warning alert message.</div>
+                <div class="alert alert-warning">this is danger alert message.</div>
+            </div>
             <div>
-                <button class="btn btn-primary" id="closeBtn">Close</button>
+                <button class="btn btn-primary" id="alertCloseBtn">Close</button>
             </div>
         </div>
     </div>
@@ -102,34 +99,34 @@ $(function () {<span class="text-success">// DOM構造が解析された後に�
     </div>
     ■scriptの内容
     <pre class="table-bordered border-primary pl-2 pt-2">
-$(function () {<span class="text-success">// DOM構造が解析された後に動く</span>
+let counter = 0;
+<span class="text-success">// 指定したIDのボタンがクリックされた時の処理</span>
+$('#appearAlertBtn').click(function () {
+    <span class="text-success">// アラートを生成</span>
+    let alert = $('&lt;div&gt;')
+        .attr('role', 'alert')
+        .addClass('alert alert-primary alert-dismissible')
+        .text('No,' + ++counter + '.This is alert!');
 
-    let counter = 0;<span class="text-success">// alertにalert1.2.3と順番に番号がついてることとする。</span>
+    <span class="text-success">// closeボタンを生成</span>
+    let closeBtn = $('&lt;button&gt;')
+        .addClass('close')
+        .attr('data-dismiss', 'alert')
+        .append(
+            $('&lt;span&gt;')
+                .attr('aria-hidden', true)
+                .text('✕')
+        );
 
-        $('#ボタンに指定したID').click(function () {<span class="text-success">// 指定したIDのボタンがクリックされた時の処理</span>
-            $('#alertのID').append(<span class="text-success">// 指定の要素の子要素に挿入</span>
-                $('&lt;div&gt;')<span class="text-success">// divタグ</span>
-                .attr('role', 'alert')<span class="text-success">// 属性を指定</span>
-                .addClass('alert alert-primary alert-dismissible')<span class="text-success">// クラスを指定</span>
-                .text('No,' + ++counter + '.This is alert!')<span class="text-success">// テキストを指定</span>
-                .append(<span class="text-success">// divタグの子要素に挿入</span>
-                    $('&lt;button&gt;')<span class="text-success">// buttonタグ</span>
-                    .addClass('close')<span class="text-success">// クラスを指定</span>
-                    .attr('data-dismiss', 'alert')<span class="text-success">// 属性を指定</span>
-                    .append(<span class="text-success">// buttonタグの子要素に挿入</span>
-                        $('&lt;span&gt;')<span class="text-success">// spanタグ</span>
-                        .attr('aria-hidden', true)<span class="text-success">// 属性を指定</span>
-                        .text('✕')<span class="text-success">// テキストを指定</span>
-                    )
-                )
-            );
-        });
-
+    <span class="text-success">// alertにcloseBtnを連結させる</span>
+    alert.append(closeBtn);
+    <span class="text-success">// 指定した要素にalertを連結させる</span>
+    $('#appendAlertArea').append(alert);
 });</pre>
     <hr>
     <div class="row">
         <div class="col-12">
-            <div id="alert10">Alert will appear here!</div>
+            <div id="appendAlertArea">Alert will appear here!</div>
             <button type="button" class="btn btn-secondary" id="appearAlertBtn">button</button>
         </div>
     </div>
@@ -139,44 +136,45 @@ $(function () {<span class="text-success">// DOM構造が解析された後に�
 
     $(function () {//DOM構造が解析された後に動く
 
+        let colors = ['info', 'warning', 'danger'];
+
         //------------------------------
         // &lt;div&gt;タグをアラートにする
         //------------------------------
-        $('#alert4').addClass('alert alert-info');
-        $('#alert5').addClass('alert alert-warning');
-        $('#alert6').addClass('alert alert-danger');
+        $('#scriptAlerts > div').each(function (i) {
+            $(this).addClass('alert alert-' + colors[i]);
+        });
 
         //--------------------
         // アラートを閉じる
         //--------------------
-        let closeAlertCounter = 6;
 
-        $('#closeBtn').click(function () {
-            closeAlertCounter++;
-            $('#alert' + closeAlertCounter).alert('close');
+        $('#alertCloseBtn').click(function () {
+            $('#closeAlert > div:first-child').alert('close');
         });
 
         //--------------------
         // アラートを生成する
         //--------------------
-        let appearAlertCounter = 9;
+        let counter = 0;
 
         $('#appearAlertBtn').click(function () {
-            $('#alert10').append(
-                $('<div>').attr('role', 'alert')
-                    .addClass('alert alert-primary alert-dismissible')
-                    .text('No,' + ++appearAlertCounter + '.This is alert!')
-                    .append(
-                        $('<button>')
-                            .addClass('close')
-                            .attr('data-dismiss', 'alert')
-                            .append(
-                                $('<span>')
-                                    .attr('aria-hidden', true)
-                                    .text('✕')
-                            )
-                    )
-            );
+            let alert = $('<div>')
+                .attr('role', 'alert')
+                .addClass('alert alert-primary alert-dismissible')
+                .text('No,' + ++counter + '.This is alert!');
+
+            let closeBtn = $('<button>')
+                .addClass('close')
+                .attr('data-dismiss', 'alert')
+                .append(
+                    $('<span>')
+                        .attr('aria-hidden', true)
+                        .text('✕')
+                );
+
+            alert.append(closeBtn);
+            $('#appendAlertArea').append(alert);
         });
 
     });

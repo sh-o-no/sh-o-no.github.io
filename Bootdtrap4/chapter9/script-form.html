@@ -38,7 +38,8 @@
 $(function() {<span class="text-success">// DOM構造が解析された後に動く</span>
     let counter = 0;<span class="text-success">// 変数counterに0を格納。</span>
     $("#btn1").click(function() {<span class="text-success">#btn1の要素をクリックした時の処理</span>
-        if (counter++ % 2 == 0) {<span class="text-success">// もしcounterに1足した数を2で割ったときの余りが0なら</span>
+        counter++<span class="text-success">// counterに1ずつ足す</span>
+        if (counter % 2 == 0) {<span class="text-success">// もしcounterを2で割ったときの余りが0なら</span>
             $('#btn1').addClass("btn-warning");<span class="text-success"> // btn1のIDを持つ要素にbtn-warningクラス追加</span>
             $('#btn1').removeClass("btn-primary");<span class="text-success"> // btn1のIDを持つ要素のbtn-primaryクラスの削除</span>
         } else {<span class="text-success"> // そうでないなら</span>
@@ -71,7 +72,7 @@ $(function() {<span class="text-success">// DOM構造が解析された後に動
         <pre class="table-bordered border-primary pl-2 pt-2">
 $(function () {<span class="text-success">// DOM構造が解析された後に動く</span>
     const c_arr = ['primary', 'secondary', 'info', 'warning', 'danger'];<span
-                class="text-success">//定数c_arrを定義、配列を格納</span>
+    class="text-success">//定数c_arrを定義、配列を格納</span>
     for (let i = 0 ; i < 10 ; i++) {<span class="text-success">// 変数iが10になるまで処理してiに1足す</span>
         $('#btn_container').append($('&lt;button&gt;')<span class="text-success">// 指定のIDに&lt;button&gt;を加える</span>
             .attr('class','btn m-1 btn-' + c_arr[i % 5])<span class="text-success">// 属性class btn,m-1,btn-[iを5で割った余りの数字のインデックス番号を持った配列]</span>
@@ -121,9 +122,12 @@ $(function () {<span class="text-success">// DOM構造が解析された後に�
     <div class="section_description">
         フォームを利用する場合、値の検証の機能は備わっているが<br>
         JavascriptとBootstrapを使って値のチェックを行わせることも出来る。<br>
-        基本的にしたい処理を上に置く。<br>
-        サンプルではokをアラートに表示しているが、本来trueなら処理が起きない。<br>
-        なのでtrueでない場合に対しての処理を記述する。<br>
+        フォーム部品の入力値がおかしい場合checkValidity()でfalseが返ってくる<br>
+        ＝＝＝＝この場合のif分の書き方＝＝＝＝<br>
+        ここで判定したいのは、入力値が間違っているかどうかである<br>
+        入力値が間違っているときに、画面切り替えを止めたりと、明示的な処理を書きたい。<br>
+        なので、エラーが起こったかどうかのifを書き、中に処理をかく。<br>
+        サンプルでelse（正常）でアラートを表示しているが、実務ではこの場合アラートを出したりしない<br>
         ■scriptの内容
         <pre class="table-bordered border-primary pl-2 pt-2">
 $(function () {<span class="text-success">// DOM構造が解析された後に動く</span>
@@ -240,12 +244,12 @@ $(function () {<span class="text-success">// DOM構造が解析された後に�
 $(function () {<span class="text-success">// DOM構造が解析された後に動く</span>
     (function () {<span class="text-success">// 即時関数を使う</span>
         let progress_value = 0;<span class="text-success">// 変数progress_valueを定義</span>
-        let timer = setInterval(function () {<span
+        let intervalID = setInterval(function () {<span
                 class="text-success">// 変数timerを定義 setInterval(一定時間ごとに処理する)メソッドを使用。</span>
             progress_value += 10;<span class="text-success">// progress_valueを10ずつ増やす</span>
             setProgressValue(progress_value);<span class="text-success">// 関数を呼び出し、引数をprogress_valueで処理。</span>
             if (progress_value == 100) {<span class="text-success">// もしprogress_valueの値が100になったら</span>
-                clearInterval(timer);<span class="text-success">// timerの処理をとめる。</span>
+                clearInterval(intervalID);<span class="text-success">// timerの処理をとめる。</span>
             }
         },1000);<span class="text-success">// setIntervalメソッドを1000ミリ秒(1秒)で。</span>
     })();
@@ -268,7 +272,7 @@ $(function () {<span class="text-success">// DOM構造が解析された後に�
     <div class="row">
         <div class="col-sm-12">
             <div class="progress mt-3">
-<!--                0の時に単位つけたら怒られます。ｗ本では0%になってた。-->
+                <!--0の時に単位つけたら怒られます。ｗ本では0%になってた。-->
                 <div id="progress1" class="progress-bar" role="progressbar" style="width: 0;" aria-valuenow="0"
                      aria-valuemin="0" aria-valuemax="100">0%
                 </div>
@@ -285,8 +289,8 @@ $(function () {<span class="text-success">// DOM構造が解析された後に�
 <div class="container study_section">
     <span class="section_title">ツールチップの設定</span>
     <div class="section_description">
-        ツールチップは予めタグに組み込むことも可能だが
-        スクリプトを使うことで勝手もよくなる。
+        ツールチップは予めタグに組み込むことも可能だが<br>
+        スクリプトを使うことで勝手もよくなる。<br>
         ■scriptの内容
         <pre class="table-bordered border-primary pl-2 pt-2">
 $(function () {<span class="text-success">// DOM構造が解析された後に動く</span>
@@ -320,7 +324,8 @@ $(function () {<span class="text-success">// DOM構造が解析された後に�
         //ボタンが押されたときの処理
         let counter = 0;
         $("#btn1").click(function () {
-            if (counter++ % 2 === 0) {
+            counter++;
+            if (counter % 2 === 0) {
                 $('#btn1').addClass("btn-warning").removeClass("btn-primary");
             } else {
                 $("#btn1").addClass("btn-primary").removeClass("btn-warning");
@@ -334,9 +339,9 @@ $(function () {<span class="text-success">// DOM構造が解析された後に�
 
         // ボタンの生成処理
         const c_arr = ['primary', 'secondary', 'info', 'warning', 'danger'];
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < c_arr.length*2; i++) {
             $('#btn_container').append($('<button>')
-                .attr('class', 'btn m-1 btn-' + c_arr[i % 5])
+                .attr('class', 'btn m-1 btn-' + c_arr[i % c_arr.length])
                 .text('button No,' + (i + 1))
             );
         }
@@ -345,14 +350,14 @@ $(function () {<span class="text-success">// DOM構造が解析された後に�
         // activeとdisabled
         //--------------------
 
-        // ボタンの生成処理
-        for (let i = 0; i < 10; i++) {
+        // ボタンの生成処理 3の倍数はdisabled、その前はactive
+        for (let i = 1; i <= 10; i++) {
             let obj = $('<button>');
             obj.attr('class', 'btn m-1 btn-info');
-            obj.text('button No,' + (i + 1));
-            if (i % 3 === 1) {
+            obj.text('button No,' + (i));
+            if (i % 3 === 2) {
                 obj.addClass('active');
-            } else if (i % 3 === 2) {
+            } else if (i % 3 === 0) {
                 obj.addClass('disabled');
             }
             $('#btn_container2').append(obj);
@@ -401,11 +406,11 @@ $(function () {<span class="text-success">// DOM構造が解析された後に�
         // プログレスバーのメーターを増やす処理
         (function () {
             let progress_value = 0;
-            let timer = setInterval(function () {
+            let intervalID = setInterval(function () {
                 progress_value += 10;
                 setProgressValue(progress_value);
                 if (progress_value === 100) {
-                    clearInterval(timer);
+                    clearInterval(intervalID);
                 }
             }, 1000);
         })();
