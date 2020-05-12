@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/common.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+
+    <title>Navbarのスクリプト操作</title>
+</head>
+
+<body>
+
+<div class="container study_section">
+    <span class="section_title">Navbarの項目追加</span>
+    <div class="section_description">
+        Navbarはスクリプトで項目の追加が可能である。<br>
+        下記のサンプルは入力フォームに入力した値がURLになるよう記述しており<br>
+        クリックするとページに飛ぶことが出来る。<br>
+        尚、サイズの指定をすることで一定の画面サイズより小さくなると折りたたまれるようになっている。<br>
+        ■scriptの構成
+        <pre class="table-bordered border-primary pl-2 pt-2">
+<span class="text-success">// inoutに入力した値をURLにしてNavbarに追加する</span>
+let count = 1;
+let input = $('&lt;input&gt;');
+
+<span class="text-success">// 要素をクリックしたときの処理</span>
+$('&lt;button&gt;').click(function (e) {
+    $('#nav-list').append(
+        $('&lt;li&gt;')
+            .addClass('nav-item')
+            .append(
+                $('&lt;a&gt;')
+                    .addClass('nav-link')
+                    .text('item ' + count++)
+                    .attr('target', '_blank')<span class="text-success">// 新しいウィンドウで開く</span>
+                    .attr('href', 'http://' + input.val())
+            )
+    );
+    input.val('');<span class="text-success">// inputの値を空に</span>
+    e.preventDefault();<span class="text-success">// イベントの中断</span>
+});</pre>
+
+    </div>
+    <div class="row m-3">
+        <div class="col-12">
+            <nav class="navbar navbar-expand-md navbar-light bg-light" id="navbar">
+                <a class="navbar-brand" href="javascript:undefined">Menu</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav" id="navList"></ul>
+                </div>
+            </nav>
+            <hr>
+            <form class="form-inline">
+                <label>
+                    <input type="text" class="form-control" id="input1">
+                </label>
+                <button class="btn btn-primary" id="navBtn">Add Item</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">Navbarでのコラプスの項目展開イベント</span>
+    <div class="section_description">
+        Navbarにはnavbar-collapseクラスうを指定することで<br>
+        項目を折りたたむことが可能である。<br>
+        そのためcollapseのイベントをそのまま使うことが出来る。<br>
+        show.bs.collapse：コラプスの展開を開始した<br>
+        shown.bs.collapse：コラプスの展開が完了した<br>
+        hide.bs.collapse：コラプスの折りたたみを開始した<br>
+        hidden.bs.collapse：コラプスの折りたたみが完了した<br>
+        下記のサンプルは展開時にbg-info、折りたたみ時にbg-lightとなっている。<br>
+        ■scriptの構成
+        <pre class="table-bordered border-primary pl-2 pt-2">
+<span class="text-success">// コラプス展開時と折りたたみ時で背景色を変える</span>
+(function () {
+    let obj = $('#collapseNavbarNav');
+
+    <span class="text-success">// コラプスの展開を開始したときの処理</span>
+    obj.on('show.bs.collapse', function () {
+        $('&lt;navbar&gt;')
+            .addClass('bg-info')
+            .removeClass('bg-light');
+    });
+
+    <span class="text-success">// コラプスの折りたたみが完了したときの処理</span>
+    obj.on('hidden.bs.collapse',function () {
+        $('&lt;navbar&gt;')
+        .removeClass('bg-info')
+        .addClass('bg-light');
+    });
+})();</pre>
+
+    </div>
+    <div class="row m-3">
+        <div class="col-12">
+            <nav class="navbar navbar-expand-md navbar-light bg-light" id="collapseNavbar">
+                <a class="navbar-brand" href="javascript:undefined">Menu</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapseNavbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapseNavbarNav">
+                    <ul class="navbar-nav" id="collapseNavList"></ul>
+                </div>
+            </nav>
+            <hr>
+            <form class="form-inline">
+                <label>
+                    <input type="text" class="form-control" id="collapseNavInput">
+                </label>
+                <button class="btn btn-primary" id="collapseNavBtn">Add Item</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+</body>
+</html>
+<script>
+
+    $(function () {//DOM構造が解析された後に動く
+
+        //------------------
+        // Navbarの項目追加
+        //------------------
+
+        // inoutに入力した値をURLにしてNavbarに追加する
+        let count = 1;
+        let input = $('#input1');
+        // #navBtnをクリックしたときの処理
+
+        $('#navBtn').click(function (e) {
+            $('#navList').append(
+                $('<li>')
+                    .addClass('nav-item')
+                    .append(
+                        $('<a>')
+                            .addClass('nav-link')
+                            .text('item ' + count++)
+                            .attr('target', '_blank')// 新しいウィンドウで開く
+                            .attr('href', 'http://' + input.val())
+                    )
+            );
+            input.val('');// inputの値を空に
+            e.preventDefault();// イベントの中断
+        });
+
+
+        //--------------------------------------
+        // Navbarでのコラプスの項目展開イベント
+        //--------------------------------------
+
+        // inoutに入力した値をURLにしてNavbarに追加する
+        let collapseCount = 1;
+        let collapseInput = $('#collapseNavInput');
+        // #navBtnをクリックしたときの処理
+
+        $('#collapseNavBtn').click(function (e) {
+            $('#collapseNavList').append(
+                $('<li>')
+                    .addClass('nav-item')
+                    .append(
+                        $('<a>')
+                            .addClass('nav-link')
+                            .text('item ' + collapseCount++)
+                            .attr('target', '_blank')// 新しいウィンドウで開く
+                            .attr('href', 'http://' + collapseInput.val())
+                    )
+            );
+            collapseInput.val('');// inputの値を空に
+            e.preventDefault();// イベントの中断
+        });
+
+        // コラプス展開時と折りたたみ時で背景色を変える
+        (function () {
+            let collapseNavbarNav = $('#collapseNavbarNav');
+
+            collapseNavbarNav.on('show.bs.collapse', function () {
+                $('#collapseNavbar')
+                    .addClass('bg-info')
+                    .removeClass('bg-light');
+            });
+
+            collapseNavbarNav.on('hidden.bs.collapse',function () {
+                $('#collapseNavbar')
+                .removeClass('bg-info')
+                .addClass('bg-light');
+            });
+        })();
+
+    });
+</script>

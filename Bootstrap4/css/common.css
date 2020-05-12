@@ -1,0 +1,22 @@
+.study_section {
+    /*padding: 0.5em 1em;*/
+    margin: 12px;
+    border: double 5px #4ec4d3;
+}
+
+.section_description {
+    font-size: 15px;
+    /*text-indent: 1em;*/
+    margin: 4px;
+    padding-left: 1em;
+}
+
+.section_title {
+    text-decoration: underline;
+    font-size: 1.75rem;
+}
+
+.study_section div.row form {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/common.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+
+    <title>カード</title>
+</head>
+
+<body>
+
+<div class="container study_section">
+    <span class="section_title">カードの基本スタイル</span>
+    <div class="section_description">
+        カードはいくつもの要素からなるコンテンツを1枚のカードの形式に<br>
+        まとめて表示する。cardクラスの指定されたdivタグの中に<br>
+        card-bodyクラスの指定されたdivタグを記述していく。<br>
+        青字の部分は必要に応じてタグも自由に記述していく。
+        <pre class="table-bordered border-primary pl-2 pt-2 small">
+&lt;div class="card"&gt;
+        &lt;div class="card-body"&gt;
+            <span class="text-info">&lt;h1 class="card-title"&gt;カードのタイトル&lt;/h1&gt;
+            &lt;h2 class="card-subtitle"&gt;カードのサブタイトル&lt;/h2&gt;</span>
+            &lt;p class="card-subtitle"&gt;
+            コンテンツの内容
+            &lt;/p&gt;
+            <span class="text-info">&lt;a class="card-link"&gt; href="リンク">リンクの文章&lt;/a&gt;</span>
+&lt;/div&gt;</pre>
+    </div>
+    <hr>
+    <div class="row m-3">
+        <div class="card" style="width: 300px;">
+            <div class="card-body">
+                <h5 class="card-title">this is card.</h5>
+                <h6 class="card-subtitle">~ card subtitle ~</h6>
+                <p class="card-text">this is card's content. これはカードのコンテンツです。</p>
+                <a class="card-link" href="javascript:undefined">card link.</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">イメージカード</span>
+    <div class="section_description">
+        カードはイメージと合わせて使うこともある。<br>
+        カードと合わせるとより一体化したコンテンツを作ることができる。<br>
+        イメージをcard-bodyの上下に置くことで接続面の角の丸みが<br>
+        無くなり、綺麗にくっついているように見える。
+    </div>
+    <hr>
+    <div class="row m-3">
+        <div class="col-6">
+            <div class="card" style="width: 300px;">
+                <img src="../img/sample.jpg" class="card-img-top" alt="card image">
+                <div class="card-body">
+                    <h5 class="card-title">this is card.</h5>
+                    <h6 class="card-subtitle">~ card subtitle ~</h6>
+                    <p class="card-text">this is card's content. イメージを上に置いた際のサンプル</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card" style="width: 300px;">
+                <div class="card-body">
+                    <h5 class="card-title">this is card.</h5>
+                    <h6 class="card-subtitle">~ card subtitle ~</h6>
+                    <p class="card-text">this is card's content. イメージを下に置いた際のサンプル</p>
+                </div>
+                <img src="../img/sample2.jpg" class="card-img-bottom" alt="card image">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">カードヘッダーとカードフッター</span>
+    <div class="section_description">
+        card-titleとは違う形でカードの上部に切り離した形でタイトルなどを<br>
+        表示させることもできる。 ヘッダー、ボディ、フッターの順で記述する。<br>
+        ヘッダー及びフッターはボディとは切り離されていて独立して使うことが出来る。<br>
+    </div>
+    <hr>
+    <div class="row m-3">
+        <div class="card" style="width: 300px;">
+            <div class="card-header">
+                <h5>header</h5>
+            </div>
+            <div class="card-body">
+                <h6 class="card-subtitle">body subtitle</h6>
+                <p class="card-text">body text</p>
+            </div>
+            <div class="card-footer">
+                footer
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">カードのカラー化</span>
+    <div class="section_description">
+        カードのカラーにはbg-色名を使用する。<br>
+        ただし、bg-色名のクラスは色が濃い為、text-whiteなどでテキストカラーも<br>
+        変更しておくと、より見やすいコンテンツになる。<br>
+        クラスは一箇所の指定だが、ヘッダー、フッターとボディで若干色が違うことがわかる。
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-4">
+            <div class="card bg-info text-white m-3" style="width: 250px;">
+                <h4 class="card-header">
+                    bg-info header
+                </h4>
+                <div class="card-body">
+                    <h5 class="card-subtitle">body subtitle</h5>
+                    <div class="card-text">body text</div>
+                </div>
+                <div class="card-footer">
+                    footer.
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card bg-dark text-white m-3" style="width: 250px;">
+                <h4 class="card-header">
+                    bg-dark header
+                </h4>
+                <div class="card-body">
+                    <h5 class="card-subtitle">body subtitle</h5>
+                    <div class="card-text">body text</div>
+                </div>
+                <div class="card-footer">
+                    footer.
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card bg-danger text-white m-3" style="width: 250px;">
+                <h4 class="card-header">
+                    bg-danger header
+                </h4>
+                <div class="card-body">
+                    <h5 class="card-subtitle">body subtitle</h5>
+                    <div class="card-text">body text</div>
+                </div>
+                <div class="card-footer">
+                    footer.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">カードのボーダーカラー化</span>
+    <div class="section_description">
+        カラーは塗りつぶす以外にボーダーの色指定も可能となる。<br>
+        bg-色名 text-whiteにしていた箇所を<br>
+        border-色名 text-色名に変更するだけである。<br>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-4">
+            <div class="card border-info text-info m-3" style="width: 250px;">
+                <h4 class="card-header">
+                    bg-info header
+                </h4>
+                <div class="card-body">
+                    <h5 class="card-subtitle">body subtitle</h5>
+                    <div class="card-text">body text</div>
+                </div>
+                <div class="card-footer">
+                    footer.
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card border-dark text-dark m-3" style="width: 250px;">
+                <h4 class="card-header">
+                    bg-dark header
+                </h4>
+                <div class="card-body">
+                    <h5 class="card-subtitle">body subtitle</h5>
+                    <div class="card-text">body text</div>
+                </div>
+                <div class="card-footer">
+                    footer.
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card border-danger text-danger m-3" style="width: 250px;">
+                <h4 class="card-header">
+                    bg-danger header
+                </h4>
+                <div class="card-body">
+                    <h5 class="card-subtitle">body subtitle</h5>
+                    <div class="card-text">body text</div>
+                </div>
+                <div class="card-footer">
+                    footer.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">イメージオーバーレイ</span>
+    <div class="section_description">
+        イメージを利用する場合イメージの上または下にコンテンツが表示される為<br>
+        かなり長いカードになってしまう。その表示領域を節約したい場合は<br>
+        イメージの上にコンテンツを重ねてしまう方法がある。<br>
+        cardクラスを指定したタグの中のimgタグの後ろにcard-img-overlayクラスを指定したタグを用意。<br>
+        その中にtitle,subtitle,textなどを配置する。<br>
+        card-img-overlayクラスを指定したタグがcard-bodyの代わりになる。<br>
+        <span class="text-danger"> ※画像の色合いによってテキストのカラーは変更するとよい。</span>
+    </div>
+    <hr>
+    <div class="row m-3">
+        <div class="col-6">
+            <div class="card" style="width: 300px;">
+                <img src="../img/sample.jpg" class="card-img-top" alt="card image">
+                <div class="card-img-overlay">
+                    <h5 class="card-title text-white">overlay sample</h5>
+                    <p class="card-text">this is card's content. オーバーレイのサンプル</p>
+                </div>
+                <div class="card-footer text-right">
+                    footer
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">カードグループ</span>
+    <div class="section_description">
+        複数のカードを表示させるような場合、それらをグループ化することが出来る。<br>
+        card-groupクラスを指定したタグの中にカードを記述して作成していく。<br>
+        カードの大きさは一番大きいカードに揃うようになっている。<br>
+        全てのカードをcard-groupクラスのタグで囲うことでグループ化される。
+    </div>
+    <hr>
+    <div class="row m-3">
+        <div class="row m-3">
+            <div class="card-group">
+                <div class="card">
+                    <h5 class="card-header">Card 1</h5>
+                    <div class="card-body">
+                        <p class="card-text">card list sample.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h5 class="card-header">Card 2</h5>
+                    <div class="card-body">
+                        <p class="card-text">card list sample.card list sample.card list sample.card list sample.card
+                            list sample.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h5 class="card-header">Card 3</h5>
+                    <div class="card-body">
+                        <p class="card-text">card list sample.card list sample.card list sample.card list sample.card
+                            list sample.card list sample.card list sample.card list sample.card list sample.v</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">カードデッキ</span>
+    <div class="section_description">
+        カードデッキとはカードグループのようにグループになるが<br>
+        カードとカードの間に隙間を開けたいときに使用する。<br>
+        card-groupクラスをcard-deckに変更するだけである。<br>
+    </div>
+    <hr>
+    <div class="row m-3">
+        <div class="row m-3">
+            <div class="card-deck">
+                <div class="card">
+                    <h5 class="card-header">Card 1</h5>
+                    <div class="card-body">
+                        <p class="card-text">card list sample.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h5 class="card-header">Card 2</h5>
+                    <div class="card-body">
+                        <p class="card-text">card list sample.card list sample.card list sample.card list sample.card
+                            list sample.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h5 class="card-header">Card 3</h5>
+                    <div class="card-body">
+                        <p class="card-text">card list sample.card list sample.card list sample.card list sample.card
+                            list sample.card list sample.card list sample.card list sample.card list sample.v</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">カードコラム</span>
+    <div class="section_description">
+        複数のカードを縦横に適当に並べてくれるもの。<br>
+        スペースの無駄遣いを防ぐことが出来る。<br>
+        card-groupやcard-deckを指定してきた箇所をcard-columnsとする。<br>
+        なお、カードコラムも使い方はカードグループなどと同じである。
+    </div>
+    <hr>
+    <div class="row m-3">
+        <div class="row m-3">
+            <div class="card-columns">
+                <div class="card">
+                    <div class="card-body">
+                        <h6>card 1</h6>
+                        <p class="card-text">card columns sample</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h5 class="card-header">Card 2</h5>
+                    <div class="card-body">
+                        <p class="card-text">card columns sample.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text">this is card 3 .</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h5>card 4</h5>
+                    <p class="card-text">card columns sample.card columns sample.card columns sample.card columns sample.card
+                        columns sample.</p>
+                    <div class="card-footer">
+                        footer
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h6>card 5</h6>
+                        <p class="card-text">card content.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h5 class="card-header">Card 6</h5>
+                    <div class="card-body">
+                        <p class="card-text">card columns sample.card columns sample.card columns sample.card columns sample.card
+                            columns sample.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h6>card 7</h6>
+                        <p class="card-text">card content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+</body>
+</html>

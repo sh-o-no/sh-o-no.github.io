@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/common.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+
+    <title>スタティックポップオーバー</title>
+</head>
+
+<body>
+
+<div class="container study_section">
+    <span class="section_title">ポップオーバー</span>
+    <div class="section_description">
+        簡単なメッセージなどをポップアップして使う。<br>
+        ただし利用するにはJavaScriptを使う必要がある。(クリックした時にポップアップされるなど)<br>
+        ポップオーバーによる表示の部分はタグを使って静的に表示させることが出来る。<br>
+        これがスタティックポップオーバーである。<br>
+        ■基本構成<br>
+        <pre class="table-bordered border-primary pl-2 pt-2 small">
+&lt;div class="popover"&gt;
+        &lt;div class="popover-header"&gt;
+            ヘッダーの内容
+        &lt;/div&gt;
+        &lt;div class="popover-body"&gt;
+            ボディの内容
+        &lt;/div&gt;
+&lt;/figure&gt;</pre>
+    </div>
+<hr>
+    <div class="row m-3">
+        <div class="col-sm-12">
+            <div class="popover">
+                <h3 class="popover-header">Popover Header</h3>
+                <div class="popover-body">
+                    <p class="text-capitalize">
+                        this is static popover content.
+                        this is static popover content.
+                        this is static popover content.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--    改行しないと枠の上にポップアップされるｗ-->
+<br><br><br><br><br><br>
+
+
+
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+
+</body>
+</html>

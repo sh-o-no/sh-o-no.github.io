@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/common.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+
+    <title>ジャンボトロン</title>
+</head>
+
+<body>
+
+<div class="container study_section">
+    <span class="section_title">ジャンボトロンの基本スタイル</span>
+    <div class="section_description">
+        ジャンボトロンとは、一般的なパネルなどよりも大きく<br>
+        目立つコンテンツを置きたいときに使用する。<br>
+        ■基本構成
+        <pre class="table-bordered border-primary pl-2 pt-2 small">
+&lt;div class="jumbotron"&gt;
+    表示するコンテンツ
+&lt;/div&gt;</pre>
+    </div>
+    <hr>
+    <div class="row m-3">
+        <div class="col-sm-12">
+            <div class="jumbotron">
+                <p>これはジャンボトロンを使ったサンプルです。</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">テキスト表示のよく使うクラス</span>
+    <div class="section_description">
+        テキストのフォントや文字サイズなどテキストに関するクラスが<br>
+        いくつか設けられている。
+        <hr>
+        <p>・display-番号…見出しなどで用いられる。1が1番大きく、数字が増えるにつれ小さくなる。<br>
+            ・lead…テキストを目立たせる。指定するだけで太字になる。<br>
+            ・font-weight,font-weight-normal,font-italic…フォントにボールド、イタリック体を割り当てるクラス<br>
+            ・text-lowercase,text-uppercase,text-capitalize…左から全てを小文字、全て大文字、単語の最初だけ大文字にするクラス</p>
+
+        <div class="row m-3">
+            <div class="col-sm-12">
+                <div class="jumbotron">
+                    <p>※display-3,text-uppercaseを使用</p>
+                    <h3 class="display-3 text-uppercase">jumbotron!</h3>
+                    <p>※lead,text-capitalize,font-italicを使用</p>
+                    <p class="lead text-capitalize font-italic">this is a simple jumbotron style component.this is a simple
+                        jumbotron style component.</p>
+                    <hr>
+                    <p>※leadを使用</p>
+                    <p class="lead">これはジャンボトロンを使ったサンプルです。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="container study_section">
+        <span class="section_title">角の丸み</span>
+        <div class="section_description">
+            <p>ジャンボトロンの角四隅は丸くなっている。この丸みを取り除きたい場合は<br>
+                jumbotronクラスに続けてjumbotron-fluidクラスを指定する。<br>
+                ただしjumbotron-fluidクラスを指定することでコンテンツの<br>
+                端から端まで配置されて余白がなくなってしまう。<br>
+                そのため構成を少し変更し、jumbotronクラスの中にcontainerを用意する必要がある。</p>
+            <hr>
+            <p>・container配置</p>
+            <div class="row m-3">
+                <div class="col-sm-12">
+                    <div class="jumbotron jumbotron-fluid">
+                        <div class="container">
+                            <p>※display-3,text-uppercaseを使用</p>
+                            <h3 class="display-3 text-uppercase">jumbotron!</h3>
+                            <p>※lead,text-capitalize,font-weight-boldを使用</p>
+                            <p class="lead text-capitalize font-weight-bold">this is a simple jumbotron style component.this is a simple
+                                jumbotron style component.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p>・container未配置</p>
+            <div class="row m-3">
+                <div class="col-sm-12">
+                    <div class="jumbotron jumbotron-fluid">
+                        <p>※display-3,text-uppercaseを使用</p>
+                        <h3 class="display-3 text-uppercase">jumbotron!</h3>
+                        <p>※lead,text-capitalizeを使用</p>
+                        <p class="lead text-capitalize">this is a simple jumbotron style component.this is a simple
+                            jumbotron style component.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="mt-1"></div>
+        <hr>
+        <div class="mb-1"></div>
+</body>
+</html>

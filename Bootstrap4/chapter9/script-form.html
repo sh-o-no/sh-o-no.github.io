@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/common.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+
+    <title>フォームのスクリプト操作</title>
+</head>
+
+<body>
+
+<div class="container study_section">
+    <span class="section_title">ボタンのスクリプト操作</span>
+    <div class="section_description">
+        タグの中にスクリプトを割り当てている。<br>
+        #btn1の要素をクリックしたときに<br>
+        ①clicked:の数字が増える<br>
+        ②ボタンの色が変わる<br>
+        という操作を行っている。<br>
+        ■scriptの内容
+        <pre class="table-bordered border-primary pl-2 pt-2">
+$(function() {<span class="text-success">// DOM構造が解析された後に動く</span>
+    let counter = 0;<span class="text-success">// 変数counterに0を格納。</span>
+    $("#btn1").click(function() {<span class="text-success">#btn1の要素をクリックした時の処理</span>
+        counter++<span class="text-success">// counterに1ずつ足す</span>
+        if (counter % 2 == 0) {<span class="text-success">// もしcounterを2で割ったときの余りが0なら</span>
+            $('#btn1').addClass("btn-warning");<span class="text-success"> // btn1のIDを持つ要素にbtn-warningクラス追加</span>
+            $('#btn1').removeClass("btn-primary");<span class="text-success"> // btn1のIDを持つ要素のbtn-primaryクラスの削除</span>
+        } else {<span class="text-success"> // そうでないなら</span>
+            $("#btn1").addClass("btn-primary");<span class="text-success"> // btn1のIDを持つ要素にbtn-primaryクラスの追加</span>
+            $("#btn1").removeClass("btn-warning");<span class="text-success"> // btn1のIDを持つ要素のbtn-warningクラスの削除</span>
+        }
+    $('#msg').text("clicked: " + counter);<span class="text-success"> // IDmsgの文字列を変更</span>
+});</pre>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <div>
+                <h5 id="msg" class="mb-4">type any text...</h5>
+            </div>
+            <div>
+                <button id="btn1" type="button" class="btn btn-primary">button</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">コントロールをダイナミックに生成</span>
+    <div class="section_description">
+        HTML要素を新たに生成する事もできる。<br>
+        ■scriptの内容
+        <pre class="table-bordered border-primary pl-2 pt-2">
+$(function () {<span class="text-success">// DOM構造が解析された後に動く</span>
+    const c_arr = ['primary', 'secondary', 'info', 'warning', 'danger'];<span
+    class="text-success">//定数c_arrを定義、配列を格納</span>
+    for (let i = 0 ; i < 10 ; i++) {<span class="text-success">// 変数iが10になるまで処理してiに1足す</span>
+        $('#btn_container').append($('&lt;button&gt;')<span class="text-success">// 指定のIDに&lt;button&gt;を加える</span>
+            .attr('class','btn m-1 btn-' + c_arr[i % 5])<span class="text-success">// 属性class btn,m-1,btn-[iを5で割った余りの数字のインデックス番号を持った配列]</span>
+            .text('button No,' + (i + 1)));<span class="text-success">// 内容 button No,と[iに1を足した数]</span>
+    }
+});</pre>
+    </div>
+    <hr>
+    <div class="row">
+        <div id="btn_container"></div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">activeとdisabled</span>
+    <div class="section_description">
+        クラスを追加するメソッドを使うと、active,disableも追加出来る。<br>
+        ■scriptの内容
+        <pre class="table-bordered border-primary pl-2 pt-2">
+$(function () {<span class="text-success">// DOM構造が解析された後に動く</span>
+    for (let i = 0; i < 10; i++) {<span class="text-success">iが10になるまで処理を繰り返し、iに1ずつ足す。</span>
+        let obj =$('&lt;button&gt;')<span class="text-success">// 変数objを定義</span>
+        .attr('class','btn m-1 btn-info')<span class="text-success">// 属性にclass、値にbtn,m-1,btn-infoを加える</span>
+        .text('button No,' + (i + 1));<span class="text-success">// 内容にbutton No,とiに１を足した数を加える</span>
+
+        if (i % 3 == 1) {<span class="text-success">// もしiを3で割って余りが1なら</span>
+            obj.addClass('active');<span class="text-success">// objのクラスにactiveを追加</span>
+        }else if (i % 3 == 2){<span class="text-success">// そうでなく、iを3で割って余りが2なら</span>
+            obj.addClass('disabled');<span class="text-success">// objのクラスにdisabledを追加</span>
+        }
+        $('#btn_container2').append(obj);<span class="text-success">// 指定のIDを持つ要素にobjを追加する</span>
+    }
+});</pre>
+    </div>
+    <hr>
+    <div class="row">
+        <div id="btn_container2"></div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">バリデーション</span>
+    <div class="section_description">
+        フォームを利用する場合、値の検証の機能は備わっているが<br>
+        JavascriptとBootstrapを使って値のチェックを行わせることも出来る。<br>
+        フォーム部品の入力値がおかしい場合checkValidity()でfalseが返ってくる<br>
+        ＝＝＝＝この場合のif分の書き方＝＝＝＝<br>
+        ここで判定したいのは、入力値が間違っているかどうかである<br>
+        入力値が間違っているときに、画面切り替えを止めたりと、明示的な処理を書きたい。<br>
+        なので、エラーが起こったかどうかのifを書き、中に処理をかく。<br>
+        サンプルでelse（正常）でアラートを表示しているが、実務ではこの場合アラートを出したりしない<br>
+        ■scriptの内容
+        <pre class="table-bordered border-primary pl-2 pt-2">
+$(function () {<span class="text-success">// DOM構造が解析された後に動く</span>
+    $("#form1").submit(function (event) {<span class="text-success">// #form1に対してsubmitのメソッドが起きた時の処理</span>
+
+        if(!event.target.checkValidity()) {<span
+                class="text-success">// checkValidityでバリデーションのチェックを行いtrueでないなら</span>
+            event.preventDefault();<span class="text-success">// イベントのキャンセル</span>
+            event.stopPropagation();<span class="text-success">// イベントの伝達を中止</span>
+        } else {<span class="text-success">そうでなく、trueなら</span>
+            alert("ok!");<span class="text-success">// アラートにok!と表示</span>
+        }
+        $('#form1').addClass('was-validated');<span class="text-success">#formにwas-validatedクラスを追加</span>
+    )};
+});</pre>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-sm-12">
+            <!--            novalidate:HTML5のバリデーションをOFFにする
+            javascriptを使いたい場合はformにこれを必ず記述する-->
+            <!--            labelの中はインライン要素しかいれたらあかんみたいでdiv→spanに変更-->
+            <form class="container" id="form1" novalidate>
+                <div class="mt-2">
+                    <label>
+                        Name
+                        <input type="text" class="form-control" placeholder="name" required>
+                        <span class="invalid-feedback">type your name</span>
+                    </label>
+                </div>
+                <div class="mt-2">
+                    <label>
+                        City
+                        <input type="text" class="form-control" placeholder="address">
+                        <span class="invalid-feedback">
+                            type your address
+                        </span>
+                    </label>
+                </div>
+                <div class="mt-2">
+                    <label>
+                        Mail
+                        <input type="email" class="form-control" placeholder="email" required>
+                        <span class="invalid-feedback">
+                            type your e-mail
+                        </span>
+                    </label>
+                </div>
+                <div class="mt-2">
+                    <button id="btnSubmit" class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">チェックボックスの選択状態</span>
+    <div class="section_description">
+        チェックボックスやラジオボタンではjQueryのpropというメソッドを使うことで<br>
+        スクリプト内から選択状態の操作を行うことが出来る。<br>
+        checked属性をtrue：チェック状態<br>
+        indeterminate属性をtrue：ONでもOFFでもない中間状態<br>
+        ■scriptの内容
+        <pre class="table-bordered border-primary pl-2 pt-2">
+$(function () {<span class="text-success">// DOM構造が解析された後に動く</span>
+    (function () {<span class="text-success">// 即時関数</span>
+        $('#ck1').prop('checked', true);<span class="text-success">// #ck1のchecked属性をtrueへ</span>
+        $('#ck2').prop('indeterminate', true);<span class="text-success">// #ck2のindeterminate属性をtrueへ</span>
+    })();
+});</pre>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-sm-12">
+            <form class="container" id="form2" novalidate>
+                <div class="mt-2">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" id="ck1" class="custom-control-input">
+                        <label class="custom-control-label" for="ck1">
+                            check box 1
+                        </label>
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" id="ck2" class="custom-control-input">
+                        <label class="custom-control-label" for="ck2">
+                            check box 2
+                        </label>
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <div class="custom-control custom-checkbox">
+                        <button class="btn btn-primary" type="submit">submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">プログレスバーの操作</span>
+    <div class="section_description">
+        JavaScriptを使うと一定時間でメーターを増やすことが可能である。<br>
+        ■scriptの内容
+        <pre class="table-bordered border-primary pl-2 pt-2">
+<span class="text-success">// プログレスバーのメーターを増やす処理</span>
+$(function () {<span class="text-success">// DOM構造が解析された後に動く</span>
+    (function () {<span class="text-success">// 即時関数を使う</span>
+        let progress_value = 0;<span class="text-success">// 変数progress_valueを定義</span>
+        let intervalID = setInterval(function () {<span
+                class="text-success">// 変数timerを定義 setInterval(一定時間ごとに処理する)メソッドを使用。</span>
+            progress_value += 10;<span class="text-success">// progress_valueを10ずつ増やす</span>
+            setProgressValue(progress_value);<span class="text-success">// 関数を呼び出し、引数をprogress_valueで処理。</span>
+            if (progress_value == 100) {<span class="text-success">// もしprogress_valueの値が100になったら</span>
+                clearInterval(intervalID);<span class="text-success">// timerの処理をとめる。</span>
+            }
+        },1000);<span class="text-success">// setIntervalメソッドを1000ミリ秒(1秒)で。</span>
+    })();
+
+    <span class="text-success">//#progress1の要素にcss,属性,テキストを追加する処理</span>
+    setProgressValue = function(n) {<span class="text-success">// 関数setProgressValueを定義</span>
+        $('#progress1')<span class="text-success">#progress1の要素に</span>
+            .css('width',n + '%')<span class="text-success">// style="progress_value%"を追加</span>
+            .prop('aria-valuenow', n)<span class="text-success">// aria-valuenow="progress_value"を追加</span>
+            .text(n + '%');<span class="text-success">// text="progress_value%"を追加</span>
+    };
+
+    <span class="text-success">// ボタンをクリックしたときにメーターが0に戻る処理</span>
+    $('#btn').click(function () {<span class="text-success">#btnをクリックした時の処理</span>
+        setProgressValue(0);<span class="text-success">setProgressValue関数を呼び出し引数0で処理</span>
+    });
+});</pre>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="progress mt-3">
+                <!--0の時に単位つけたら怒られます。ｗ本では0%になってた。-->
+                <div id="progress1" class="progress-bar" role="progressbar" style="width: 0;" aria-valuenow="0"
+                     aria-valuemin="0" aria-valuemax="100">0%
+                </div>
+            </div>
+            <div class="mt-3">
+                <button id="btn" class="btn btn-primary" type="button" onclick="reset();">Reset</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">ツールチップの設定</span>
+    <div class="section_description">
+        ツールチップは予めタグに組み込むことも可能だが<br>
+        スクリプトを使うことで勝手もよくなる。<br>
+        ■scriptの内容
+        <pre class="table-bordered border-primary pl-2 pt-2">
+$(function () {<span class="text-success">// DOM構造が解析された後に動く</span>
+    $('[type="button"]')<span class="text-success">type="button"の要素を取得</span>
+        .tooltip({'placement': 'bottom','title':'Tooltip is here!'});<span class="text-success">// placement(位置)とtitle(文字列)を渡し、ツールチップを生成</span>
+});</pre>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-sm-12" id="tooltips">
+            <button type="button" class="btn btn-secondary">Tooltip Button</button>
+            <button type="button" class="btn btn-secondary">Tooltip Button</button>
+            <button type="button" class="btn btn-secondary">Tooltip Button</button>
+            <button type="button" class="btn btn-secondary">Tooltip Button</button>
+        </div>
+    </div>
+    <br><br>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+</body>
+<script>
+    // DOM構造が解析された後に動く
+    $(function () {
+
+        //--------------------------
+        // ボタンのスクリプト操作
+        //--------------------------
+
+        //ボタンが押されたときの処理
+        let counter = 0;
+        $("#btn1").click(function () {
+            counter++;
+            if (counter % 2 === 0) {
+                $('#btn1').addClass("btn-warning").removeClass("btn-primary");
+            } else {
+                $("#btn1").addClass("btn-primary").removeClass("btn-warning");
+            }
+            $('#msg').text("clicked: " + counter);
+        });
+
+        //------------------------------------
+        // コントロールをダイナミックに生成
+        //------------------------------------
+
+        // ボタンの生成処理
+        const c_arr = ['primary', 'secondary', 'info', 'warning', 'danger'];
+        for (let i = 0; i < c_arr.length*2; i++) {
+            $('#btn_container').append($('<button>')
+                .attr('class', 'btn m-1 btn-' + c_arr[i % c_arr.length])
+                .text('button No,' + (i + 1))
+            );
+        }
+
+        //--------------------
+        // activeとdisabled
+        //--------------------
+
+        // ボタンの生成処理 3の倍数はdisabled、その前はactive
+        for (let i = 1; i <= 10; i++) {
+            let obj = $('<button>');
+            obj.attr('class', 'btn m-1 btn-info');
+            obj.text('button No,' + (i));
+            if (i % 3 === 2) {
+                obj.addClass('active');
+            } else if (i % 3 === 0) {
+                obj.addClass('disabled');
+            }
+            $('#btn_container2').append(obj);
+        }
+
+        //------------------
+        // バリデーション
+        //------------------
+
+        // バリデーションチェック
+        $("#form1").submit(function (event) {
+            if (!event.target.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            } else {
+                alert("ok!");
+            }
+            $('#form1').addClass('was-validated');
+        });
+
+        // 下2つは同じ処理をする。
+        // $("#form1").submit(function(){
+        //     処理
+        // });
+        //
+        // document.getElementById("form1").addEventListener('submit',function(event){
+        //     処理
+        // });
+
+
+        //-----------------------------
+        // チェックボックスの選択状態
+        //-----------------------------
+
+        // 属性を追加する処理
+        // 変数定義してないし（即時）関数使わなくてもよさそう！
+        (function () {
+            $('#ck1').prop('checked', true);
+            $('#ck2').prop('indeterminate', true);
+        })();
+
+        //-----------------------------
+        // プログレスバーの操作
+        //-----------------------------
+
+        // プログレスバーのメーターを増やす処理
+        (function () {
+            let progress_value = 0;
+            let intervalID = setInterval(function () {
+                progress_value += 10;
+                setProgressValue(progress_value);
+                if (progress_value === 100) {
+                    clearInterval(intervalID);
+                }
+            }, 1000);
+        })();
+
+        //#progress1の要素にcss,属性,テキストを追加する処理
+        let setProgressValue = function (n) {
+            $('#progress1')
+                .css('width', n + '%')
+                .prop('aria-valuenow', n)
+                .text(n + '%');
+        };
+
+        // 下の書き方でも動くけど
+        // 呼び出し先がjQueryの中やからであって
+        // 呼び出し先がHTMLの時はエラーになるから非推奨
+
+        // function setProgressValue(n) {
+        //     $('#progress1')
+        //         .css('width',n + '%')
+        //         .prop('aria-valuenow', n)
+        //         .text(n + '%');
+        // }
+
+        // ボタンをクリックしたときにメーターが0に戻る処理
+        // 無名関数 IDを使って取得する(推奨)
+        $('#btn').click(function () {
+            setProgressValue(0);
+        });
+
+        // 関数名をつけて呼び出させるやり方(非推奨)
+        // reset = function() {
+        //     setProgressValue(0);
+        // }
+
+        //-----------------------------
+        // ツールチップの設定
+        //-----------------------------
+        $('#tooltips > button')
+            .tooltip({'placement': 'bottom', 'title': 'Tooltip is here!'});
+
+    });
+
+</script>
+</html>
+

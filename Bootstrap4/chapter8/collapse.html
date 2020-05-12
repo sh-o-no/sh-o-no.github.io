@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/common.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+
+    <title>コラプス</title>
+</head>
+
+<body>
+
+<div class="container study_section">
+    <span class="section_title">コラプスとは</span>
+    <div class="section_description">
+        ポップオーバーと同じように、テキストなどのメッセージを表示するインターフェイスである。<br>
+        ただしコラプスはポップアップして現れるわけでなく、追加表示されるイメージ。<br>
+        ボタンなどを押してコンテンツを広げるといった形である。<br>
+        collapseクラスの中にコンテンツを記述し、その中にコンテンツを用意する。<br>
+        コンテンツを広げるボタンは別で用意し、IDで紐付ける。<br>
+        collapseクラスに続けてshowクラスを記述すると開いた状態で表示される。<br>
+        ■構成
+        <pre class="table-bordered border-primary pl-2 pt-2">
+&lt;div class="collapse <span class="text-info">show</span>" id="<span class="text-danger">ID名</span>"&gt;
+
+    ･･･コンテンツの内容･･･
+
+&lt;/div&gt;</pre>
+        ■表示用ボタン
+        <pre class="table-bordered border-primary pl-2 pt-2">
+&lt;button class="btn" data-toggle="collapse" data-target="#<span class="text-danger">コプラスと紐付けるID</span>"&gt;
+        </pre>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <p>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse1">Hide
+                    collapse
+                </button>
+            </p>
+            <div class="collapse show" id="collapse1">
+                <div class="card card-body">
+                    <h4>collapse</h4>
+                    <p>this is collapse sample.</p>
+                </div>
+            </div>
+            <p class="mt-3">
+                this is sample content.
+                this is sample content.
+                this is sample content.
+                this is sample content.
+            </p>
+        </div>
+
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">コラプスが消えた後</span>
+    <div class="section_description">
+    下記のサンプルでコラプスが消えた後はスペースが詰められることがわかる。
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-6">
+            <div class="collapse show" id="a-1" data-toggle="collapse" data-target="#a-1">
+                <div class="card card-body">
+                    <h4>Collapse A-1</h4>
+                    <p>this is collapse sample</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="collapse show" id="a-2" data-toggle="collapse" data-target="#a-2">
+                <div class="card card-body">
+                    <h4>Collapse A-2</h4>
+                    <p>this is collapse sample</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <div class="collapse show" id="b-1" data-toggle="collapse" data-target="#b-1">
+                <div class="card card-body">
+                    <h4>Collapse B-1</h4>
+                    <p>this is collapse sample</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="collapse show" id="b-2" data-toggle="collapse" data-target="#b-2">
+                <div class="card card-body">
+                    <h4>Collapse B-2</h4>
+                    <p>this is collapse sample</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+</body>
+</html>

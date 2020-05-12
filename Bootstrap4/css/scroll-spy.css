@@ -1,0 +1,6 @@
+.scrollspy-frame {
+    position: relative;
+    height: 300px;
+    margin-top: 10px;
+    overflow: auto;
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/common.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script src="../../js/script.js"></script>
+
+    <title>パンくずリスト</title>
+</head>
+
+<body>
+
+<div class="container study_section">
+    <span class="section_title">パンくずリストとは</span>
+    <div class="section_description">
+        例えばHomeからSection Aというジャンルのページに進み<br>
+        そこから更にPage Aというページに進んだという場合<br>
+        [Home / Section A / Page A]というように<br>
+        移動したリンクが順に表示されていくという方式。<br>
+        ■構成（ulまたはolを使用）
+        <pre class="table-bordered border-primary pl-2 pt-2">
+&lt;ol または ul class="breadcrumb"&gt;
+    &lt;li class="breadcrumb-item"&gt;リンクを用意&lt;/li&gt;
+
+    ･･･必要なだけliを用意･･･
+
+&lt;/ol または ul&gt;</pre>
+        ■構成（divを使用）
+        <pre class="table-bordered border-primary pl-2 pt-2">
+&lt;div class="breadcrumb"&gt;
+    &lt;a class="breadcrumb-item" href="#"&gt;リンク&lt;/li&gt;
+
+    ･･･必要なだけリンクを用意･･･
+
+&lt;/div&gt;</pre>
+    </div>
+<hr>
+    <div class="row">
+        <div class="col-12">
+            <div class="breadcrumb">
+                <a class="breadcrumb-item" href="javascript:undefined">Home</a>
+                <a class="breadcrumb-item" href="javascript:undefined">Section A</a>
+                <a class="breadcrumb-item" href="javascript:undefined">Page A</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h2 class="display-3">Sample</h2>
+            <p class="lead">
+                this is navigation sample page.
+                this is navigation sample page.
+                this is navigation sample page.<br><br>
+                this is navigation sample page.
+                this is navigation sample page.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">カラー表示</span>
+    <div class="section_description">
+        パンくずリストもテキスト(text-色名)や背景(bg-色名)の色を変更できる。<br>
+        背景カラー：breadcrumbを指定したタグに続けて記述<br>
+        テキストカラー：<br>
+        　　・divタグ使用時はbreadcrumb-itemを指定したタグに続けて記述<br>
+        　　・ol,ulタグ使用時はliの中のaタグにテキストカラーを記述
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <div class="breadcrumb bg-dark">
+                <a class="breadcrumb-item text-light" href="javascript:undefined">Home</a>
+<!--                <li class="breadcrumb-item text-light"><a class="text-light" href="javascript:undefined">Home</a></li>-->
+                <a class="breadcrumb-item text-light" href="javascript:undefined">Section A</a>
+                <a class="breadcrumb-item text-light" href="javascript:undefined">Page A</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h2 class="display-3">Sample</h2>
+            <p class="lead">
+                this is navigation sample page.
+                this is navigation sample page.
+                this is navigation sample page.<br><br>
+                this is navigation sample page.
+                this is navigation sample page.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">上下の固定表示</span>
+    <div class="section_description">
+        上下の固定も同じようにbreadcrumbクラスに続けて<br>
+        fixed-top または fixed-bottomを指定することで可能となる。<br>
+        こちらもサンプルは別ページ用意。<br>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <a class="btn btn-outline-success btn-lg" href="breadcrumb-fixed.html">fixed-top sample.</a>
+        </div>
+    </div>
+
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+</body>
+</html>
