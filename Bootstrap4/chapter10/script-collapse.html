@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/common.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+
+    <title>コラプスのスクリプト操作</title>
+</head>
+
+<body>
+<div class="container study_section">
+    <span class="section_title">コラプスの表示、非表示</span>
+    <div class="section_description">
+        コラプスはcollapseメソッドを呼び出す事で<br>
+        スクリプト内からの操作が可能である。<br>
+        引数なしで呼び出せばコラプスを初期化する。<br>
+        引数を指定すると次の様になる。<br>
+        show：コラプスを表示させる<br>
+        hide：コラプスを非表示にする<br>
+        toggle：コラプスをON/OFFする<br>
+        ■scriptの内容
+        <pre class="table-bordered border-primary pl-2 pt-2">
+<span class="text-success">// コラプスを表示するボタンがクリックされたときの処理</span>
+$('&lt;selector&gt;').click(function () {
+        $('&lt;collapse&gt;').collapse('toggle');<span class="text-success">// コラプスをON/OFF表示する</span>
+});</pre>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <button class="btn btn-primary" type="button" id="collapseBtn">Click</button>
+            <div class="collapse" id="collapse">
+                <div class="card card-body">
+                    <p class="lead">this is sample collapse content.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">コラプスを生成</span>
+    <div class="section_description">
+        コラプスはスクリプトを使って必要なDOMオブジェクトを生成して<br>
+        取り込めば、それだけでちゃんと動くコラプスが生成できる。<br>
+        ■scriptの内容
+        <pre class="table-bordered border-primary pl-2 pt-2">
+addNewCollapse(<span class="text-warning">1</span>, '<span class="text-info">This is First Collapse!</span>');
+addNewCollapse(<span class="text-warning">2</span>, '<span class="text-info">This is Second Collapse!</span>');
+addNewCollapse(<span class="text-warning">3</span>, '<span class="text-info">This is Last Collapse!</span>');
+
+<span class="text-success">// 関数定義</span>
+
+<span class="text-success">// 生成された要素を指定のIDの要素に付け加える</span>
+function addNewCollapse(<span class="text-warning">num</span>, <span class="text-info"> msg</span>) {
+    $('#buttons').append(createCollapseButton(<span class="text-danger">'collapse' + num</span>));
+    $('#contents').append(createCollapseContent(<span class="text-danger">'collapse' + num</span>, <span class="text-info"> msg</span>));
+}
+
+<span class="text-success">// ボタン要素を生成</span>
+function createCollapseButton(<span class="text-danger">id</span>) {
+    return $('&lt;button&gt;').addClass('btn btn-primary m-1')
+        .attr({
+            'type': 'button',
+            'data-toggle': 'collapse',
+            'data-target': '#' + <span class="text-danger">id</span>
+        }).text(id);
+}
+
+<span class="text-success">// コンテンツ要素を生成</span>
+function createCollapseContent(<span class="text-danger">id</span>, <span class="text-info">msg</span>) {
+    <span class="text-success">// コラプスを生成</span>
+    let collapse = $('&lt;div&gt;')
+            .addClass('collapse m-1')
+            .attr('id', <span class="text-danger">id</span>);
+
+    <span class="text-success">// カードを生成</span>
+    let card = $('&lt;div&gt;')
+        .addClass('card card-body')
+        .append(
+            $('&lt;p&gt;')
+                .addClass('lead')
+                .text(<span class="text-info">msg</span>)
+        )
+    <span class="text-success">// コラプスにカードを連結し、戻り値とする</span>
+    return collapse.append(card);
+}</pre>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <div id="buttons"></div>
+            <div id="contents"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+
+    $(function () {//DOM構造が解析された後に動く
+
+        //------------------------
+        // コラプスの表示、非表示
+        //------------------------
+        $('#collapseBtn').click(function () {
+            $('#collapse').collapse('toggle');
+        });
+
+        //----------------
+        // コラプスの生成
+        //----------------
+
+        // 関数の呼び出し
+        addNewCollapse(1, 'This is First Collapse!');
+        addNewCollapse(2, 'This is Second Collapse!');
+        addNewCollapse(3, 'This is Last Collapse!');
+
+        // 関数定義
+
+        // 生成された要素を指定のIDの要素に付け加える
+        function addNewCollapse(num, msg) {
+            $('#buttons').append(createCollapseButton('collapse' + num));
+            $('#contents').append(createCollapseContent('collapse' + num, msg));
+        }
+
+        // ボタン要素を生成
+        function createCollapseButton(id) {
+            return $('<button>')
+                .addClass('btn btn-primary m-1')
+                .attr({
+                    'type': 'button',
+                    'data-toggle': 'collapse',
+                    'data-target': '#' + id
+                })
+                .text(id);
+        }
+
+        // コンテンツ要素を生成
+        function createCollapseContent(id, msg) {
+            // コラプスを生成
+            let collapse = $('<div>')
+                .addClass('collapse m-1')
+                .attr('id', id);
+
+            // カードを生成
+            let card = $('<div>')
+                .addClass('card card-body')
+                .append(
+                    $('<p>')
+                        .addClass('lead')
+                        .text(msg)
+                )
+            // コラプスにカードを連結し、戻り値とする
+            return collapse.append(card);
+
+        }
+
+    });
+</script>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/scroll-spy.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+
+    <title>スクロールスパイ</title>
+</head>
+
+<body>
+
+<div class="container study_section">
+    <span class="section_title">スクロールスパイとは</span>
+    <div class="section_description">
+        コンテンツが長くなった時に、必要な項目にたどり着く為スクロール操作が必要になるが<br>
+        スクロール表示は意外とわかりにくいので、コンテンツにリンクをつけ<br>
+        ナビゲーションバーのボタンクリックでその場所に移動する仕組みを使っている。<br>
+        これをスクロールスパイという。<br>
+        ・position: relative;が設定されたタグ内にコンテンツ類を置く（stylesheetで指定）<br>
+        ・コンテンツ類が置かれているタグのheightがスクロールできる範囲に調整<br>
+        （スクロールできなければこの機能は使えない。）<br>
+        ・スクロールスパイで使うナビゲーションバーはnav-pillsかnav-tabsにしておく。<br>
+        <pre class="table-bordered border-primary pl-2 pt-2">
+&lt;nav id="<span class="text-info">.scrollspy-frameと紐付けるID</span>" class="navbar"&gt;
+    &lt;ul class="nav nav-pills"&gt;
+        &lt;li class="nav-item"&gt;
+            &lt;a class="nav-link" href="#<span class="text-danger">コンテンツと紐付けるID</span>"&gt;ボタン&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;div data-spy="scroll" data-target="#<span class="text-info">.navbarと紐付けるID</span>" data-offset="0" class="scrollspy-frame"&gt;
+    &lt;h4 id="<span class="text-danger">.nav-linkと紐付けるID</span>">コンテンツタイトル&lt;/h4&gt;
+    &lt;p>コンテンツ&lt;/p&gt;
+
+    ･･･必要な分だけコンテンツを表示･･･
+
+&lt;/div&gt;</pre>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="border border-info p-1">
+                <nav id="navbar-1" class="navbar navbar-light bg-light">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#start">Start</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#middle">Middle</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#end">End</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div data-spy="scroll" data-target="#navbar-1" data-offset="5" class="scrollspy-frame">
+                    <h4 id="start" class="display-4">Start Title</h4>
+                    <p>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                    </p>
+                    <h4 id="middle" class="display-4">Middle Title</h4>
+                    <p>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.
+                    </p>
+                    <h4 id="end" class="display-4">End Title</h4>
+                    <p>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">スクロールスパイの横表示</span>
+    <div class="section_description">
+        スクロールスパイの横の表示と、ナビゲーションバーをリストにするサンプルである。<br>
+        横表示にする場合、rowとcolの構成を少し変更する。<br>
+        rowの外側にコンテンツ全体を格納するdivタグを配置し、その中にrow<br>
+        更にその中にcolを2つ配置してそれぞれの中にリストとコンテンツを配置。
+    </div>
+    <hr>
+    <div class="border border-info p-1">
+        <div class="row">
+            <div class="col-4">
+                <div id="list-1" class="list-group d-flex flex-column">
+                    <a class="list-group-item list-group-item-action" href="#start2">Start</a>
+                    <a class="list-group-item list-group-item-action" href="#middle2">Middle</a>
+                    <a class="list-group-item list-group-item-action" href="#end2">End</a>
+                </div>
+            </div>
+            <div class="col-8">
+                <div data-spy="scroll" data-target="#list-1" data-offset="5" class="scrollspy-frame">
+                    <h4 id="start2" class="display-4">Start Title</h4>
+                    <p>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                    </p>
+                    <h4 id="middle2" class="display-4">Middle Title</h4>
+                    <p>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.
+                    </p>
+                    <h4 id="end2" class="display-4">End Title</h4>
+                    <p>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">階層ナビゲーションの利用</span>
+    <div class="section_description">
+        長いコンテンツになると、見出しの中に小見出しが組み込まれている場合もあり<br>
+        こういった場合はナビゲーションも階層的に構築することとなる。<br>
+        navタグの中にnavタグを入れるという方法を使っている。<br>
+        この表示はnav内に直接aタグを並べる場合にのみ使うことができ<br>
+        ol,ulタグを使うと正常に反映しないので注意。<br>
+        ※下の階層のリンクにはmarginを入れておくとリンクが重ならなくて済む。<br>
+    </div>
+    <hr>
+    <div class="border border-info p-1">
+        <div class="row">
+            <div class="col-4">
+                <nav id="nav-1" class="nav nav-pills flex-column navbar-light bg-light">
+                    <a class="nav-link" href="#start3">Start</a>
+                    <nav class="nav nav-pills flex-column ml-3 bg-light" hreh="#start3">
+                        <a class="nav-link ml-3 my-1" href="#start-A">Start A</a>
+                        <a class="nav-link ml-3 my-1" href="#start-B">Start B</a>
+                    </nav>
+                    <a class="nav-link" href="#middle3">Middle</a>
+                    <nav class="nav nav-pills flex-column ml-3 bg-light" hreh="#middle3">
+                        <a class="nav-link ml-3 my-1" href="#middle-A">Middle A</a>
+                        <a class="nav-link ml-3 my-1" href="#middle-B">Middle B</a>
+                    </nav>
+                    <a class="nav-link" href="#end3">End</a>
+                </nav>
+            </div>
+            <div class="col-8">
+                <div data-spy="scroll" data-target="#nav-1" data-offset="10" class="scrollspy-frame">
+                    <h4 id="start3" class="display-4">Start Title</h4>
+                    <p>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.<br><br>
+                        this is scrollspy start sample.
+                    </p>
+                    <h5 id="start-A">Start A Title</h5>
+                    <p>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                    </p>
+                    <h5 id="start-B">Start B Title</h5>
+                    <p>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                    </p>
+                    <h4 id="middle3" class="display-4">Middle Title</h4>
+                    <p>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.<br><br>
+                        this is scrollspy middle sample.
+                    </p>
+                    <h5 id="middle-A">middle A Title</h5>
+                    <p>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                    </p>
+                    <h5 id="middle-B">middle B Title</h5>
+                    <p>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                        this is sample scroll-spy content.<br><br>
+                    </p>
+                    <h4 id="end3" class="display-4">End Title</h4>
+                    <p>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.<br><br>
+                        this is scrollspy end sample.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

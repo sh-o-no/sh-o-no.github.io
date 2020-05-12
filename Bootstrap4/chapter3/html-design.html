@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"-->
+    <!--          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="../css/common.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+    <title>コンテンツの基本要素</title>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Bootstrap未使用時の、HTMLタグ毎のレイアウト</h1>
+</div>
+<div class="container study_section">
+    <span class="section_title">見出し</span>
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>H1 headline</h1>
+            <h2>H2 headline</h2>
+            <h3>H3 headline</h3>
+            <h4>H4 headline</h4>
+            <h5>H5 headline</h5>
+            <h6>H6 headline</h6>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <p>this is main content.</p>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">コンテンツとコードの記述</span>
+    <div class="row">
+        <div class="col-sm-12">
+            <p>this is p tag sample. これはpタグのサンプルです。</p>
+            <div>this is div tag sample. これdivタグのサンプルです。</div>
+            <pre>this is pre tag sample. これはpreタグのサンプルです。</pre>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">リストの表示</span>
+    <div class="row">
+        <div class="col-sm-12">
+            <ul>
+                <li>first item</li>
+                <li>second item</li>
+                <ul>
+                    <li>sub list 1</li>
+                    <li>sub list 2</li>
+                    <ul>
+                        <li>sub list A</li>
+                        <li>sub list B</li>
+                    </ul>
+                </ul>
+                <li>third item</li>
+                <li>fourth item</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">定義リスト</span>
+    <div class="row">
+        <div class="col-sm-12">
+            <dl>
+                <dt>Sample Title</dt>
+                <dd>this is sample description.</dd>
+                <dt>Bootstrap</dt>
+                <dd>Bootstrap is an open source framework for developing with HTML, StyleSheet, and JavaScript.</dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">テーブル</span>
+    <p>HTMLタグのみ（スタイル指定なし）</p>
+    <div class="row">
+        <div class="col-sm-12">
+            <table>
+                <thead>
+                <tr>
+                    <th scope="col">No.</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Mail</th>
+                    <th scope="col">Tel</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="col">1</th>
+                    <td>Taro</td>
+                    <td>taro@yamada</td>
+                    <td>03-999-999</td>
+                </tr>
+                <tr>
+                    <th scope="col">2</th>
+                    <td>Hanako</td>
+                    <td>hanako@flower</td>
+                    <td>080-888-888</td>
+                </tr>
+                <tr>
+                    <th scope="col">3</th>
+                    <td>Taro</td>
+                    <td>taro@yamada</td>
+                    <td>03-999-999</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">イメージの表示</span>
+    <p>画面サイズが画像より小さいと見切れる</p>
+    <div class="row">
+        <div class="col-sm-12">
+            <img src="../img/sample.jpg" class="img-fluid">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

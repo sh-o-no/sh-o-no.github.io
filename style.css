@@ -4,24 +4,6 @@ h1 {
   text-align: center;
 }
 
-ul {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  align-items: center;
-  height: 200px;
-  list-style: none;
-  padding: 10px 0;
-  text-align: center;
-}
-
-li {
-  display: inline-block;
-  padding: 10px;
-}
-
 .contents {
   position: relative;
   background: #fff0cd;
@@ -29,7 +11,7 @@ li {
   border: dashed 2px white;
   padding: 0.2em 0.5em;
   color: #454545;
-  width: 300px;
+  margin: 10px;
 }
 
 .contents:after {
@@ -40,7 +22,7 @@ li {
   border-width: 0 15px 15px 0;
   border-style: solid;
   border-color: #ffdb88 #fff #ffdb88;
-  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15); 
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
 }
 
 p {

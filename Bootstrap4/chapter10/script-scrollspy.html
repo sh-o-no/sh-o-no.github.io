@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/scroll-spy.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+
+    <title>スクロールスパイのスクリプト操作</title>
+</head>
+
+<body>
+
+<div class="container study_section">
+    <span class="section_title">スクロールスパイの項目追加とイベント</span>
+    <div class="section_description">
+        スクロールスパイはナビゲーション部分とコンテンツ部分からなるため<br>
+        追加する場合は両方の部分にタグを追加しなければならない。<br>
+        更にactive.bs.scrollspyというイベントが用意されており<br>
+        スクロールして特定の項目がアクティブになったときに発生する。<br>
+        ■scriptの構成
+        <pre class="table-bordered border-primary pl-2 pt-2">
+<span class="text-success">// 追加ボタンをクリックしたときの処理</span>
+$('#addContentsBtn').click(function () {
+    let title = $('#title').val();
+    let content = $('#content').val();
+
+    <span class="text-success">// #nav-listの子要素にliタグ生成、その子要素にaタグ生成</span>
+    $('#nav-list').append(
+        $('&lt;li&gt;')
+        .addClass('nav-item')
+        .append(
+            $('&lt;a&gt;')
+                .addClass('nav-link')
+                .attr('href', '#' + title)
+                .text(title)
+        )
+    );
+
+    let spyContent = $('#spy-content1')
+
+    <span class="text-success">// #spy-content1の子要素にh4タグ生成(ここがタイトル)</span>
+    spyContent.append(
+        $('&lt;h4&gt;')
+            .attr('id', title)// IDは入力された値
+            .addClass('display-4')
+            .text(title)
+        );
+
+    <span class="text-success">// #spy-content1の子要素にpタグ生成(ここがコンテンツ)</span>
+    spyContent.append(
+        $('&lt;p&gt;').text(content)
+    );
+
+    <span class="text-success">// アクティブの要素のテキストを#msgに貼り付け</span>
+    spyContent.on('activate.bs.scrollspy', function () {
+    let obj = $('#navbar-1').find('ul li a.active');<span class="text-success">// 引数で要素を探している</span>
+        $('#msg').text('今、' + obj.text() + 'を読んでいます。');
+    });
+
+});</pre>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <p id="msg"></p>
+            <nav id="navbar-1" class="navbar navbar-light bg-light">
+                <ul class="nav nav-pills" id="nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#start">Start</a>
+                    </li>
+                </ul>
+            </nav>
+            <div data-spy="scroll" data-target="#navbar-1" data-offset="10" class="scrollspy-frame" id="spy-content1">
+                <h4 id="start" class="display-4">Start Title</h4>
+                <p>this is scroll-spy sample. </p>
+                <p>this is scroll-spy sample. </p>
+                <p>this is scroll-spy sample. </p>
+                <p>this is scroll-spy sample. </p>
+                <p>this is scroll-spy sample. </p>
+                <p>this is scroll-spy sample. </p>
+                <p>this is scroll-spy sample. </p>
+                <p>this is scroll-spy sample. </p>
+                <p>this is scroll-spy sample. </p>
+                <p>this is scroll-spy sample. </p>
+            </div>
+            <hr>
+            <label>
+                <input type="text" class="form-control" id="title">
+                <textarea class="form-control" id="content"></textarea>
+                <button class="btn btn-primary mt-2" id="addContentsBtn">click</button>
+            </label>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    $(function () {
+
+        //--------------------------------------
+        // スクロールスパイの項目追加とイベント
+        //--------------------------------------
+
+        // 追加ボタンをクリックしたときの処理
+        $('#addContentsBtn').click(function () {
+            let title = $('#title').val();
+            let content = $('#content').val();
+            // #nav-listの子要素にliタグ生成、その子要素にaタグ
+            $('#nav-list').append(
+                $('<li>')
+                    .addClass('nav-item')
+                    .append(
+                        $('<a>')
+                            .addClass('nav-link')
+                            .attr('href', '#' + title)
+                            .text(title)
+                    )
+            );
+
+            let spyContent = $('#spy-content1')
+            // #spy-content1の子要素にh4タグ生成
+            spyContent.append(
+                $('<h4>')
+                    .attr('id', title)// IDは入力された値
+                    .addClass('display-4')
+                    .text(title)
+            );
+
+            // 同じコンテンツを7回繰り返し、#spy-content1の子要素にpタグ生成
+            // 繰り返す必要がなければfor文不要
+            for (let i = 0; i < 7; i++) {
+                spyContent.append(
+                    $('<p>').text(content)
+                );
+            }
+            // アクティブの要素のテキストを#msgに貼り付け
+            spyContent.on('activate.bs.scrollspy', function () {
+                let obj = $('#navbar-1').find('ul li a.active');
+                $('#msg').text('今、' + obj.text() + 'を読んでいます。');
+            });
+        });
+
+    });
+</script>

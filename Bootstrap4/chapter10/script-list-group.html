@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/common.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+
+    <title>リストグループのスクリプト操作</title>
+</head>
+
+<body>
+
+<div class="container study_section">
+    <span class="section_title">リストグループの項目追加</span>
+    <div class="section_description">
+        リストグループの項目もスクリプト操作によって追加することが出来る。<br>
+        event.preventDefault();は重要で、これを行わないと生成がやり直され、追加した項目が消える。<br>
+        ■Scriptの内容
+        <pre class="table-bordered border-primary pl-2 pt-2">
+<span class="text-success">//要素をクリックしたときの処理</span>
+$('&lt;button&gt;').click(function (event) {
+    let input = $('&lt;input&gt;')
+    if (input.val() === ''){
+        return;<span class="text-success">// inputの値が空のとき何も処理しない、ここで一旦処理終わらす。</span>
+    }
+    $('&lt;ul&gt;').append(<span class="text-success">// 空じゃないときのみ進む、指定の要素にliタグを付け加え。</span>
+        $('&lt;li&gt;')
+            .addClass('list-group-item')
+            .text(input.val())<span class="text-success">// inputの値をテキストとして付け加える</span>
+    );
+    event.preventDefault();<span class="text-success">// イベント中断</span>
+    input.val('');<span class="text-success">// inputの値を空にする</span>
+});</pre>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <div>
+                <ul id="listGroup1" class="list-group">
+                    <li class="list-group-item">Windows</li>
+                    <li class="list-group-item">macOS</li>
+                    <li class="list-group-item">Linux</li>
+                </ul>
+            </div>
+            <div class="mt-5">
+                <form class="form-inline">
+                    <label>
+                        <input type="text" id="input1" class="form-control mr-2">
+                    </label>
+                    <button class="btn btn-primary" id="addItemBtn">Add Item</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">リストグループの項目の並び順操作</span>
+    <div class="section_description">
+        すでに組み込まれているリストグループの並び順は<br>
+        項目を配列として取り出し、並び順を操作してから再びappendで組み込む。<br>
+        .toArray()：要素を取り出す<br>
+        .reverse()：逆順にする<br>
+        ■Scriptの内容
+        <pre class="table-bordered border-primary pl-2 pt-2">
+<span class="text-success">// 要素をクリックした時の処理</span>
+$('&lt;button&gt;').click(function (event) {
+    $('&lt;selector&gt;')
+        .append(
+            $('&lt;selector&gt;')
+            .toArray()<span class="text-success">// 要素を取り出す</span>
+            .reverse()<span class="text-success">// その要素を逆順にする</span>
+    );
+    event.preventDefault();<span class="text-success">// イベント中断</span>
+});</pre>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <div>
+                <ul id="listGroup2" class="list-group">
+                    <li class="list-group-item">Windows</li>
+                    <li class="list-group-item">macOS</li>
+                    <li class="list-group-item">Linux</li>
+                </ul>
+            </div>
+            <div class="mt-5">
+                <form class="form-inline">
+                    <button class="btn btn-primary" id="listItemBtn">click</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+
+    $(function () {//DOM構造が解析された後に動く
+
+        //--------------------------
+        // リストグループの項目追加
+        //--------------------------
+
+        //アイテムを追加するボタンをクリックしたときの処理
+        $('#addItemBtn').click(function (event) {
+            let input = $('#input1')
+            if (!input.val()) {
+                event.preventDefault();// イベント中断
+                return;// inputの値が空のとき何も処理しない、ここで一旦処理終わらす。
+            }
+            // 空じゃないときのみ進む、指定の要素にliタグを付け加え。
+            $('#listGroup1').append(
+                $('<li>')
+                    .addClass('list-group-item')
+                    .text(input.val())// inputの値をテキストとして付け加える
+            );
+            event.preventDefault();// イベント中断
+            input.val('');// inputの値を空にする
+        });
+
+        //---------------------------------
+        // リストグループの項目の並び順操作
+        //---------------------------------
+
+        // ボタンクリックで要素を配列として取り出し、逆さ順にして入れ直す処理
+        $('#listItemBtn').click(function (event) {
+            $('#listGroup2').append(
+                $('#listGroup2 li')
+                    .toArray()// 要素を取り出す
+                    .reverse()// その要素を逆順にする
+            );
+            event.preventDefault();// イベント中断
+        });
+
+    });
+</script>

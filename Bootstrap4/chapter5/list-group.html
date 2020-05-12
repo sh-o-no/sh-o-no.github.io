@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/common.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+
+    <title>リストグループ</title>
+</head>
+
+<body>
+
+<div class="container study_section">
+    <span class="section_title">リストグループ</span>
+    <div class="section_description">
+        ul,olによるリストをグループ化し、表示する。<br>
+        ul,olタグにlist-groupクラスを適応し、liタグにlist-group-itemを適応する。
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <ul class="list-group">
+                <li class="list-group-item">Windows</li>
+                <li class="list-group-item">macOS</li>
+                <li class="list-group-item">Linux</li>
+                <li class="list-group-item">iOS</li>
+                <li class="list-group-item">android</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">ボタンやリンクのグループ化</span>
+    <div class="section_description">
+        リストグループはul,ol以外にもリストグループに出来る。<br>
+        下記はbuttonタグ、aタグ、pタグをリストグループ化したものである。
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <div class="list-group">
+                <button class="list-group-item">buttonタグ</button>
+                <a href="javascript:undefined" class="list-group-item">aタグ</a>
+<!--                リンクを貼る時はhref属性の中にjavascript:undefinedを入れるとページトップに飛ばない-->
+                <p class="list-group-item">pタグ</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">アクションの設定</span>
+    <div class="section_description">
+        list-group-item-actionを適応することで、クリックが効くようになり<br>
+        更にボタンやリンクなど、クリックして操作する項目が分かりやすくなる。<br>
+        一番下のpタグには比較のためlist-group-item-actionは未適応となっている。<br>
+    </div>
+<hr>
+    <div class="row">
+        <div class="col-12">
+            <div class="list-group">
+                <button class="list-group-item list-group-item-action">&lt;button&gt;　action</button>
+                <a href="javascript:undefined" class="list-group-item-action list-group-item">&lt;a&gt;　action</a>
+                <p class="list-group-item">&lt;p&gt;　no action</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">active disabled</span>
+    <div class="section_description">
+        buttonを使ったリストにactiveクラス,disable属性を記述する事で<br>
+        リストのアクティブ状態、非アクティブ状態を表すことが出来る。
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <div class="list-group">
+                <button class="list-group-item list-group-item-action active">active</button>
+                <button class="list-group-item list-group-item-action">default</button>
+                <button class="list-group-item list-group-item-action" disabled>disabled</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">項目の色指定</span>
+    <div class="section_description">
+        リストの項目の色は、専用のlist-group-item-色名クラスを使う。
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <div class="list-group">
+                <a href="javascript:undefined" class="list-group-item list-group-item-primary">primary</a>
+                <a href="javascript:undefined" class="list-group-item list-group-item-secondary">secondary</a>
+                <a href="javascript:undefined" class="list-group-item list-group-item-success">success</a>
+                <a href="javascript:undefined" class="list-group-item list-group-item-info">info</a>
+                <a href="javascript:undefined" class="list-group-item list-group-item-warning">warning</a>
+                <a href="javascript:undefined" class="list-group-item list-group-item-danger">danger</a>
+                <a href="javascript:undefined" class="list-group-item list-group-item-light">light</a>
+                <a href="javascript:undefined" class="list-group-item list-group-item-dark">dark</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">コンテンツリストグループ</span>
+    <div class="section_description">
+         基本構成のlist-groupの子要素にlist-group-itemを追加していく形さえ<br>
+        守っていれば複雑なものであっても組み込みが可能。<br>
+        下記はaタグ内に、list-group-item-actionを追加してるので<br>
+        クリックして操作することも出来る。aタグの中にはh5、pタグが組み込まれている。
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <div class="list-group">
+                <a href="javascript:undefined" class="list-group-item list-group-item-action list-group-item-info">
+                    <h5 class="mb-1">First Item Title.</h5>
+                    <p>this is list group item content.
+                        this is list group item content.
+                        this is list group item content.</p>
+                </a>
+                <a href="javascript:undefined" class="list-group-item list-group-item-action">
+                    <h5 class="mb-1">Second Item Title.</h5>
+                    <p>this is list group item content.
+                        this is list group item content.
+                        this is list group item content.</p>
+                </a>
+                <a href="javascript:undefined" class="list-group-item list-group-item-action">
+                    <h5 class="mb-1">Last Item Title.</h5>
+                    <p>this is list group item content.
+                        this is list group item content.
+                        this is list group item content.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">コンテンツの切り替え表示</span>
+    <div class="section_description">
+        左側のリストによるコンテンツの切り替え。<br>
+        idでリストとコンテンツを紐付け、クリックされたリストのコンテンツを表示する。<br>
+        この機能はリストにタブ表示の機能を組み合わせたものである。<br>
+    </div>
+    <hr>
+    <div class="row m-3">
+        <div class="col-4">
+            <div class="list-group" role="tablist">
+                <a class="list-group-item list-group-item-action active" data-toggle="list" href="#list-contact-windows"
+                   role="tab">Windows</a>
+                <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-contact-mac"
+                   role="tab">macOS</a>
+                <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-contact-linux"
+                   role="tab">Linux</a>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="list-contact-windows" role="tabpanel"
+                     aria-labelledby="list-home-list">
+                    this is contact for windows. this is contact for windows. this is contact for windows. this is
+                    contact for windows.
+                </div>
+                <div class="tab-pane fade" id="list-contact-mac" role="tabpanel" aria-labelledby="list-profile-list">
+                    this is contact for macOS. this is contact for macOS. this is contact for macOS. this is contact for
+                    macOS.
+                </div>
+                <div class="tab-pane fade" id="list-contact-linux" role="tabpanel" aria-labelledby="list-message-list">
+                    this is contact for Linux. this is contact for Linux. this is contact for Linux. this is contact for
+                    Linux.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+
+</body>
+</html>

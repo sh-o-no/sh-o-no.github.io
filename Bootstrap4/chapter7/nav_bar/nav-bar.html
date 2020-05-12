@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/common.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script src="../../js/script.js"></script>
+
+    <title>NavBar</title>
+</head>
+
+<body>
+
+<div class="container study_section">
+    <span class="section_title">NavBarの基本スタイル</span>
+    <div class="section_description">
+        今までnavクラスを指定していた箇所をnavbarクラスにするだけで<br>
+        Navよりももう少しナビゲーションらしくなる。<br>
+        navbarクラスを指定するだけだと特に変わらないが<br>
+        navbarにしかない機能がいろいろ用意されている。<br>
+        ※なお、わかりやすいようにbg-lightも指定。<br>
+        ■構成
+        <pre class="table-bordered border-primary pl-2 pt-2">
+&lt;div class="row"&gt;
+    &lt;div class="col- colサイズ指定"&gt;
+        &lt;nav class="navbar"&gt;
+
+           ･･･ナビゲーションのリンク･･･
+
+        &lt;/nav&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <nav class="navbar bg-light">
+                <a class="nav-link nav-item" href="javascript:undefined">Page A</a>
+                <a class="nav-link nav-item" href="javascript:undefined">Page B</a>
+                <a class="nav-link nav-item" href="javascript:undefined">Page C</a>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h2 class="display-3">Sample</h2>
+            <p class="lead">
+                this is navigation sample page.
+                this is navigation sample page.
+                this is navigation sample page.<br><br>
+                this is navigation sample page.
+                this is navigation sample page.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">項目を折りたたむ</span>
+    <div class="section_description">
+        必要に応じて折りたたみ、クリックして現れるようにする機能。<br>
+        下記のサンプルはsmより小さくなると折りたたまれ、ナビゲーションのリンクがなくなり<br>
+        LINKという文字が現れる。クリックすると再度ナビゲーションが表示される。<br>
+        ・navbar-expand-ブラウザサイズ：指定したサイズより小さくなると折りたたむ<br>
+        ・navbar-toggler：折りたたみのon/offを用意<br>
+        ・data-target：展開表示するリンクをまとめたタグのID<br>
+        ・collapse：折りたたみの基本クラス<br>
+        ・navbar-collapse：NavBar用の折りたたみクラス<br>
+        ・navbar-nav：この中にリンク関係を用意（必ずnav-itemとnav-link両方を指定すること。）<br>
+        ■構成（ulを使った例）
+        <pre class="table-bordered border-primary pl-2 pt-2">
+&lt;nav class="navbar navbar-expand-ブラウザサイズ"&gt;
+    &lt;button class="navbar-toggler" type="button" data-toggle="collapse" data-target="<span
+                class="text-danger">#ID名</span>"&gt;ボタン&lt;/button&gt;
+    &lt;div class="collapse navbar-collapse" id="<span class="text-danger">ID</span>"&gt;
+        &lt;ul class="navbar-nav"&gt;
+            &lt;li class="nav-item"&gt;
+                &lt;a class="nav-link" href="#"&gt;リンク&lt;/a&gt;
+            &lt;/li&gt;
+
+                ･･･必要なだけリンクを並べる･･･
+
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;</pre>
+        ■構成（divを使った例）
+        <pre class="table-bordered border-primary pl-2 pt-2">
+&lt;nav class="navbar navbar-expand-ブラウザサイズ"&gt;
+    &lt;button class="navbar-toggler" type="button" data-toggle="collapse" data-target="<span
+                class="text-danger">#ID名</span>"&gt;ボタン&lt;/button&gt;
+    &lt;div class="collapse navbar-collapse" id="<span class="text-danger">ID</span>"&gt;
+        &lt;div class="navbar-nav"&gt;
+            &lt;a class="nav-item nav-link" href="#"&gt;リンク&lt;/a&gt;
+
+            ･･･必要なだけリンクを並べる･･･
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;</pre>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <nav class="navbar navbar-expand-sm bg-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapse-items">LINK
+                </button>
+                <div class="collapse navbar-collapse" id="collapse-items">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="javascript:undefined">Page A</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="javascript:undefined">Page B</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="javascript:undefined">Page C</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h2 class="display-3">Sample</h2>
+            <p class="lead">
+                this is navigation sample page.
+                this is navigation sample page.
+                this is navigation sample page.<br><br>
+                this is navigation sample page.
+                this is navigation sample page.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<!--justify-content-between：アイテムを両端から均等に並べる-->
+<div class="container study_section justify-content-between">
+    <span class="section_title">インラインフォーム</span>
+    <div class="section_description">
+        ナビゲーションバーにはリンク以外にもインラインフォームの設置が可能である。<br>
+        navbarクラスのタグの中にリンクが記述されている。<br>
+        そこにform-inlineクラスを指定したformタグを記述し<br>
+        その中に、フォーム、ボタンなどを配置していく。<br>
+        ■フォームの構成
+        <pre class="table-bordered border-primary pl-2 pt-2">
+&lt;nav class="navbar"&gt;
+    &lt;a class="nav-item nav-link" href="#"&gt;リンク&lt;/a&gt;
+    &lt;form class="form-inline"&gt;
+
+        ･･･フォームやボタンを配置･･･
+
+    &lt;/form&gt;
+
+&lt;/nav&gt;</pre>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <nav class="navbar bg-light">
+                <a class="nav-link nav-item" href="javascript:undefined">Page A</a>
+                <a class="nav-link nav-item" href="javascript:undefined">Page B</a>
+                <a class="nav-link nav-item" href="javascript:undefined">Page C</a>
+                <form class="form-inline">
+                    <input class="form-control mr-2" type="text" placeholder="Find">
+                    <button class="btn btn-outline-primary">Find</button>
+                </form>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h2 class="display-3">Sample</h2>
+            <p class="lead">
+                this is navigation sample page.
+                this is navigation sample page.
+                this is navigation sample page.<br><br>
+                this is navigation sample page.
+                this is navigation sample page.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section justify-content-between">
+    <span class="section_title">バーを固定する</span>
+    <div class="section_description">
+        ナビゲーションバーをウィンドウの上部や下部に固定するクラスも用意されている。<br>
+        navbarクラスに続けてfixed-topまたはfixed-bottomを指定。<br>
+        ここに記載するとこのページのトップに表示される為サンプルは別ページに用意<br>
+
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <a class="btn btn-outline-success btn-lg" href="fixed.html">fixed-top sample.</a>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section justify-content-between">
+    <span class="section_title">エクスターナルコンテンツ</span>
+    <div class="section_description">
+        ナビゲーションバーにはさまざまなコンテンツが組み込めるが<br>
+        余計なコンテンツは極力排除して表示させておきたい。<br>
+        collapseクラスを指定したbuttonタグを用意することで<br>
+        初期状態には表示されず「≡」の中に収まりスッキリした見た目になる。<br>
+        ・buttonタグとエクスターナルコンテンツはidで紐付けしておく。<br>
+        ・「≡」のアイコンはnavbar-toggler-iconクラスで表示、これをbuttonタグの中に配置する。<br>
+        ■構成
+        <pre class="table-bordered border-primary pl-2 pt-2">
+&lt;nav class="navbar"&gt;
+    &lt;button class="navbar-toggler" data-toggle="collapse" data-target="<span class="text-danger">#ID名</span>"
+        &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+
+    ･･･ナビゲーションリンク･･･
+
+    &lt;div class="collapse" id="<span class="text-danger">ID</span>"&gt;
+
+        ･･･エクスターナルコンテンツ･･･
+
+    &lt;/form&gt;
+
+&lt;/nav&gt;</pre>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <nav class="navbar bg-info">
+                <button class="navbar-dark navbar-toggler" data-toggle="collapse" data-target="#ex-content">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="nav-link nav-item text-light" href="javascript:undefined">Page A</a>
+                <a class="nav-link nav-item text-light" href="javascript:undefined">Page B</a>
+                <a class="nav-link nav-item text-light" href="javascript:undefined">Page C</a>
+                <form class="form-inline">
+                    <input class="form-control mr-2" type="text" placeholder="Find">
+                    <button class="btn btn-outline-light">Find</button>
+                </form>
+            </nav>
+            <div class="collapse" id="ex-content">
+                <div class="bg-info text-white p-4">
+                    <h4>Description</h4>
+                    <p>this is description</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h2 class="display-3">Sample</h2>
+            <p class="lead">
+                this is navigation sample page.
+                this is navigation sample page.
+                this is navigation sample page.<br><br>
+                this is navigation sample page.
+                this is navigation sample page.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+</body>
+</html>

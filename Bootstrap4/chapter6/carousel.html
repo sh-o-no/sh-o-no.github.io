@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/common.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+
+    <title>カルーセル</title>
+</head>
+
+<body>
+
+<div class="container study_section">
+    <span class="section_title">カルーセルとは</span>
+    <div class="section_description">
+        たくさんのイメージを表示させる時などに使う 、多数のイメージを<br>
+        スライド的に表示させるために用意されているクラス。<br>
+        基本的な使い方はスライドショーである。<br>
+        ・carouselクラスのdivタグを用意する（ここが土台）<br>
+        ・この内部にcarousel-innerクラスのdivタグを用意する。<br>
+        ・更にこの内部にcarousel-itemクラスのdivタグを用意。<br>
+        ・ここに表示させたいイメージ(imgタグ)を配置する。<br>
+        　　w-100の指定をしておくと綺麗に表示される。<br>
+        <br>
+        ■基本構成<br>
+        <pre class="table-bordered border-primary pl-2 pt-2">
+&lt;div class="carousel slide" data-ride="carousel" data-interval="スライドの間隔をミリ秒で"&gt;
+    &lt;div class="carousel-inner"&gt;
+
+        &lt;div class="carousel-item active"&gt;
+            &lt;img src="イメージファイル"&gt;
+        &lt;/div&gt;
+
+            <span class="text-info">必要な分だけ&lt;div&gt;タグと&lt;img&gt;タグを用意</span>
+
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="carousel slide" data-ride="carousel" data-interval="2000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="../img/sample.jpg">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="../img/sample2.jpg">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="../img/sample3.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">操作用のコントローラーを用意</span>
+    <div class="section_description">
+        スライドショーには自動でスライドされるものの他にアイコンをクリックして<br>
+        切り替えるものがあり、 カルーセルに操作用のコントローラーを追加することで可能。<br>
+        前後に進むボタンはaタグであり、hrefにはcarouselクラスのタグで<br>
+        つけたIDで紐付けして操作するようになっている。<br>
+        <br>
+        ■carouselクラスのdivタグ
+        <pre class="table-bordered border-primary pl-2 pt-2">
+&lt;div id="前後のボタンと紐付けるID" class="carousel" data-ride="carousel"&gt;
+
+&lt;/div&gt;</pre>
+        ■前に進むボタン
+        <pre class="table-bordered border-primary pl-2 pt-2">
+&lt;a class="carousel-control-prev" href="#carouselクラスのdivタグで紐付けたID" role="button" data-slide="prev"&gt;
+        &lt;span class="carousel-control-prev-icon" aria-hidden="true"&gt;&lt;/span&gt;
+&lt;/a&gt;</pre>
+        ■後ろに戻るボタン
+        <pre class="table-bordered border-primary pl-2 pt-2">
+&lt;a class="carousel-control-next" href="#carouselクラスのdivタグで紐付けたID" role="button" data-slide="prev"&gt;
+        &lt;span class="carousel-control-next-icon" aria-hidden="true"&gt;&lt;/span&gt;
+&lt;/a&gt;</pre>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <div id="controllers1" class="carousel" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="../img/sample.jpg" alt="first">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="../img/sample2.jpg" alt="second">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="../img/sample3.jpg" alt="third">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#controllers1" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </a>
+                <a class="carousel-control-next" href="#controllers1" role="button" data-slide="prev">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container study_section">
+    <span class="section_title">インジゲーターの表示</span>
+    <div class="section_description">
+        前後移動の他にもインジゲーターによる切り替えも可能。<br>
+        イメージ中央下部にあらわれる。<br>
+        インジゲーターはol,ulタグを使うのが基本となっている。<br>
+        liタグの内のdata-slide-toクラスは表示するイメージの番号を指定している。<br>
+        <br>
+        ■carouselクラスのdivタグ
+        <pre class="table-bordered border-primary pl-2 pt-2">
+&lt;div id="前後のボタンと紐付けるID" class="carousel" data-ride="carousel"&gt;
+
+&lt;/div&gt;</pre>
+        ■インジゲーターの表示
+        <pre class="table-bordered border-primary pl-2 pt-2">
+&lt;ol class="carousel-indicators"&gt;
+   &lt;li data-target="#carouselクラスのdivタグで紐付けたID" data-slide-to="0" class="active"&gt;&lt;/li&gt;
+   &lt;li data-target="#carouselクラスのdivタグで紐付けたID" data-slide-to="1"&gt;&lt;/li&gt;
+   &lt;li data-target="#carouselクラスのdivタグで紐付けたID" data-slide-to="2"&gt;&lt;/li&gt;
+&lt;ol&gt;</pre>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <div id="controllers2" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="../img/sample.jpg" alt="first">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="../img/sample2.jpg" alt="second">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="../img/sample3.jpg" alt="third">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#controllers2" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </a>
+                <a class="carousel-control-next" href="#controllers2" role="button" data-slide="prev">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </a>
+                <ol class="carousel-indicators">
+                    <li data-target="#controllers2" data-slide-to="0" class="active"></li>
+                    <li data-target="#controllers2" data-slide-to="1"></li>
+                    <li data-target="#controllers2" data-slide-to="2"></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-1"></div>
+<hr>
+<div class="mb-1"></div>
+<div class="container-fruid study_section">
+    <span class="section_title">イメージにキャプションをつける</span>
+    <div class="section_description">
+        イメージを表示し、キャプションをつけたい場合<br>
+        carousel-itemクラスのdivタグの中のimgタグに並べて記述することで<br>
+        画像の上にキャプションとしてあらわれるようになる。<br>
+        下記のサンプルはcarousel-captionクラスの他にd-none d-sm-blockというクラスが<br>
+        指定されているがこれは、d-done=「ない」d-sm-block=「blockのsmサイズの指定」<br>
+        つまりsmサイズまではブロックで表示し、それ以下になったら表示しないという設定である。<br>
+        キャプションの他に、インジゲーターもこの処理が可能。ただしインライン表示にすること。<br>
+        <br>
+        ■キャプションの表示
+        <pre class="table-bordered border-primary pl-2 pt-2">
+&lt;div class="carousel-item active”&gt;
+   &lt;img class="d-block w-100" src="イメージファイル"&gt;
+        &lt;div class="carousel-caption&gt;
+
+        ここにキャプションを用意する。
+
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+        <hr>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div id="controllers" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="../img/sample.jpg" alt="first">
+                        <div class="carousel-caption d-none d-sm-block text-primary">
+                            <!-- 画面を狭くするとキャプションは消える(d-none)-->
+
+                            <h3 class="display-4">First Image</h3>
+                            <p>This Is First Image Caption.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="../img/sample2.jpg" alt="second">
+                        <div class="carousel-caption d-none d-sm-block text-danger">
+                            <h3 class="display-4">Second Image</h3>
+                            <p>This Is Second Image Caption.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="../img/sample3.jpg" alt="third">
+                        <div class="carousel-caption d-none d-sm-block text-light">
+                            <h3 class="display-4">Third Image</h3>
+                            <p>THIS IS THIRD IMAGE CAPTION.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <a class="carousel-control-prev" href="#controllers" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </a>
+                <a class="carousel-control-next" href="#controllers" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </a>
+                <ol class="carousel-indicators">
+                    <li data-target="#controllers" data-slide-to="0" class="active"></li>
+                    <li data-target="#controllers" data-slide-to="1"></li>
+                    <li data-target="#controllers" data-slide-to="2"></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
