@@ -85,6 +85,7 @@ $('&lt;selector&gt;').click(function () {
         carouselメソッドを使うことで前後にスライドさせたり指定の番号の<br>
         イメージを表示させたりできる。<br>
         手動で移動させる場合はその都度カルーセルを一時停止しないとそのままスライドが始まってしまう。<br>
+        <span class="text-danger">※data-ride="carousel"を指定しなくてもスライドが始まる。</span><br>
         ■Scriptの内容
         <pre class="table-bordered border-primary pl-2 pt-2">
 <span class="text-success">//#carouselのjQueryオブジェクトを代入</span>
@@ -149,16 +150,16 @@ $('&lt;selector&gt;').click(function () {
         <pre class="table-bordered border-primary pl-2 pt-2">
 (function () {
     let num = 0;
-    let 変数名 = $('&lt;carousel&gt;');
+    let obj = $('&lt;carousel&gt;');
 
     <span class="text-success">// スライドが開始したときの処理</span>
-    変数名.on('slide.bs.carousel', function (event) {
+    obj.on('slide.bs.carousel', function (event) {
         let msg = event.from + ' →' + event.to;
         $('#msg').text(msg);<span class="text-success">// #msgの要素のテキストを書き換える</span>
     });
 
     <span class="text-success">// スライドが完了したときの処理</span>
-    変数名.on('slid.bs.carousel', function (event) {
+    obj.on('slid.bs.carousel', function (event) {
         $('#msg').text('count: ' + ++num + '(' + event.relatedTarget.id + ')');<span class="text-success">// #msgの要素のテキストを書き換える</span>
     });
 })();</pre>

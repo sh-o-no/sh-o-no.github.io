@@ -95,17 +95,17 @@ $('&lt;button&gt;').click(function (e) {
         <pre class="table-bordered border-primary pl-2 pt-2">
 <span class="text-success">// コラプス展開時と折りたたみ時で背景色を変える</span>
 (function () {
-    let 変数名 = $('#collapseNavbarNav');
+    let obj = $('#collapseNavbarNav');
 
     <span class="text-success">// コラプスの展開を開始したときの処理</span>
-    変数名.on('show.bs.collapse', function () {
+    obj.on('show.bs.collapse', function () {
         $('&lt;navbar&gt;')
             .addClass('bg-info')
             .removeClass('bg-light');
     });
 
     <span class="text-success">// コラプスの折りたたみが完了したときの処理</span>
-    変数名.on('hidden.bs.collapse',function () {
+    obj.on('hidden.bs.collapse',function () {
         $('&lt;navbar&gt;')
         .removeClass('bg-info')
         .addClass('bg-light');

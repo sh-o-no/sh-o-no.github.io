@@ -33,12 +33,12 @@
         ■Scriptの内容
         <pre class="table-bordered border-primary pl-2 pt-2">
 <span class="text-success">//要素をクリックしたときの処理</span>
-$('&lt;selector&gt;').click(function (event) {
+$('&lt;button&gt;').click(function (event) {
     let input = $('&lt;input&gt;')
     if (input.val() === ''){
         return;<span class="text-success">// inputの値が空のとき何も処理しない、ここで一旦処理終わらす。</span>
     }
-    $('&lt;selector&gt;').append(<span class="text-success">// 空じゃないときのみ進む、指定の要素にliタグを付け加え。</span>
+    $('&lt;ul&gt;').append(<span class="text-success">// 空じゃないときのみ進む、指定の要素にliタグを付け加え。</span>
         $('&lt;li&gt;')
             .addClass('list-group-item')
             .text(input.val())<span class="text-success">// inputの値をテキストとして付け加える</span>
@@ -81,7 +81,7 @@ $('&lt;selector&gt;').click(function (event) {
         ■Scriptの内容
         <pre class="table-bordered border-primary pl-2 pt-2">
 <span class="text-success">// 要素をクリックした時の処理</span>
-$('&lt;selector&gt;').click(function (event) {
+$('&lt;button&gt;').click(function (event) {
     $('&lt;selector&gt;')
         .append(
             $('&lt;selector&gt;')
@@ -122,7 +122,8 @@ $('&lt;selector&gt;').click(function (event) {
         //アイテムを追加するボタンをクリックしたときの処理
         $('#addItemBtn').click(function (event) {
             let input = $('#input1')
-            if (input.val() === '') {
+            if (!input.val()) {
+                event.preventDefault();// イベント中断
                 return;// inputの値が空のとき何も処理しない、ここで一旦処理終わらす。
             }
             // 空じゃないときのみ進む、指定の要素にliタグを付け加え。
