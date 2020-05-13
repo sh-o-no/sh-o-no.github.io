@@ -24,16 +24,16 @@
 </head>
 
 <body>
-
-<div class="container study_section">
-    <span class="section_title">Navbarの項目追加</span>
-    <div class="section_description">
-        Navbarはスクリプトで項目の追加が可能である。<br>
-        下記のサンプルは入力フォームに入力した値がURLになるよう記述しており<br>
-        クリックするとページに飛ぶことが出来る。<br>
-        尚、サイズの指定をすることで一定の画面サイズより小さくなると折りたたまれるようになっている。<br>
-        ■scriptの構成
-        <pre class="table-bordered border-primary pl-2 pt-2">
+<div class="container-fruid">
+    <div class="study_section">
+        <span class="section_title">Navbarの項目追加</span>
+        <div class="section_description">
+            Navbarはスクリプトで項目の追加が可能である。<br>
+            下記のサンプルは入力フォームに入力した値がURLになるよう記述しており<br>
+            クリックするとページに飛ぶことが出来る。<br>
+            尚、サイズの指定をすることで一定の画面サイズより小さくなると折りたたまれるようになっている。<br>
+            ■scriptの構成
+            <pre class="table-bordered border-primary pl-2 pt-2">
 <span class="text-success">// inoutに入力した値をURLにしてNavbarに追加する</span>
 let count = 1;
 let input = $('&lt;input&gt;');
@@ -54,45 +54,44 @@ $('&lt;button&gt;').click(function (e) {
     input.val('');<span class="text-success">// inputの値を空に</span>
     e.preventDefault();<span class="text-success">// イベントの中断</span>
 });</pre>
-
-    </div>
-    <div class="row m-3">
-        <div class="col-12">
-            <nav class="navbar navbar-expand-md navbar-light bg-light" id="navbar">
-                <a class="navbar-brand" href="javascript:undefined">Menu</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav" id="navList"></ul>
-                </div>
-            </nav>
-            <hr>
-            <form class="form-inline">
-                <label>
-                    <input type="text" class="form-control" id="input1">
-                </label>
-                <button class="btn btn-primary" id="navBtn">Add Item</button>
-            </form>
+        </div>
+        <div class="row m-3">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-md navbar-light bg-light" id="navbar">
+                    <a class="navbar-brand" href="javascript:undefined">Menu</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav" id="navList"></ul>
+                    </div>
+                </nav>
+                <hr>
+                <form class="form-inline">
+                    <label>
+                        <input type="text" class="form-control" id="input1">
+                    </label>
+                    <button class="btn btn-primary" id="navBtn">Add Item</button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">Navbarでのコラプスの項目展開イベント</span>
-    <div class="section_description">
-        Navbarにはnavbar-collapseクラスうを指定することで<br>
-        項目を折りたたむことが可能である。<br>
-        そのためcollapseのイベントをそのまま使うことが出来る。<br>
-        show.bs.collapse：コラプスの展開を開始した<br>
-        shown.bs.collapse：コラプスの展開が完了した<br>
-        hide.bs.collapse：コラプスの折りたたみを開始した<br>
-        hidden.bs.collapse：コラプスの折りたたみが完了した<br>
-        下記のサンプルは展開時にbg-info、折りたたみ時にbg-lightとなっている。<br>
-        ■scriptの構成
-        <pre class="table-bordered border-primary pl-2 pt-2">
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">Navbarでのコラプスの項目展開イベント</span>
+        <div class="section_description">
+            Navbarにはnavbar-collapseクラスうを指定することで<br>
+            項目を折りたたむことが可能である。<br>
+            そのためcollapseのイベントをそのまま使うことが出来る。<br>
+            show.bs.collapse：コラプスの展開を開始した<br>
+            shown.bs.collapse：コラプスの展開が完了した<br>
+            hide.bs.collapse：コラプスの折りたたみを開始した<br>
+            hidden.bs.collapse：コラプスの折りたたみが完了した<br>
+            下記のサンプルは展開時にbg-info、折りたたみ時にbg-lightとなっている。<br>
+            ■scriptの構成
+            <pre class="table-bordered border-primary pl-2 pt-2">
 <span class="text-success">// コラプス展開時と折りたたみ時で背景色を変える</span>
 (function () {
     let obj = $('#collapseNavbarNav');
@@ -111,32 +110,30 @@ $('&lt;button&gt;').click(function (e) {
         .addClass('bg-light');
     });
 })();</pre>
-
-    </div>
-    <div class="row m-3">
-        <div class="col-12">
-            <nav class="navbar navbar-expand-md navbar-light bg-light" id="collapseNavbar">
-                <a class="navbar-brand" href="javascript:undefined">Menu</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapseNavbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="collapseNavbarNav">
-                    <ul class="navbar-nav" id="collapseNavList"></ul>
-                </div>
-            </nav>
-            <hr>
-            <form class="form-inline">
-                <label>
-                    <input type="text" class="form-control" id="collapseNavInput">
-                </label>
-                <button class="btn btn-primary" id="collapseNavBtn">Add Item</button>
-            </form>
+        </div>
+        <div class="row m-3">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-md navbar-light bg-light" id="collapseNavbar">
+                    <a class="navbar-brand" href="javascript:undefined">Menu</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#collapseNavbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="collapseNavbarNav">
+                        <ul class="navbar-nav" id="collapseNavList"></ul>
+                    </div>
+                </nav>
+                <hr>
+                <form class="form-inline">
+                    <label>
+                        <input type="text" class="form-control" id="collapseNavInput">
+                    </label>
+                    <button class="btn btn-primary" id="collapseNavBtn">Add Item</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
 </body>
 </html>
 <script>
@@ -204,10 +201,10 @@ $('&lt;button&gt;').click(function (e) {
                     .removeClass('bg-light');
             });
 
-            collapseNavbarNav.on('hidden.bs.collapse',function () {
+            collapseNavbarNav.on('hidden.bs.collapse', function () {
                 $('#collapseNavbar')
-                .removeClass('bg-info')
-                .addClass('bg-light');
+                    .removeClass('bg-info')
+                    .addClass('bg-light');
             });
         })();
 

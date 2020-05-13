@@ -24,417 +24,416 @@
 
 <body>
 
-<div class="container">
+<div class="container-fruid">
     <h1>Bootstrap使用時の、HTMLタグ毎のレイアウト</h1>
-</div>
-<div class="container study_section">
-    <span class="section_title">見出し</span>
-    <div class="section_description">
-        HTMLだけだと行間隔が空きすぎてしまい、更に h6タグは通常pタグよりも小さくなるが、それらを解消できる。
-    </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <h1>H1 headline</h1>
-            <h2>H2 headline</h2>
-            <h3>H3 headline</h3>
-            <h4>H4 headline</h4>
-            <h5>H5 headline</h5>
-            <h6>H6 headline</h6>
+    <div class="study_section">
+        <span class="section_title">見出し</span>
+        <div class="section_description">
+            HTMLだけだと行間隔が空きすぎてしまい、更に h6タグは通常pタグよりも小さくなるが、それらを解消できる。
         </div>
-    </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>H1 headline</h1>
+                <h2>H2 headline</h2>
+                <h3>H3 headline</h3>
+                <h4>H4 headline</h4>
+                <h5>H5 headline</h5>
+                <h6>H6 headline</h6>
+            </div>
+        </div>
 
-    <div class="row">
-        <div class="col-sm-12">
-            <p>this is main content.</p>
+        <div class="row">
+            <div class="col-sm-12">
+                <p>this is main content.</p>
+            </div>
         </div>
     </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">コンテンツとコードの記述</span>
-    <div class="section_description">
-        pタグとpreタグの行間はそれなりに空いているがdivタグはかなり狭くなっている。<br>
-        また、preタグは等幅の半角文字が使われている。<br>
-        preタグはソースコードの掲載によく使われるためインデント位置などが正確にわかるようになっている。
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-sm-12">
-            <p>this is p tag sample. これはpタグのサンプルです。</p>
-            <div>this is div tag sample. これdivタグのサンプルです。</div>
-            <pre>this is pre tag sample. これはpreタグのサンプルです。</pre>
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">コンテンツとコードの記述</span>
+        <div class="section_description">
+            pタグとpreタグの行間はそれなりに空いているがdivタグはかなり狭くなっている。<br>
+            また、preタグは等幅の半角文字が使われている。<br>
+            preタグはソースコードの掲載によく使われるためインデント位置などが正確にわかるようになっている。
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-12">
+                <p>this is p tag sample. これはpタグのサンプルです。</p>
+                <div>this is div tag sample. これdivタグのサンプルです。</div>
+                <pre>this is pre tag sample. これはpreタグのサンプルです。</pre>
+            </div>
         </div>
     </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">リストの表示</span>
-    <div class="section_description">
-        ul,ol,liタグを使ったリストも行の始めの記号は同じだがフォントサイズなどが調整されている。
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-sm-12">
-            <ul>
-                <li>first item</li>
-                <li>second item</li>
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">リストの表示</span>
+        <div class="section_description">
+            ul,ol,liタグを使ったリストも行の始めの記号は同じだがフォントサイズなどが調整されている。
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-12">
                 <ul>
-                    <li>sub list 1</li>
-                    <li>sub list 2</li>
+                    <li>first item</li>
+                    <li>second item</li>
                     <ul>
-                        <li>sub list A</li>
-                        <li>sub list B</li>
+                        <li>sub list 1</li>
+                        <li>sub list 2</li>
+                        <ul>
+                            <li>sub list A</li>
+                            <li>sub list B</li>
+                        </ul>
                     </ul>
+                    <li>third item</li>
+                    <li>fourth item</li>
                 </ul>
-                <li>third item</li>
-                <li>fourth item</li>
-            </ul>
+            </div>
         </div>
     </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">定義リスト</span>
-    <div class="section_description">
-        dl,dt,ddタグを使った定義リストはタイトルが自動的に太字になるようになっており、フォントも調整されている。
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-sm-12">
-            <dl>
-                <dt>Sample Title</dt>
-                <dd>this is sample description.</dd>
-                <dt>Bootstrap</dt>
-                <dd>Bootstrap is an open source framework for developing with HTML, StyleSheet, and JavaScript.</dd>
-            </dl>
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">定義リスト</span>
+        <div class="section_description">
+            dl,dt,ddタグを使った定義リストはタイトルが自動的に太字になるようになっており、フォントも調整されている。
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-12">
+                <dl>
+                    <dt>Sample Title</dt>
+                    <dd>this is sample description.</dd>
+                    <dt>Bootstrap</dt>
+                    <dd>Bootstrap is an open source framework for developing with HTML, StyleSheet, and JavaScript.</dd>
+                </dl>
+            </div>
         </div>
     </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">テーブル</span>
-    <div class="section_description">
-        tableタグのclassにtableを指定するだけで簡単にテーブルが作成できる。<br>
-        タイトルにあたる部分は太字になり、各行は横線で仕切られている。
-    </div>
-    <br>
-    <p>・カラー指定なし（tableクラスのみ）</p>
-    <div class="row">
-        <div class="col-sm-12">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">No.</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Mail</th>
-                    <th scope="col">Tel</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="col">1</th>
-                    <td>Taro</td>
-                    <td>taro@yamada</td>
-                    <td>03-999-999</td>
-                </tr>
-                <tr>
-                    <th scope="col">2</th>
-                    <td>Hanako</td>
-                    <td>hanako@flower</td>
-                    <td>080-888-888</td>
-                </tr>
-                <tr>
-                    <th scope="col">3</th>
-                    <td>Taro</td>
-                    <td>taro@yamada</td>
-                    <td>03-999-999</td>
-                </tr>
-                </tbody>
-            </table>
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">テーブル</span>
+        <div class="section_description">
+            tableタグのclassにtableを指定するだけで簡単にテーブルが作成できる。<br>
+            タイトルにあたる部分は太字になり、各行は横線で仕切られている。
         </div>
-    </div>
-    <p>・白黒反転（tableクラスにtable-darkを追加）</p>
-    <div class="row">
-        <div class="col-sm-12">
-            <table class="table table-dark">
-                <!--tableは削除しない-->
-                <thead>
-                <tr>
-                    <th scope="col">No.</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Mail</th>
-                    <th scope="col">Tel</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="col">1</th>
-                    <td>Taro</td>
-                    <td>taro@yamada</td>
-                    <td>03-999-999</td>
-                </tr>
-                <tr>
-                    <th scope="col">2</th>
-                    <td>Hanako</td>
-                    <td>hanako@flower</td>
-                    <td>080-888-888</td>
-                </tr>
-                <tr>
-                    <th scope="col">3</th>
-                    <td>Taro</td>
-                    <td>taro@yamada</td>
-                    <td>03-999-999</td>
-                </tr>
-                </tbody>
-            </table>
+        <br>
+        <p>・カラー指定なし（tableクラスのみ）</p>
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Mail</th>
+                        <th scope="col">Tel</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="col">1</th>
+                        <td>Taro</td>
+                        <td>taro@yamada</td>
+                        <td>03-999-999</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">2</th>
+                        <td>Hanako</td>
+                        <td>hanako@flower</td>
+                        <td>080-888-888</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">3</th>
+                        <td>Taro</td>
+                        <td>taro@yamada</td>
+                        <td>03-999-999</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
-    <p>・マス目状（tableクラスにtable-borderedを追加</p>
-    <div class="row">
-        <div class="col-sm-12">
-            <table class="table table-bordered">
-                <!--tableは削除しない-->
-                <thead>
-                <tr>
-                    <th scope="col">No.</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Mail</th>
-                    <th scope="col">Tel</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="col">1</th>
-                    <td>Taro</td>
-                    <td>taro@yamada</td>
-                    <td>03-999-999</td>
-                </tr>
-                <tr>
-                    <th scope="col">2</th>
-                    <td>Hanako</td>
-                    <td>hanako@flower</td>
-                    <td>080-888-888</td>
-                </tr>
-                <tr>
-                    <th scope="col">3</th>
-                    <td>Taro</td>
-                    <td>taro@yamada</td>
-                    <td>03-999-999</td>
-                </tr>
-                </tbody>
-            </table>
+        <p>・白黒反転（tableクラスにtable-darkを追加）</p>
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-dark">
+                    <!--tableは削除しない-->
+                    <thead>
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Mail</th>
+                        <th scope="col">Tel</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="col">1</th>
+                        <td>Taro</td>
+                        <td>taro@yamada</td>
+                        <td>03-999-999</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">2</th>
+                        <td>Hanako</td>
+                        <td>hanako@flower</td>
+                        <td>080-888-888</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">3</th>
+                        <td>Taro</td>
+                        <td>taro@yamada</td>
+                        <td>03-999-999</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
-    <p>・一番上のヘッダー部分は黒背景（theadタグにthead-darkを追加）<br>
-        ・左端のヘッダーはグレー背景（tbodyタグにthead-lightを追加）</p>
-    <div class="row">
-        <div class="col-sm-12">
-            <table class="table">
-                <thead class="thead-dark">
-                <tr>
-                    <th scope="col">No.</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Mail</th>
-                    <th scope="col">Tel</th>
-                </tr>
-                </thead>
-                <tbody class="thead-light">
-                <tr>
-                    <th scope="col">1</th>
-                    <td>Taro</td>
-                    <td>taro@yamada</td>
-                    <td>03-999-999</td>
-                </tr>
-                <tr>
-                    <th scope="col">2</th>
-                    <td>Hanako</td>
-                    <td>hanako@flower</td>
-                    <td>080-888-888</td>
-                </tr>
-                <tr>
-                    <th scope="col">3</th>
-                    <td>Taro</td>
-                    <td>taro@yamada</td>
-                    <td>03-999-999</td>
-                </tr>
-                </tbody>
-            </table>
+        <p>・マス目状（tableクラスにtable-borderedを追加</p>
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-bordered">
+                    <!--tableは削除しない-->
+                    <thead>
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Mail</th>
+                        <th scope="col">Tel</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="col">1</th>
+                        <td>Taro</td>
+                        <td>taro@yamada</td>
+                        <td>03-999-999</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">2</th>
+                        <td>Hanako</td>
+                        <td>hanako@flower</td>
+                        <td>080-888-888</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">3</th>
+                        <td>Taro</td>
+                        <td>taro@yamada</td>
+                        <td>03-999-999</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
-    <p>・ストライプテーブル（tableタグにtable-stripedを追加）</p>
-    <div class="row">
-        <div class="col-sm-12">
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th scope="col">No.</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Mail</th>
-                    <th scope="col">Tel</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="col">1</th>
-                    <td>Taro</td>
-                    <td>taro@yamada</td>
-                    <td>03-999-999</td>
-                </tr>
-                <tr>
-                    <th scope="col">2</th>
-                    <td>Hanako</td>
-                    <td>hanako@flower</td>
-                    <td>080-888-888</td>
-                </tr>
-                <tr>
-                    <th scope="col">3</th>
-                    <td>Taro</td>
-                    <td>taro@yamada</td>
-                    <td>03-999-999</td>
-                </tr>
-                </tbody>
-            </table>
+        <p>・一番上のヘッダー部分は黒背景（theadタグにthead-darkを追加）<br>
+            ・左端のヘッダーはグレー背景（tbodyタグにthead-lightを追加）</p>
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Mail</th>
+                        <th scope="col">Tel</th>
+                    </tr>
+                    </thead>
+                    <tbody class="thead-light">
+                    <tr>
+                        <th scope="col">1</th>
+                        <td>Taro</td>
+                        <td>taro@yamada</td>
+                        <td>03-999-999</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">2</th>
+                        <td>Hanako</td>
+                        <td>hanako@flower</td>
+                        <td>080-888-888</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">3</th>
+                        <td>Taro</td>
+                        <td>taro@yamada</td>
+                        <td>03-999-999</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
-    <p>・マウスのホバーで選択（tableタグにtable-hoverを追加）</p>
-    <div class="row">
-        <div class="col-sm-12">
-            <table class="table table-hover">
-                <thead>
-                <tr>
-                    <th scope="col">No.</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Mail</th>
-                    <th scope="col">Tel</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="col">1</th>
-                    <td>Taro</td>
-                    <td>taro@yamada</td>
-                    <td>03-999-999</td>
-                </tr>
-                <tr>
-                    <th scope="col">2</th>
-                    <td>Hanako</td>
-                    <td>hanako@flower</td>
-                    <td>080-888-888</td>
-                </tr>
-                <tr>
-                    <th scope="col">3</th>
-                    <td>Taro</td>
-                    <td>taro@yamada</td>
-                    <td>03-999-999</td>
-                </tr>
-                </tbody>
-            </table>
+        <p>・ストライプテーブル（tableタグにtable-stripedを追加）</p>
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Mail</th>
+                        <th scope="col">Tel</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="col">1</th>
+                        <td>Taro</td>
+                        <td>taro@yamada</td>
+                        <td>03-999-999</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">2</th>
+                        <td>Hanako</td>
+                        <td>hanako@flower</td>
+                        <td>080-888-888</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">3</th>
+                        <td>Taro</td>
+                        <td>taro@yamada</td>
+                        <td>03-999-999</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
-    <p>・小さめのテーブル（tableタグにtable-smを追加）</p>
-    <div class="row">
-        <div class="col-sm-12">
-            <table class="table table-sm">
-                <thead>
-                <tr>
-                    <th scope="col">No.</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Mail</th>
-                    <th scope="col">Tel</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="col">1</th>
-                    <td>Taro</td>
-                    <td>taro@yamada</td>
-                    <td>03-999-999</td>
-                </tr>
-                <tr>
-                    <th scope="col">2</th>
-                    <td>Hanako</td>
-                    <td>hanako@flower</td>
-                    <td>080-888-888</td>
-                </tr>
-                <tr>
-                    <th scope="col">3</th>
-                    <td>Taro</td>
-                    <td>taro@yamada</td>
-                    <td>03-999-999</td>
-                </tr>
-                </tbody>
-            </table>
+        <p>・マウスのホバーで選択（tableタグにtable-hoverを追加）</p>
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Mail</th>
+                        <th scope="col">Tel</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="col">1</th>
+                        <td>Taro</td>
+                        <td>taro@yamada</td>
+                        <td>03-999-999</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">2</th>
+                        <td>Hanako</td>
+                        <td>hanako@flower</td>
+                        <td>080-888-888</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">3</th>
+                        <td>Taro</td>
+                        <td>taro@yamada</td>
+                        <td>03-999-999</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
-    <p>・レスポンシブテーブル（tableタグにtable-responsiveを追加）<br>
-        　画面幅が768pxより狭いとスクロールバーが現れる<br>
-        　※確認しやすいようにcolは6に設定済み。</p>
-    <div class="row">
-        <div class="col-sm-6">
-            <table class="table table-responsive">
+        <p>・小さめのテーブル（tableタグにtable-smを追加）</p>
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-sm">
+                    <thead>
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Mail</th>
+                        <th scope="col">Tel</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="col">1</th>
+                        <td>Taro</td>
+                        <td>taro@yamada</td>
+                        <td>03-999-999</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">2</th>
+                        <td>Hanako</td>
+                        <td>hanako@flower</td>
+                        <td>080-888-888</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">3</th>
+                        <td>Taro</td>
+                        <td>taro@yamada</td>
+                        <td>03-999-999</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <p>・レスポンシブテーブル（tableタグにtable-responsiveを追加）<br>
+            　画面幅が768pxより狭いとスクロールバーが現れる<br>
+            　※確認しやすいようにcolは6に設定済み。</p>
+        <div class="row">
+            <div class="col-sm-6">
+                <table class="table table-responsive">
 
-                <thead>
-                <tr>
-                    <th scope="col">No.</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Mail</th>
-                    <th scope="col">Tel</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="col">1</th>
-                    <td>Taro</td>
-                    <td>taro@yamada</td>
-                    <td>03-999-999</td>
-                </tr>
-                <tr>
-                    <th scope="col">2</th>
-                    <td>Hanako</td>
-                    <td>hanako@flower</td>
-                    <td>080-888-888</td>
-                </tr>
-                <tr>
-                    <th scope="col">3</th>
-                    <td>Taro</td>
-                    <td>taro@yamada</td>
-                    <td>03-999-999</td>
-                </tr>
-                </tbody>
-            </table>
+                    <thead>
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Mail</th>
+                        <th scope="col">Tel</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="col">1</th>
+                        <td>Taro</td>
+                        <td>taro@yamada</td>
+                        <td>03-999-999</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">2</th>
+                        <td>Hanako</td>
+                        <td>hanako@flower</td>
+                        <td>080-888-888</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">3</th>
+                        <td>Taro</td>
+                        <td>taro@yamada</td>
+                        <td>03-999-999</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">イメージの表示</span>
+        <div class="section_description">
+            Bootstrapでは画像を表示されるデバイスの幅に合わせて最適な大きさで表示させられる。
+        </div>
+        <br>
+        <p>・イメージの自動調整（img-fluid）</p>
+        <div class="row">
+            <div class="col-sm-12">
+                <img src="../img/sample.jpg" class="img-fluid">
+            </div>
+        </div>
+        <p>・サムネイル表示（img-thumbnail）</p>
+        <div class="row">
+            <div class="col-sm-12">
+                <img src="../img/sample.jpg" class="img-fluid img-thumbnail" width="200px">
+            </div>
         </div>
     </div>
 </div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">イメージの表示</span>
-    <div class="section_description">
-        Bootstrapでは画像を表示されるデバイスの幅に合わせて最適な大きさで表示させられる。
-    </div>
-    <br>
-    <p>・イメージの自動調整（img-fluid）</p>
-    <div class="row">
-        <div class="col-sm-12">
-            <img src="../img/sample.jpg" class="img-fluid">
-        </div>
-    </div>
-    <p>・サムネイル表示（img-thumbnail）</p>
-    <div class="row">
-        <div class="col-sm-12">
-            <img src="../img/sample.jpg" class="img-fluid img-thumbnail" width="200px">
-        </div>
-    </div>
-</div>
-
 </body>
 </html>

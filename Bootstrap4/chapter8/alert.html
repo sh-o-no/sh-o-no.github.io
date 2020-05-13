@@ -24,109 +24,107 @@
 </head>
 
 <body>
-
-<div class="container study_section">
-    <span class="section_title">アラートの表示</span>
-    <div class="section_description">
-        ユーザーに何らかの注意喚起をしたり必要な入力を求めるときに用いる機能。<br>
-        javascriptを使うと簡単なアラートやダイアログを呼び出すことは可能だが<br>
-        Bootstrapのalertクラスを使っても作成することが出来る。<br>
-        alertに続けてalert-色名で色指定が可能。<br>
-        このカラー指定で、背景、テキスト、ボーダーのカラーをまとめて設定してくれる。<br>
-        <br>
-        ■構成
-        <pre class="table-bordered border-primary pl-2 pt-2">
+<div class="container-fruid">
+    <div class="study_section">
+        <span class="section_title">アラートの表示</span>
+        <div class="section_description">
+            ユーザーに何らかの注意喚起をしたり必要な入力を求めるときに用いる機能。<br>
+            javascriptを使うと簡単なアラートやダイアログを呼び出すことは可能だが<br>
+            Bootstrapのalertクラスを使っても作成することが出来る。<br>
+            alertに続けてalert-色名で色指定が可能。<br>
+            このカラー指定で、背景、テキスト、ボーダーのカラーをまとめて設定してくれる。<br>
+            <br>
+            ■構成
+            <pre class="table-bordered border-primary pl-2 pt-2">
 &lt;div class="alert alert-色名" role="alert"&gt;
 
     ･･･コンテンツ･･･
 
 &lt;/div&gt;
         </pre>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-12">
-            <div class="alert alert-primary" role="alert">
-                this is alert-primary sample content.
-            </div>
-            <div class="alert alert-secondary" role="alert">
-                this is alert-secondary sample content.
-            </div>
-            <div class="alert alert-info" role="alert">
-                this is alert-info sample content.
-            </div>
-            <div class="alert alert-warning" role="alert">
-                this is alert-warning sample content.
-            </div>
-            <div class="alert alert-danger" role="alert">
-                this is alert-danger sample content.
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <div class="alert alert-primary" role="alert">
+                    this is alert-primary sample content.
+                </div>
+                <div class="alert alert-secondary" role="alert">
+                    this is alert-secondary sample content.
+                </div>
+                <div class="alert alert-info" role="alert">
+                    this is alert-info sample content.
+                </div>
+                <div class="alert alert-warning" role="alert">
+                    this is alert-warning sample content.
+                </div>
+                <div class="alert alert-danger" role="alert">
+                    this is alert-danger sample content.
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">アラートコンテンツ用のクラス</span>
-    <div class="section_description">
-        アラートにはヘッダーやリンクなども配置が可能である。<br>
-        そのためにはアラート専用のクラスを指定する必要がある。<br>
-        記述は簡単で、alertクラスを指定したタグの中に<br>
-        ヘッダーやリンクを並べていくだけである。<br>
-        alert-heading：ヘッダー<br>
-        alert-link：リンク<br>
-    </div>
+    <div class="mt-1"></div>
     <hr>
-    <div class="row">
-        <div class="col-12">
-            <div class="alert alert-primary" role="alert">
-                <h3 class="alert-heading">alert-heading</h3>
-                <p>
-                    this is alert sample content.<br>
-                    this is alert sample content.<br>
-                    this is alert sample content.
-                </p>
-                <hr>
-                <p>alert-link is <a class="alert-link" href="javascript:undefined">here</a>.</p>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">アラートコンテンツ用のクラス</span>
+        <div class="section_description">
+            アラートにはヘッダーやリンクなども配置が可能である。<br>
+            そのためにはアラート専用のクラスを指定する必要がある。<br>
+            記述は簡単で、alertクラスを指定したタグの中に<br>
+            ヘッダーやリンクを並べていくだけである。<br>
+            alert-heading：ヘッダー<br>
+            alert-link：リンク<br>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <div class="alert alert-primary" role="alert">
+                    <h3 class="alert-heading">alert-heading</h3>
+                    <p>
+                        this is alert sample content.<br>
+                        this is alert sample content.<br>
+                        this is alert sample content.
+                    </p>
+                    <hr>
+                    <p>alert-link is <a class="alert-link" href="javascript:undefined">here</a>.</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">アラートを閉じる</span>
-    <div class="section_description">
-        閉じる機能をつける、クローズボックスのアイコン表示させて<br>
-        処理を行わせるをアラートを閉じることが出来る。<br>
-        ■「✕」アイコン
-        <pre class="table-bordered border-primary pl-2 pt-2">
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">アラートを閉じる</span>
+        <div class="section_description">
+            閉じる機能をつける、クローズボックスのアイコン表示させて<br>
+            処理を行わせるをアラートを閉じることが出来る。<br>
+            ■「✕」アイコン
+            <pre class="table-bordered border-primary pl-2 pt-2">
 &lt;button type="button" class="close" data-dismiss="alert"&gt;
     &lt;span aria-hidden="true"&gt;&times;&lt;/span&gt;
 &lt;/button&gt;
         </pre>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-12">
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <button type="button" class="close" data-dismiss="alert">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h3 class="alert-heading">alert-heading</h3>
-                <p>
-                    this is alert sample content.<br>
-                    this is alert sample content.<br>
-                    this is alert sample content.
-                </p>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h3 class="alert-heading">alert-heading</h3>
+                    <p>
+                        this is alert sample content.<br>
+                        this is alert sample content.<br>
+                        this is alert sample content.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
 </body>
 </html>

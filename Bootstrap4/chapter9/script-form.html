@@ -24,17 +24,17 @@
 </head>
 
 <body>
-
-<div class="container study_section">
-    <span class="section_title">ボタンのスクリプト操作</span>
-    <div class="section_description">
-        タグの中にスクリプトを割り当てている。<br>
-        #btn1の要素をクリックしたときに<br>
-        ①clicked:の数字が増える<br>
-        ②ボタンの色が変わる<br>
-        という操作を行っている。<br>
-        ■scriptの内容
-        <pre class="table-bordered border-primary pl-2 pt-2">
+<div class="container-fruid">
+    <div class="study_section">
+        <span class="section_title">ボタンのスクリプト操作</span>
+        <div class="section_description">
+            タグの中にスクリプトを割り当てている。<br>
+            #btn1の要素をクリックしたときに<br>
+            ①clicked:の数字が増える<br>
+            ②ボタンの色が変わる<br>
+            という操作を行っている。<br>
+            ■scriptの内容
+            <pre class="table-bordered border-primary pl-2 pt-2">
 $(function() {<span class="text-success">// DOM構造が解析された後に動く</span>
     let counter = 0;<span class="text-success">// 変数counterに0を格納。</span>
     $("#btn1").click(function() {<span class="text-success">#btn1の要素をクリックした時の処理</span>
@@ -48,52 +48,52 @@ $(function() {<span class="text-success">// DOM構造が解析された後に動
         }
     $('#msg').text("clicked: " + counter);<span class="text-success"> // IDmsgの文字列を変更</span>
 });</pre>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-12">
-            <div>
-                <h5 id="msg" class="mb-4">type any text...</h5>
-            </div>
-            <div>
-                <button id="btn1" type="button" class="btn btn-primary">button</button>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <div>
+                    <h5 id="msg" class="mb-4">type any text...</h5>
+                </div>
+                <div>
+                    <button id="btn1" type="button" class="btn btn-primary">button</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">コントロールをダイナミックに生成</span>
-    <div class="section_description">
-        HTML要素を新たに生成する事もできる。<br>
-        ■scriptの内容
-        <pre class="table-bordered border-primary pl-2 pt-2">
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">コントロールをダイナミックに生成</span>
+        <div class="section_description">
+            HTML要素を新たに生成する事もできる。<br>
+            ■scriptの内容
+            <pre class="table-bordered border-primary pl-2 pt-2">
 $(function () {<span class="text-success">// DOM構造が解析された後に動く</span>
     const c_arr = ['primary', 'secondary', 'info', 'warning', 'danger'];<span
-    class="text-success">//定数c_arrを定義、配列を格納</span>
+                    class="text-success">//定数c_arrを定義、配列を格納</span>
     for (let i = 0 ; i < 10 ; i++) {<span class="text-success">// 変数iが10になるまで処理してiに1足す</span>
         $('#btn_container').append($('&lt;button&gt;')<span class="text-success">// 指定のIDに&lt;button&gt;を加える</span>
             .attr('class','btn m-1 btn-' + c_arr[i % 5])<span class="text-success">// 属性class btn,m-1,btn-[iを5で割った余りの数字のインデックス番号を持った配列]</span>
             .text('button No,' + (i + 1)));<span class="text-success">// 内容 button No,と[iに1を足した数]</span>
     }
 });</pre>
+        </div>
+        <hr>
+        <div class="row">
+            <div id="btn_container"></div>
+        </div>
     </div>
+    <div class="mt-1"></div>
     <hr>
-    <div class="row">
-        <div id="btn_container"></div>
-    </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">activeとdisabled</span>
-    <div class="section_description">
-        クラスを追加するメソッドを使うと、active,disableも追加出来る。<br>
-        ■scriptの内容
-        <pre class="table-bordered border-primary pl-2 pt-2">
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">activeとdisabled</span>
+        <div class="section_description">
+            クラスを追加するメソッドを使うと、active,disableも追加出来る。<br>
+            ■scriptの内容
+            <pre class="table-bordered border-primary pl-2 pt-2">
 $(function () {<span class="text-success">// DOM構造が解析された後に動く</span>
     for (let i = 0; i < 10; i++) {<span class="text-success">iが10になるまで処理を繰り返し、iに1ずつ足す。</span>
         let obj =$('&lt;button&gt;')<span class="text-success">// 変数objを定義</span>
@@ -108,33 +108,33 @@ $(function () {<span class="text-success">// DOM構造が解析された後に�
         $('#btn_container2').append(obj);<span class="text-success">// 指定のIDを持つ要素にobjを追加する</span>
     }
 });</pre>
+        </div>
+        <hr>
+        <div class="row">
+            <div id="btn_container2"></div>
+        </div>
     </div>
+    <div class="mt-1"></div>
     <hr>
-    <div class="row">
-        <div id="btn_container2"></div>
-    </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">バリデーション</span>
-    <div class="section_description">
-        フォームを利用する場合、値の検証の機能は備わっているが<br>
-        JavascriptとBootstrapを使って値のチェックを行わせることも出来る。<br>
-        フォーム部品の入力値がおかしい場合checkValidity()でfalseが返ってくる<br>
-        ＝＝＝＝この場合のif分の書き方＝＝＝＝<br>
-        ここで判定したいのは、入力値が間違っているかどうかである<br>
-        入力値が間違っているときに、画面切り替えを止めたりと、明示的な処理を書きたい。<br>
-        なので、エラーが起こったかどうかのifを書き、中に処理をかく。<br>
-        サンプルでelse（正常）でアラートを表示しているが、実務ではこの場合アラートを出したりしない<br>
-        ■scriptの内容
-        <pre class="table-bordered border-primary pl-2 pt-2">
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">バリデーション</span>
+        <div class="section_description">
+            フォームを利用する場合、値の検証の機能は備わっているが<br>
+            JavascriptとBootstrapを使って値のチェックを行わせることも出来る。<br>
+            フォーム部品の入力値がおかしい場合checkValidity()でfalseが返ってくる<br>
+            ＝＝＝＝この場合のif分の書き方＝＝＝＝<br>
+            ここで判定したいのは、入力値が間違っているかどうかである<br>
+            入力値が間違っているときに、画面切り替えを止めたりと、明示的な処理を書きたい。<br>
+            なので、エラーが起こったかどうかのifを書き、中に処理をかく。<br>
+            サンプルでelse（正常）でアラートを表示しているが、実務ではこの場合アラートを出したりしない<br>
+            ■scriptの内容
+            <pre class="table-bordered border-primary pl-2 pt-2">
 $(function () {<span class="text-success">// DOM構造が解析された後に動く</span>
     $("#form1").submit(function (event) {<span class="text-success">// #form1に対してsubmitのメソッドが起きた時の処理</span>
 
         if(!event.target.checkValidity()) {<span
-                class="text-success">// checkValidityでバリデーションのチェックを行いtrueでないなら</span>
+                    class="text-success">// checkValidityでバリデーションのチェックを行いtrueでないなら</span>
             event.preventDefault();<span class="text-success">// イベントのキャンセル</span>
             event.stopPropagation();<span class="text-success">// イベントの伝達を中止</span>
         } else {<span class="text-success">そうでなく、trueなら</span>
@@ -143,109 +143,109 @@ $(function () {<span class="text-success">// DOM構造が解析された後に�
         $('#form1').addClass('was-validated');<span class="text-success">#formにwas-validatedクラスを追加</span>
     )};
 });</pre>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-sm-12">
-            <!--            novalidate:HTML5のバリデーションをOFFにする
-            javascriptを使いたい場合はformにこれを必ず記述する-->
-            <!--            labelの中はインライン要素しかいれたらあかんみたいでdiv→spanに変更-->
-            <form class="container" id="form1" novalidate>
-                <div class="mt-2">
-                    <label>
-                        Name
-                        <input type="text" class="form-control" placeholder="name" required>
-                        <span class="invalid-feedback">type your name</span>
-                    </label>
-                </div>
-                <div class="mt-2">
-                    <label>
-                        City
-                        <input type="text" class="form-control" placeholder="address">
-                        <span class="invalid-feedback">
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-12">
+                <!--            novalidate:HTML5のバリデーションをOFFにする
+                javascriptを使いたい場合はformにこれを必ず記述する-->
+                <!--            labelの中はインライン要素しかいれたらあかんみたいでdiv→spanに変更-->
+                <form class="container" id="form1" novalidate>
+                    <div class="mt-2">
+                        <label>
+                            Name
+                            <input type="text" class="form-control" placeholder="name" required>
+                            <span class="invalid-feedback">type your name</span>
+                        </label>
+                    </div>
+                    <div class="mt-2">
+                        <label>
+                            City
+                            <input type="text" class="form-control" placeholder="address">
+                            <span class="invalid-feedback">
                             type your address
                         </span>
-                    </label>
-                </div>
-                <div class="mt-2">
-                    <label>
-                        Mail
-                        <input type="email" class="form-control" placeholder="email" required>
-                        <span class="invalid-feedback">
+                        </label>
+                    </div>
+                    <div class="mt-2">
+                        <label>
+                            Mail
+                            <input type="email" class="form-control" placeholder="email" required>
+                            <span class="invalid-feedback">
                             type your e-mail
                         </span>
-                    </label>
-                </div>
-                <div class="mt-2">
-                    <button id="btnSubmit" class="btn btn-primary" type="submit">Submit</button>
-                </div>
-            </form>
+                        </label>
+                    </div>
+                    <div class="mt-2">
+                        <button id="btnSubmit" class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">チェックボックスの選択状態</span>
-    <div class="section_description">
-        チェックボックスやラジオボタンではjQueryのpropというメソッドを使うことで<br>
-        スクリプト内から選択状態の操作を行うことが出来る。<br>
-        checked属性をtrue：チェック状態<br>
-        indeterminate属性をtrue：ONでもOFFでもない中間状態<br>
-        ■scriptの内容
-        <pre class="table-bordered border-primary pl-2 pt-2">
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">チェックボックスの選択状態</span>
+        <div class="section_description">
+            チェックボックスやラジオボタンではjQueryのpropというメソッドを使うことで<br>
+            スクリプト内から選択状態の操作を行うことが出来る。<br>
+            checked属性をtrue：チェック状態<br>
+            indeterminate属性をtrue：ONでもOFFでもない中間状態<br>
+            ■scriptの内容
+            <pre class="table-bordered border-primary pl-2 pt-2">
 $(function () {<span class="text-success">// DOM構造が解析された後に動く</span>
     (function () {<span class="text-success">// 即時関数</span>
         $('#ck1').prop('checked', true);<span class="text-success">// #ck1のchecked属性をtrueへ</span>
         $('#ck2').prop('indeterminate', true);<span class="text-success">// #ck2のindeterminate属性をtrueへ</span>
     })();
 });</pre>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-sm-12">
-            <form class="container" id="form2" novalidate>
-                <div class="mt-2">
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" id="ck1" class="custom-control-input">
-                        <label class="custom-control-label" for="ck1">
-                            check box 1
-                        </label>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-12">
+                <form class="container" id="form2" novalidate>
+                    <div class="mt-2">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" id="ck1" class="custom-control-input">
+                            <label class="custom-control-label" for="ck1">
+                                check box 1
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <div class="mt-2">
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" id="ck2" class="custom-control-input">
-                        <label class="custom-control-label" for="ck2">
-                            check box 2
-                        </label>
+                    <div class="mt-2">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" id="ck2" class="custom-control-input">
+                            <label class="custom-control-label" for="ck2">
+                                check box 2
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <div class="mt-2">
-                    <div class="custom-control custom-checkbox">
-                        <button class="btn btn-primary" type="submit">submit</button>
+                    <div class="mt-2">
+                        <div class="custom-control custom-checkbox">
+                            <button class="btn btn-primary" type="submit">submit</button>
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">プログレスバーの操作</span>
-    <div class="section_description">
-        JavaScriptを使うと一定時間でメーターを増やすことが可能である。<br>
-        ■scriptの内容
-        <pre class="table-bordered border-primary pl-2 pt-2">
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">プログレスバーの操作</span>
+        <div class="section_description">
+            JavaScriptを使うと一定時間でメーターを増やすことが可能である。<br>
+            ■scriptの内容
+            <pre class="table-bordered border-primary pl-2 pt-2">
 <span class="text-success">// プログレスバーのメーターを増やす処理</span>
 $(function () {<span class="text-success">// DOM構造が解析された後に動く</span>
     (function () {<span class="text-success">// 即時関数を使う</span>
         let progress_value = 0;<span class="text-success">// 変数progress_valueを定義</span>
         let intervalID = setInterval(function () {<span
-                class="text-success">// 変数timerを定義 setInterval(一定時間ごとに処理する)メソッドを使用。</span>
+                    class="text-success">// 変数timerを定義 setInterval(一定時間ごとに処理する)メソッドを使用。</span>
             progress_value += 10;<span class="text-success">// progress_valueを10ずつ増やす</span>
             setProgressValue(progress_value);<span class="text-success">// 関数を呼び出し、引数をprogress_valueで処理。</span>
             if (progress_value == 100) {<span class="text-success">// もしprogress_valueの値が100になったら</span>
@@ -267,51 +267,49 @@ $(function () {<span class="text-success">// DOM構造が解析された後に�
         setProgressValue(0);<span class="text-success">setProgressValue関数を呼び出し引数0で処理</span>
     });
 });</pre>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="progress mt-3">
-                <!--0の時に単位つけたら怒られます。ｗ本では0%になってた。-->
-                <div id="progress1" class="progress-bar" role="progressbar" style="width: 0;" aria-valuenow="0"
-                     aria-valuemin="0" aria-valuemax="100">0%
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="progress mt-3">
+                    <!--0の時に単位つけたら怒られます。ｗ本では0%になってた。-->
+                    <div id="progress1" class="progress-bar" role="progressbar" style="width: 0;" aria-valuenow="0"
+                         aria-valuemin="0" aria-valuemax="100">0%
+                    </div>
                 </div>
-            </div>
-            <div class="mt-3">
-                <button id="btn" class="btn btn-primary" type="button" onclick="reset();">Reset</button>
+                <div class="mt-3">
+                    <button id="btn" class="btn btn-primary" type="button" onclick="reset();">Reset</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">ツールチップの設定</span>
-    <div class="section_description">
-        ツールチップは予めタグに組み込むことも可能だが<br>
-        スクリプトを使うことで勝手もよくなる。<br>
-        ■scriptの内容
-        <pre class="table-bordered border-primary pl-2 pt-2">
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">ツールチップの設定</span>
+        <div class="section_description">
+            ツールチップは予めタグに組み込むことも可能だが<br>
+            スクリプトを使うことで勝手もよくなる。<br>
+            ■scriptの内容
+            <pre class="table-bordered border-primary pl-2 pt-2">
 $(function () {<span class="text-success">// DOM構造が解析された後に動く</span>
     $('[type="button"]')<span class="text-success">type="button"の要素を取得</span>
         .tooltip({'placement': 'bottom','title':'Tooltip is here!'});<span class="text-success">// placement(位置)とtitle(文字列)を渡し、ツールチップを生成</span>
 });</pre>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-sm-12" id="tooltips">
-            <button type="button" class="btn btn-secondary">Tooltip Button</button>
-            <button type="button" class="btn btn-secondary">Tooltip Button</button>
-            <button type="button" class="btn btn-secondary">Tooltip Button</button>
-            <button type="button" class="btn btn-secondary">Tooltip Button</button>
         </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-12" id="tooltips">
+                <button type="button" class="btn btn-secondary">Tooltip Button</button>
+                <button type="button" class="btn btn-secondary">Tooltip Button</button>
+                <button type="button" class="btn btn-secondary">Tooltip Button</button>
+                <button type="button" class="btn btn-secondary">Tooltip Button</button>
+            </div>
+        </div>
+        <br><br>
     </div>
-    <br><br>
 </div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
 </body>
 <script>
     // DOM構造が解析された後に動く
@@ -339,7 +337,7 @@ $(function () {<span class="text-success">// DOM構造が解析された後に�
 
         // ボタンの生成処理
         const c_arr = ['primary', 'secondary', 'info', 'warning', 'danger'];
-        for (let i = 0; i < c_arr.length*2; i++) {
+        for (let i = 0; i < c_arr.length * 2; i++) {
             $('#btn_container').append($('<button>')
                 .attr('class', 'btn m-1 btn-' + c_arr[i % c_arr.length])
                 .text('button No,' + (i + 1))

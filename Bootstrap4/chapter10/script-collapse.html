@@ -24,45 +24,46 @@
 </head>
 
 <body>
-<div class="container study_section">
-    <span class="section_title">コラプスの表示、非表示</span>
-    <div class="section_description">
-        コラプスはcollapseメソッドを呼び出す事で<br>
-        スクリプト内からの操作が可能である。<br>
-        引数なしで呼び出せばコラプスを初期化する。<br>
-        引数を指定すると次の様になる。<br>
-        show：コラプスを表示させる<br>
-        hide：コラプスを非表示にする<br>
-        toggle：コラプスをON/OFFする<br>
-        ■scriptの内容
-        <pre class="table-bordered border-primary pl-2 pt-2">
+<div class="container-fruid">
+    <div class="study_section">
+        <span class="section_title">コラプスの表示、非表示</span>
+        <div class="section_description">
+            コラプスはcollapseメソッドを呼び出す事で<br>
+            スクリプト内からの操作が可能である。<br>
+            引数なしで呼び出せばコラプスを初期化する。<br>
+            引数を指定すると次の様になる。<br>
+            show：コラプスを表示させる<br>
+            hide：コラプスを非表示にする<br>
+            toggle：コラプスをON/OFFする<br>
+            ■scriptの内容
+            <pre class="table-bordered border-primary pl-2 pt-2">
 <span class="text-success">// コラプスを表示するボタンがクリックされたときの処理</span>
 $('&lt;selector&gt;').click(function () {
         $('&lt;collapse&gt;').collapse('toggle');<span class="text-success">// コラプスをON/OFF表示する</span>
 });</pre>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-12">
-            <button class="btn btn-primary" type="button" id="collapseBtn">Click</button>
-            <div class="collapse" id="collapse">
-                <div class="card card-body">
-                    <p class="lead">this is sample collapse content.</p>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <button class="btn btn-primary" type="button" id="collapseBtn">Click</button>
+                <div class="collapse" id="collapse">
+                    <div class="card card-body">
+                        <p class="lead">this is sample collapse content.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">コラプスを生成</span>
-    <div class="section_description">
-        コラプスはスクリプトを使って必要なDOMオブジェクトを生成して<br>
-        取り込めば、それだけでちゃんと動くコラプスが生成できる。<br>
-        ■scriptの内容
-        <pre class="table-bordered border-primary pl-2 pt-2">
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">コラプスを生成</span>
+        <div class="section_description">
+            コラプスはスクリプトを使って必要なDOMオブジェクトを生成して<br>
+            取り込めば、それだけでちゃんと動くコラプスが生成できる。<br>
+            ■scriptの内容
+            <pre class="table-bordered border-primary pl-2 pt-2">
 addNewCollapse(<span class="text-warning">1</span>, '<span class="text-info">This is First Collapse!</span>');
 addNewCollapse(<span class="text-warning">2</span>, '<span class="text-info">This is Second Collapse!</span>');
 addNewCollapse(<span class="text-warning">3</span>, '<span class="text-info">This is Last Collapse!</span>');
@@ -72,7 +73,8 @@ addNewCollapse(<span class="text-warning">3</span>, '<span class="text-info">Thi
 <span class="text-success">// 生成された要素を指定のIDの要素に付け加える</span>
 function addNewCollapse(<span class="text-warning">num</span>, <span class="text-info"> msg</span>) {
     $('#buttons').append(createCollapseButton(<span class="text-danger">'collapse' + num</span>));
-    $('#contents').append(createCollapseContent(<span class="text-danger">'collapse' + num</span>, <span class="text-info"> msg</span>));
+    $('#contents').append(createCollapseContent(<span class="text-danger">'collapse' + num</span>, <span
+                    class="text-info"> msg</span>));
 }
 
 <span class="text-success">// ボタン要素を生成</span>
@@ -103,12 +105,13 @@ function createCollapseContent(<span class="text-danger">id</span>, <span class=
     <span class="text-success">// コラプスにカードを連結し、戻り値とする</span>
     return collapse.append(card);
 }</pre>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-12">
-            <div id="buttons"></div>
-            <div id="contents"></div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <div id="buttons"></div>
+                <div id="contents"></div>
+            </div>
         </div>
     </div>
 </div>

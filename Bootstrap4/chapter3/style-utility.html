@@ -22,475 +22,478 @@
     <title>スタイル・ユーティリティ</title>
 </head>
 <body>
-<div class="container study_section">
-    <span class="section_title">色のクラスの基本</span>
-    <div class="section_description">
-        Bootstrapではそれぞれの用途ごとに決まった色が設定されている。<br>
-    </div>
-    <p>各色クラスの基本</p>
-    <div class="row">
-        <div class="col-sm-8">
-            <table class="table table-bordered">
-                <thead class="thead-dark">
-                <tr>
-                    <th scope="col">color</th>
-                    <th scope="col">description</th>
-                </tr>
-                </thead>
-                <tbody class="">
-                <tr class="table-primary table-sm">
-                    <td>primary</td>
-                    <td>主要な情報、一時情報</td>
-                </tr>
-                <tr class="table-secondary table-sm">
-                    <td>secondary</td>
-                    <td>副次的な情報、二時情報</td>
-                </tr>
-                <tr class="table-success table-sm">
-                    <td>success</td>
-                    <td>成功したことを報告</td>
-                </tr>
-                <tr class="table-info table-sm">
-                    <td>info</td>
-                    <td>インフォメーション</td>
-                </tr>
-                <tr class="table-warning table-sm">
-                    <td>warning</td>
-                    <td>警告</td>
-                </tr>
-                <tr class="table-danger table-sm">
-                    <td>danger</td>
-                    <td>危険</td>
-                </tr>
-                <tr class="table-light table-sm">
-                    <td>light</td>
-                    <td>明るい状態</td>
-                </tr>
-                <tr class="table-dark table-sm">
-                    <td>dark</td>
-                    <td>暗い状態</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <hr>
-    <p>各色見本</p>
-    <div class="row">
-        <div class="col-sm-12">
-            <table class="table">
-                <thead class="thead-dark">
-                <tr>
-                    <th scope="col">text-色名</th>
-                    <th scope="col">table-色名</th>
-                    <th scope="col">bg-色名</th>
-                </tr>
-                </thead>
-                <tbody class="">
-                <tr>
-                    <td class="text-primary">primary</td>
-                    <td class="table-primary">table-primary</td>
-                    <td class="bg-primary">bg-primary</td>
-                </tr>
-                <tr>
-                    <td class="text-secondary">secondary</td>
-                    <td class="table-secondary">table-secondary</td>
-                    <td class="bg-secondary">bg-secondary</td>
-                </tr>
-                <tr>
-                    <td class="text-success">success</td>
-                    <td class="table-success">table-success</td>
-                    <td class="bg-success">bg-success</td>
-                </tr>
-                <tr>
-                    <td class="text-info">info</td>
-                    <td class="table-info">table-info</td>
-                    <td class="bg-info">bg-info</td>
-                </tr>
-                <tr>
-                    <td class="text-warning">warning</td>
-                    <td class="table-warning">table-warning</td>
-                    <td class="bg-warning">bg-warning</td>
-                </tr>
-                <tr>
-                    <td class="text-danger">danger</td>
-                    <td class="table-danger">table-danger</td>
-                    <td class="bg-danger">bg-danger</td>
-                </tr>
-                <tr>
-                    <td class="text-light bg-dark">light ※背景色明示</td>
-                    <td class="table-light">table-light</td>
-                    <td class="bg-light">bg-light</td>
-                </tr>
-                <tr>
-                    <td class="text-dark">dark</td>
-                    <td class="table-dark text-light">table-dark ※文字色明示</td>
-                    <td class="bg-dark text-light">bg-dark ※文字色明示</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">ボーダーの指定</span>
-    <div class="section_description">
-        コンテンツの周囲の枠線のボーダー専用クラスがある。
-    </div>
-    <p>・枠線の指定</p>
-    <div class="row">
-        <div class="col-sm-12">
-            <p class="border">borderクラスのみ</p>
-        </div>
-        <div class="col-sm-6">
-            <p class="border border-top-0">border-top-0</p>
-        </div>
-        <div class="col-sm-6">
-            <p class="border border-left-0">border-left-0</p>
-        </div>
-        <div class="col-sm-6">
-            <p class="border border-bottom-0">border-bottom-0</p>
-        </div>
-        <div class="col-sm-6">
-            <p class="border border-left-0">border-left-0</p>
-        </div>
-    </div>
-    <hr>
-    <p>・枠線の色の指定</p>
-    <div class="row">
-        <div class="col-sm-6">
-            <p class="border border-primary">border-primary</p>
-        </div>
-        <div class="col-sm-6">
-            <p class="border border-secondary">border-secondary</p>
-        </div>
-        <div class="col-sm-6">
-            <p class="border border-success">border-success</p>
-        </div>
-        <div class="col-sm-6">
-            <p class="border border-info">border-info</p>
-        </div>
-        <div class="col-sm-6">
-            <p class="border border-warning">border-warning</p>
-        </div>
-        <div class="col-sm-6">
-            <p class="border border-danger">border-danger</p>
-        </div>
-    </div>
-    <hr>
-    <p>・角を丸める指定</p>
-    <div class="row">
-        <div class="col-sm-6">
-            <p class="border border-dark rounded">rounded</p>
-        </div>
-        <div class="col-sm-6">
-            <p class="border border-dark rounded-top">rounded-top</p>
-        </div>
-        <div class="col-sm-6">
-            <p class="border border-dark rounded-left">rounded-left</p>
-        </div>
-        <div class="col-sm-6">
-            <p class="border border-dark rounded-circle">rounded-circle</p>
-        </div>
-    </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">インラインとブロック</span>
-    <div class="section_description">
-        d-inline,d-block,d-inline-blockクラスを使うと<br>
-        通常インラインの要素をブロック要素にしたり、逆にブロック要素をインライン要素にしたり<br>
-        インラインブロック要素にしたりが可能である。
-    </div>
+<div class="container-fruid">
 
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="d-inline table-primary">this is inline context.</div>
-            <div class="d-inline table-primary">this is inline context.</div>
-            <div class="d-inline table-primary">this is inline context.</div>
-            <hr>
-            <div class="d-block table-secondary">this is block context.</div>
-            <div class="d-block table-secondary">this is block context.</div>
-            <div class="d-block table-secondary">this is block context.</div>
+    <div class="study_section">
+        <span class="section_title">色のクラスの基本</span>
+        <div class="section_description">
+            Bootstrapではそれぞれの用途ごとに決まった色が設定されている。<br>
+        </div>
+        <p>各色クラスの基本</p>
+        <div class="row">
+            <div class="col-sm-8">
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">color</th>
+                        <th scope="col">description</th>
+                    </tr>
+                    </thead>
+                    <tbody class="">
+                    <tr class="table-primary table-sm">
+                        <td>primary</td>
+                        <td>主要な情報、一時情報</td>
+                    </tr>
+                    <tr class="table-secondary table-sm">
+                        <td>secondary</td>
+                        <td>副次的な情報、二時情報</td>
+                    </tr>
+                    <tr class="table-success table-sm">
+                        <td>success</td>
+                        <td>成功したことを報告</td>
+                    </tr>
+                    <tr class="table-info table-sm">
+                        <td>info</td>
+                        <td>インフォメーション</td>
+                    </tr>
+                    <tr class="table-warning table-sm">
+                        <td>warning</td>
+                        <td>警告</td>
+                    </tr>
+                    <tr class="table-danger table-sm">
+                        <td>danger</td>
+                        <td>危険</td>
+                    </tr>
+                    <tr class="table-light table-sm">
+                        <td>light</td>
+                        <td>明るい状態</td>
+                    </tr>
+                    <tr class="table-dark table-sm">
+                        <td>dark</td>
+                        <td>暗い状態</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <hr>
+        <p>各色見本</p>
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">text-色名</th>
+                        <th scope="col">table-色名</th>
+                        <th scope="col">bg-色名</th>
+                    </tr>
+                    </thead>
+                    <tbody class="">
+                    <tr>
+                        <td class="text-primary">primary</td>
+                        <td class="table-primary">table-primary</td>
+                        <td class="bg-primary">bg-primary</td>
+                    </tr>
+                    <tr>
+                        <td class="text-secondary">secondary</td>
+                        <td class="table-secondary">table-secondary</td>
+                        <td class="bg-secondary">bg-secondary</td>
+                    </tr>
+                    <tr>
+                        <td class="text-success">success</td>
+                        <td class="table-success">table-success</td>
+                        <td class="bg-success">bg-success</td>
+                    </tr>
+                    <tr>
+                        <td class="text-info">info</td>
+                        <td class="table-info">table-info</td>
+                        <td class="bg-info">bg-info</td>
+                    </tr>
+                    <tr>
+                        <td class="text-warning">warning</td>
+                        <td class="table-warning">table-warning</td>
+                        <td class="bg-warning">bg-warning</td>
+                    </tr>
+                    <tr>
+                        <td class="text-danger">danger</td>
+                        <td class="table-danger">table-danger</td>
+                        <td class="bg-danger">bg-danger</td>
+                    </tr>
+                    <tr>
+                        <td class="text-light bg-dark">light ※背景色明示</td>
+                        <td class="table-light">table-light</td>
+                        <td class="bg-light">bg-light</td>
+                    </tr>
+                    <tr>
+                        <td class="text-dark">dark</td>
+                        <td class="table-dark text-light">table-dark ※文字色明示</td>
+                        <td class="bg-dark text-light">bg-dark ※文字色明示</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
+    <div class="mt-1"></div>
     <hr>
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="d-inline-block table-info">
-                <h3>inline block</h3>
-                <p>this is inline-block context.</p>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">ボーダーの指定</span>
+        <div class="section_description">
+            コンテンツの周囲の枠線のボーダー専用クラスがある。
+        </div>
+        <p>・枠線の指定</p>
+        <div class="row">
+            <div class="col-sm-12">
+                <p class="border">borderクラスのみ</p>
             </div>
-            <div class="d-inline-block table-warning">
-                <h3>inline brock</h3>
-                <p>this is inline-block context.</p>
+            <div class="col-sm-6">
+                <p class="border border-top-0">border-top-0</p>
+            </div>
+            <div class="col-sm-6">
+                <p class="border border-left-0">border-left-0</p>
+            </div>
+            <div class="col-sm-6">
+                <p class="border border-bottom-0">border-bottom-0</p>
+            </div>
+            <div class="col-sm-6">
+                <p class="border border-left-0">border-left-0</p>
+            </div>
+        </div>
+        <hr>
+        <p>・枠線の色の指定</p>
+        <div class="row">
+            <div class="col-sm-6">
+                <p class="border border-primary">border-primary</p>
+            </div>
+            <div class="col-sm-6">
+                <p class="border border-secondary">border-secondary</p>
+            </div>
+            <div class="col-sm-6">
+                <p class="border border-success">border-success</p>
+            </div>
+            <div class="col-sm-6">
+                <p class="border border-info">border-info</p>
+            </div>
+            <div class="col-sm-6">
+                <p class="border border-warning">border-warning</p>
+            </div>
+            <div class="col-sm-6">
+                <p class="border border-danger">border-danger</p>
+            </div>
+        </div>
+        <hr>
+        <p>・角を丸める指定</p>
+        <div class="row">
+            <div class="col-sm-6">
+                <p class="border border-dark rounded">rounded</p>
+            </div>
+            <div class="col-sm-6">
+                <p class="border border-dark rounded-top">rounded-top</p>
+            </div>
+            <div class="col-sm-6">
+                <p class="border border-dark rounded-left">rounded-left</p>
+            </div>
+            <div class="col-sm-6">
+                <p class="border border-dark rounded-circle">rounded-circle</p>
             </div>
         </div>
     </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">フロート表示</span>
-    <div class="section_description">
-        複数のブロック要素の内容を同じ行に並べて配置できる機能をフロートという。
-    </div>
-    <p>・通常時</p>
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="float-none table-success">this is float-none.</div>
-            <div class="float-right table-primary">float-right 1</div>
-            <div class="float-right table-secondary">float-right 2</div>
-            <div class="float-left table-warning">float-left 1</div>
-            <div class="float-left table-danger">float-left 2</div>
-        </div>
-    </div>
+    <div class="mt-1"></div>
     <hr>
-    <p>・クリアフィクス利用時<br>
-        ※ここではフロートをリセットしたいという時に使う</p>
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="float-none table-success">this is float-none.</div>
-            <div class="clearfix"></div>
-            <div class="float-right table-primary">float-right 1</div>
-            <div class="clearfix"></div>
-            <div class="float-right table-secondary">float-right 2</div>
-            <div class="clearfix"></div>
-            <div class="float-left table-warning">float-left 1</div>
-            <div class="clearfix"></div>
-            <div class="float-left table-danger">float-left 2</div>
-        </div>
-    </div>
-</div>
-<div class="container study_section">
-    <span class="section_title">フレックスによる整列</span>
-    <div class="section_description">
-        フロートと似た仕組みで整列するが、縦方向の整列がある。<br>
-        表示の仕方はブロックとインラインがある。
-    </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <p>・横方向に整列</p>
-            <div class="d-flex">
-                <div class="table-info">this is flex A</div>
-                <div class="table-warning">this is flex B</div>
-                <div class="table-danger">this is flex C</div>
-            </div>
-            <hr>
-            <p>・横方向に逆から整列</p>
-            <div class="d-flex flex-row-reverse">
-                <div class="table-info">this is flex A</div>
-                <div class="table-warning">this is flex B</div>
-                <div class="table-danger">this is flex C</div>
-            </div>
-            <hr>
-            <p>・縦方向に整列</p>
-            <div class="d-flex flex-column">
-                <div class="table-info">this is flex A</div>
-                <div class="table-warning">this is flex B</div>
-                <div class="table-danger">this is flex C</div>
-            </div>
-            <hr>
-            <p>・縦方向に逆から整列</p>
-            <div class="d-flex flex-column-reverse">
-                <div class="table-info">this is flex A</div>
-                <div class="table-warning">this is flex B</div>
-                <div class="table-danger">this is flex C</div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">間隔の調整</span>
-    <div class="section_description">
-        margin,paddingの指定をする際に使う省略したクラス。<br>
-        m,pとx,y,t,b,r,lは続けて記述し、ハイフンでつないで幅の指定を行う。
-    </div>
-    <div class="row">
-        <div class="col-sm-4 ">
-            <table class="table table-dark table-bordered table-striped table-sm">
-
-                <tbody>
-                <tr>
-                    <td>m</td>
-                    <td>marginの設定</td>
-                </tr>
-                <tr>
-                    <td>p</td>
-                    <td>paddingの設定</td>
-                </tr>
-                <tr>
-                    <td>x</td>
-                    <td>left,rightの設定</td>
-                </tr>
-                <tr>
-                    <td>y</td>
-                    <td>top,bottomの設定</td>
-                </tr>
-                <tr>
-                    <td>t</td>
-                    <td>topの設定</td>
-                </tr>
-                <tr>
-                    <td>b</td>
-                    <td>bottomの設定</td>
-                </tr>
-                <tr>
-                    <td>r</td>
-                    <td>rightの設定</td>
-                </tr>
-                <tr>
-                    <td>l</td>
-                    <td>leftの設定</td>
-                </tr>
-
-                </tbody>
-            </table>
-        </div>
-        <div class="col-sm-4">
-            <table class="table table-dark table-bordered table-striped table-sm">
-
-                <tbody>
-                <tr>
-                    <td>0</td>
-                    <td>幅をゼロに指定</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>幅を0.25remに指定</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>幅を0.5remに指定</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>幅を1remに指定</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>幅を1.5remに指定</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>幅を3remに指定</td>
-                </tr>
-                <tr>
-                    <td>auto</td>
-                    <td>幅を自動調整</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="m-3 p-3 table-primary">this is m-3 p-3 space.</div>
-            <div class="m-3 px-3 table-primary">this is m-3 px-3 space.</div>
-            <div class="m-3 py-3 table-primary">this is m-3 py-3 space.</div>
-        </div>
-    </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">サイズの調整</span>
-    <div class="section_description">
-        margin,padding以外にwidth,heightを調整するクラス。<br>
-        w,hの後ろに、ハイフンでつないで幅の指定を行う。
-    </div>
-    <div class="row">
-        <div class="col-sm-4 ">
-            <table class="table table-dark table-bordered table-striped table-sm">
-                <tbody>
-                <tr>
-                    <td>ｗ</td>
-                    <td>widthの設定</td>
-                </tr>
-                <tr>
-                    <td>ｈ</td>
-                    <td>heightの設定</td>
-                </tr>
-                </tbody>
-            </table>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">インラインとブロック</span>
+        <div class="section_description">
+            d-inline,d-block,d-inline-blockクラスを使うと<br>
+            通常インラインの要素をブロック要素にしたり、逆にブロック要素をインライン要素にしたり<br>
+            インラインブロック要素にしたりが可能である。
         </div>
 
-        <div class="col-sm-4">
-            <table class="table table-dark table-bordered table-striped table-sm">
-                <tbody>
-                <tr>
-                    <td>25</td>
-                    <td>25％に設定</td>
-                </tr>
-                <tr>
-                    <td>50</td>
-                    <td>50％に設定</td>
-                </tr>
-                <tr>
-                    <td>75</td>
-                    <td>75％に設定</td>
-                </tr>
-                <tr>
-                    <td>100</td>
-                    <td>100％に設定</td>
-                </tr>
-                <tr>
-                    <td>auto</td>
-                    <td>autoに設定</td>
-                </tr>
-                <tr>
-                    <td>上記以外</td>
-                    <td>存在しない</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="w-25 p-3 table-primary">this is width 25%.</div>
-            <div class="w-50 p-3 table-info">this is width 50%.</div>
-            <div class="w-75 p-3 table-warning">this is width 75%.</div>
-            <div class="w-100 p-3 table-danger">this is width 100%.</div>
-            <div class="w-auto p-3 table-success">this is width auto.</div>
-            <div class="w-15 p-3 table-dark">this is width 15%. ※存在しない</div>
-        </div>
-    </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">テキストの位置揃え</span>
-    <div class="section_description">
-        テキストを左、中央、右、均等に揃える事が出来る。
-    </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="p-2 border text-left">this is text-left</div>
-            <div class="p-2 border text-center">this is text-center</div>
-            <div class="p-2 border text-right">this is text-right</div>
-            <div class="p-2 border text-justify">text-justify 右端の文字の位置が揃っていることに注目<br><br>ハンセン病は、抗酸菌の一種であるらい菌（Mycobacterium
-                leprae）の皮膚のマクロファージ内寄生および末梢神経細胞内寄生によって引き起こされる感染症である。
-                病名は1873年にらい菌を発見したノルウェー人医師アルマウェル・ハンセンの姓に由来する。かつては「癩（らい）」、「癩病」、「らい病」とも呼ばれていたが、それらを差別的に感じる人も多く、歴史的な文脈以外での使用は避けられるのが一般的である。
-                感染経路は、らい菌の経鼻・経気道よりのものが主であるが、他系統も存在する。らい菌の感染力は非常に低く、治療法も確立した現状では、重篤な後遺症を残すことや感染源になることは無いものの、適切な治療を受けない・受けられない場合、皮膚に重度の病変が生じ、他者へ感染することもある。……
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="d-inline table-primary">this is inline context.</div>
+                <div class="d-inline table-primary">this is inline context.</div>
+                <div class="d-inline table-primary">this is inline context.</div>
+                <hr>
+                <div class="d-block table-secondary">this is block context.</div>
+                <div class="d-block table-secondary">this is block context.</div>
+                <div class="d-block table-secondary">this is block context.</div>
             </div>
-            <div class="p-2 border">text-justify指定なし<br><br>ハンセン病は、抗酸菌の一種であるらい菌（Mycobacterium
-                leprae）の皮膚のマクロファージ内寄生および末梢神経細胞内寄生によって引き起こされる感染症である。
-                病名は1873年にらい菌を発見したノルウェー人医師アルマウェル・ハンセンの姓に由来する。かつては「癩（らい）」、「癩病」、「らい病」とも呼ばれていたが、それらを差別的に感じる人も多く、歴史的な文脈以外での使用は避けられるのが一般的である。
-                感染経路は、らい菌の経鼻・経気道よりのものが主であるが、他系統も存在する。らい菌の感染力は非常に低く、治療法も確立した現状では、重篤な後遺症を残すことや感染源になることは無いものの、適切な治療を受けない・受けられない場合、皮膚に重度の病変が生じ、他者へ感染することもある。……
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="d-inline-block table-info">
+                    <h3>inline block</h3>
+                    <p>this is inline-block context.</p>
+                </div>
+                <div class="d-inline-block table-warning">
+                    <h3>inline brock</h3>
+                    <p>this is inline-block context.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">フロート表示</span>
+        <div class="section_description">
+            複数のブロック要素の内容を同じ行に並べて配置できる機能をフロートという。
+        </div>
+        <p>・通常時</p>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="float-none table-success">this is float-none.</div>
+                <div class="float-right table-primary">float-right 1</div>
+                <div class="float-right table-secondary">float-right 2</div>
+                <div class="float-left table-warning">float-left 1</div>
+                <div class="float-left table-danger">float-left 2</div>
+            </div>
+        </div>
+        <hr>
+        <p>・クリアフィクス利用時<br>
+            ※ここではフロートをリセットしたいという時に使う</p>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="float-none table-success">this is float-none.</div>
+                <div class="clearfix"></div>
+                <div class="float-right table-primary">float-right 1</div>
+                <div class="clearfix"></div>
+                <div class="float-right table-secondary">float-right 2</div>
+                <div class="clearfix"></div>
+                <div class="float-left table-warning">float-left 1</div>
+                <div class="clearfix"></div>
+                <div class="float-left table-danger">float-left 2</div>
+            </div>
+        </div>
+    </div>
+    <div class="study_section">
+        <span class="section_title">フレックスによる整列</span>
+        <div class="section_description">
+            フロートと似た仕組みで整列するが、縦方向の整列がある。<br>
+            表示の仕方はブロックとインラインがある。
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <p>・横方向に整列</p>
+                <div class="d-flex">
+                    <div class="table-info">this is flex A</div>
+                    <div class="table-warning">this is flex B</div>
+                    <div class="table-danger">this is flex C</div>
+                </div>
+                <hr>
+                <p>・横方向に逆から整列</p>
+                <div class="d-flex flex-row-reverse">
+                    <div class="table-info">this is flex A</div>
+                    <div class="table-warning">this is flex B</div>
+                    <div class="table-danger">this is flex C</div>
+                </div>
+                <hr>
+                <p>・縦方向に整列</p>
+                <div class="d-flex flex-column">
+                    <div class="table-info">this is flex A</div>
+                    <div class="table-warning">this is flex B</div>
+                    <div class="table-danger">this is flex C</div>
+                </div>
+                <hr>
+                <p>・縦方向に逆から整列</p>
+                <div class="d-flex flex-column-reverse">
+                    <div class="table-info">this is flex A</div>
+                    <div class="table-warning">this is flex B</div>
+                    <div class="table-danger">this is flex C</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">間隔の調整</span>
+        <div class="section_description">
+            margin,paddingの指定をする際に使う省略したクラス。<br>
+            m,pとx,y,t,b,r,lは続けて記述し、ハイフンでつないで幅の指定を行う。
+        </div>
+        <div class="row">
+            <div class="col-sm-4 ">
+                <table class="table table-dark table-bordered table-striped table-sm">
+
+                    <tbody>
+                    <tr>
+                        <td>m</td>
+                        <td>marginの設定</td>
+                    </tr>
+                    <tr>
+                        <td>p</td>
+                        <td>paddingの設定</td>
+                    </tr>
+                    <tr>
+                        <td>x</td>
+                        <td>left,rightの設定</td>
+                    </tr>
+                    <tr>
+                        <td>y</td>
+                        <td>top,bottomの設定</td>
+                    </tr>
+                    <tr>
+                        <td>t</td>
+                        <td>topの設定</td>
+                    </tr>
+                    <tr>
+                        <td>b</td>
+                        <td>bottomの設定</td>
+                    </tr>
+                    <tr>
+                        <td>r</td>
+                        <td>rightの設定</td>
+                    </tr>
+                    <tr>
+                        <td>l</td>
+                        <td>leftの設定</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-4">
+                <table class="table table-dark table-bordered table-striped table-sm">
+
+                    <tbody>
+                    <tr>
+                        <td>0</td>
+                        <td>幅をゼロに指定</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>幅を0.25remに指定</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>幅を0.5remに指定</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>幅を1remに指定</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>幅を1.5remに指定</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>幅を3remに指定</td>
+                    </tr>
+                    <tr>
+                        <td>auto</td>
+                        <td>幅を自動調整</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="m-3 p-3 table-primary">this is m-3 p-3 space.</div>
+                <div class="m-3 px-3 table-primary">this is m-3 px-3 space.</div>
+                <div class="m-3 py-3 table-primary">this is m-3 py-3 space.</div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">サイズの調整</span>
+        <div class="section_description">
+            margin,padding以外にwidth,heightを調整するクラス。<br>
+            w,hの後ろに、ハイフンでつないで幅の指定を行う。
+        </div>
+        <div class="row">
+            <div class="col-sm-4 ">
+                <table class="table table-dark table-bordered table-striped table-sm">
+                    <tbody>
+                    <tr>
+                        <td>ｗ</td>
+                        <td>widthの設定</td>
+                    </tr>
+                    <tr>
+                        <td>ｈ</td>
+                        <td>heightの設定</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-sm-4">
+                <table class="table table-dark table-bordered table-striped table-sm">
+                    <tbody>
+                    <tr>
+                        <td>25</td>
+                        <td>25％に設定</td>
+                    </tr>
+                    <tr>
+                        <td>50</td>
+                        <td>50％に設定</td>
+                    </tr>
+                    <tr>
+                        <td>75</td>
+                        <td>75％に設定</td>
+                    </tr>
+                    <tr>
+                        <td>100</td>
+                        <td>100％に設定</td>
+                    </tr>
+                    <tr>
+                        <td>auto</td>
+                        <td>autoに設定</td>
+                    </tr>
+                    <tr>
+                        <td>上記以外</td>
+                        <td>存在しない</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="w-25 p-3 table-primary">this is width 25%.</div>
+                <div class="w-50 p-3 table-info">this is width 50%.</div>
+                <div class="w-75 p-3 table-warning">this is width 75%.</div>
+                <div class="w-100 p-3 table-danger">this is width 100%.</div>
+                <div class="w-auto p-3 table-success">this is width auto.</div>
+                <div class="w-15 p-3 table-dark">this is width 15%. ※存在しない</div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">テキストの位置揃え</span>
+        <div class="section_description">
+            テキストを左、中央、右、均等に揃える事が出来る。
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="p-2 border text-left">this is text-left</div>
+                <div class="p-2 border text-center">this is text-center</div>
+                <div class="p-2 border text-right">this is text-right</div>
+                <div class="p-2 border text-justify">text-justify 右端の文字の位置が揃っていることに注目<br><br>ハンセン病は、抗酸菌の一種であるらい菌（Mycobacterium
+                    leprae）の皮膚のマクロファージ内寄生および末梢神経細胞内寄生によって引き起こされる感染症である。
+                    病名は1873年にらい菌を発見したノルウェー人医師アルマウェル・ハンセンの姓に由来する。かつては「癩（らい）」、「癩病」、「らい病」とも呼ばれていたが、それらを差別的に感じる人も多く、歴史的な文脈以外での使用は避けられるのが一般的である。
+                    感染経路は、らい菌の経鼻・経気道よりのものが主であるが、他系統も存在する。らい菌の感染力は非常に低く、治療法も確立した現状では、重篤な後遺症を残すことや感染源になることは無いものの、適切な治療を受けない・受けられない場合、皮膚に重度の病変が生じ、他者へ感染することもある。……
+                </div>
+                <div class="p-2 border">text-justify指定なし<br><br>ハンセン病は、抗酸菌の一種であるらい菌（Mycobacterium
+                    leprae）の皮膚のマクロファージ内寄生および末梢神経細胞内寄生によって引き起こされる感染症である。
+                    病名は1873年にらい菌を発見したノルウェー人医師アルマウェル・ハンセンの姓に由来する。かつては「癩（らい）」、「癩病」、「らい病」とも呼ばれていたが、それらを差別的に感じる人も多く、歴史的な文脈以外での使用は避けられるのが一般的である。
+                    感染経路は、らい菌の経鼻・経気道よりのものが主であるが、他系統も存在する。らい菌の感染力は非常に低く、治療法も確立した現状では、重篤な後遺症を残すことや感染源になることは無いものの、適切な治療を受けない・受けられない場合、皮膚に重度の病変が生じ、他者へ感染することもある。……
+                </div>
             </div>
         </div>
     </div>

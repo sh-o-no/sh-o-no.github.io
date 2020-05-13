@@ -24,61 +24,59 @@
 </head>
 
 <body>
-
-<div class="container study_section">
-    <span class="section_title">ポップオーバーを表示する</span>
-    <div class="section_description">
-        ポップオーバーも下記の属性を記述し、表示させる。<br>
-        ・data-toggle="popover"：ポップオーバーが指定される<br>
-        ・data-placement="位置"：表示させる位置top,bottom,right,leftのいずれか<br>
-        ・title="タイトル"：ポップオーバーのタイトル<br>
-        ・data-content="コンテンツ"：ポップオーバーのコンテンツ<br>
-        <span class="text-danger">※popoverを初期化するためのjQueryのメソッド。<br>
+<div class="container-fruid">
+    <div class="study_section">
+        <span class="section_title">ポップオーバーを表示する</span>
+        <div class="section_description">
+            ポップオーバーも下記の属性を記述し、表示させる。<br>
+            ・data-toggle="popover"：ポップオーバーが指定される<br>
+            ・data-placement="位置"：表示させる位置top,bottom,right,leftのいずれか<br>
+            ・title="タイトル"：ポップオーバーのタイトル<br>
+            ・data-content="コンテンツ"：ポップオーバーのコンテンツ<br>
+            <span class="text-danger">※popoverを初期化するためのjQueryのメソッド。<br>
             　ツールチップを設定したタグを読み込んだ後に必ず記述する！</span>
-        <pre class="table-bordered border-primary pl-2 pt-2">
+            <pre class="table-bordered border-primary pl-2 pt-2">
 &lt;script&gt;
     $&#40;'[data-toggle="popover"]'&#41;.popover&#40;&#41;;
 &lt;script&gt;
         </pre>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button type="button" data-toggle="popover" class="btn btn-primary" data-placement="left"
+                                title="popover title"
+                                data-content="this is popover content!">click me
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <hr>
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="row">
-                <div class="col-sm-12">
-                    <button type="button" data-toggle="popover" class="btn btn-primary" data-placement="left"
-                            title="popover title"
-                            data-content="this is popover content!">click me
-                    </button>
+    <div class="study_section">
+        <span class="section_title">ポップオーバーを非表示にする</span>
+        <div class="section_description">
+            上記のポップオーバーは一度表示すると消えないようになっているが<br>
+            タグの中にdata-trigger="focus"属性も指定すると<br>
+            ポップオーバー以外の場所をクリックすると消えるようになる。<br>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button type="button" data-toggle="popover" class="btn btn-primary" data-placement="left"
+                                title="popover title" data-trigger="focus"
+                                data-content="this is popover content!">click me
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="container study_section">
-    <span class="section_title">ポップオーバーを非表示にする</span>
-    <div class="section_description">
-        上記のポップオーバーは一度表示すると消えないようになっているが<br>
-        タグの中にdata-trigger="focus"属性も指定すると<br>
-        ポップオーバー以外の場所をクリックすると消えるようになる。<br>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="row">
-                <div class="col-sm-12">
-                    <button type="button" data-toggle="popover" class="btn btn-primary" data-placement="left"
-                            title="popover title" data-trigger="focus"
-                            data-content="this is popover content!">click me
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
 </body>
 <script>
     $(function () {

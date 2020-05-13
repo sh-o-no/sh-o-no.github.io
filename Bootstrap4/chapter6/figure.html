@@ -24,80 +24,80 @@
 </head>
 
 <body>
-
-<div class="container study_section">
-    <span class="section_title">フィギュアの基本スタイル</span>
-    <div class="section_description">
-        イメージと説明分まとめて扱うのがフィギュアである。<br>
-        ブラウザの幅に応じてサイズが自動調整される。<br>
-        ■構成
-        <pre class="table-bordered border-primary pl-2 pt-2 small">
+<div class="container-fruid">
+    <div class="study_section">
+        <span class="section_title">フィギュアの基本スタイル</span>
+        <div class="section_description">
+            イメージと説明分まとめて扱うのがフィギュアである。<br>
+            ブラウザの幅に応じてサイズが自動調整される。<br>
+            ■構成
+            <pre class="table-bordered border-primary pl-2 pt-2 small">
 &lt;figure class="figure-img img-fluid" src="表示するイメージ"&gt;
         &lt;figcaption class="figure-caption"&gt;説明するテキスト&lt;/figcaption&gt;
 &lt;/figure&gt;</pre>
+        </div>
+        <hr>
+        <div class="row m-3">
+            <div class="col-12">
+                <figure class="figure">
+                    <img src="../img/sample.jpg" class="figure-img img-fluid" alt="figure sample">
+                    <figcaption class="figure-caption">this is sample image.これはサンプルのイメージです。</figcaption>
+                </figure>
+            </div>
+        </div>
     </div>
+    <div class="mt-1"></div>
     <hr>
-    <div class="row m-3">
-        <div class="col-12">
-            <figure class="figure">
-                <img src="../img/sample.jpg" class="figure-img img-fluid" alt="figure sample">
-                <figcaption class="figure-caption">this is sample image.これはサンプルのイメージです。</figcaption>
-            </figure>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">イメージサイズの固定</span>
+        <div class="section_description">
+            <p>style="width: px;"をfigureタグに指定する。<br>
+                これは必ずfigureタグに指定すること。<br>
+                imgタグに指定すると説明テキストに反映されず崩れてしまう。</p>
+        </div>
+        <div class="row m-3">
+            <div class="col-12">
+                <figure class="figure" style="width: 200px;">
+                    <img src="../img/sample.jpg" class="figure-img img-fluid" alt="figure sample">
+                    <figcaption class="figure-caption">this is sample image.これはサンプルのイメージです。</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">円形イメージ</span>
+        <div class="section_description">
+            <p>イメージの表示はimgタグに指定する。</p>
+        </div>
+        <div class="row m-3">
+            <div class="col-12">
+                <figure class="figure" style="width: 300px;">
+                    <img src="../img/sample.jpg" class="figure-img img-fluid rounded" alt="figure sample">
+                    <figcaption class="figure-caption">rounded（角に丸みをつける）</figcaption>
+                </figure>
+                <figure class="figure" style="width: 300px;">
+                    <img src="../img/sample2.jpg" class="figure-img img-fluid rounded-0" alt="figure sample">
+                    <figcaption class="figure-caption">rounded-0（角の丸みを0にする）</figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="row m-3">
+            <div class="col-12">
+                <figure class="figure" style="width: 300px;">
+                    <img src="../img/sample3.jpg" class="figure-img img-fluid rounded-circle" alt="figure sample">
+                    <figcaption class="figure-caption">rounded-circle（楕円形にする）</figcaption>
+                </figure>
+                <figure class="figure" style="width: 300px;">
+                    <img src="../img/sample4.jpg" class="figure-img img-fluid badge-pill" alt="figure sample">
+                    <figcaption class="figure-caption">badge-pill（ピル型にする）</figcaption>
+                </figure>
+            </div>
         </div>
     </div>
 </div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">イメージサイズの固定</span>
-    <div class="section_description">
-        <p>style="width: px;"をfigureタグに指定する。<br>
-            これは必ずfigureタグに指定すること。<br>
-            imgタグに指定すると説明テキストに反映されず崩れてしまう。</p>
-    </div>
-    <div class="row m-3">
-        <div class="col-12">
-            <figure class="figure" style="width: 200px;">
-                <img src="../img/sample.jpg" class="figure-img img-fluid" alt="figure sample">
-                <figcaption class="figure-caption">this is sample image.これはサンプルのイメージです。</figcaption>
-            </figure>
-        </div>
-    </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">円形イメージ</span>
-    <div class="section_description">
-        <p>イメージの表示はimgタグに指定する。</p>
-    </div>
-    <div class="row m-3">
-        <div class="col-12">
-            <figure class="figure" style="width: 300px;">
-                <img src="../img/sample.jpg" class="figure-img img-fluid rounded" alt="figure sample">
-                <figcaption class="figure-caption">rounded（角に丸みをつける）</figcaption>
-            </figure>
-            <figure class="figure" style="width: 300px;">
-                <img src="../img/sample2.jpg" class="figure-img img-fluid rounded-0" alt="figure sample">
-                <figcaption class="figure-caption">rounded-0（角の丸みを0にする）</figcaption>
-            </figure>
-        </div>
-    </div>
-    <div class="row m-3">
-        <div class="col-12">
-            <figure class="figure" style="width: 300px;">
-                <img src="../img/sample3.jpg" class="figure-img img-fluid rounded-circle" alt="figure sample">
-                <figcaption class="figure-caption">rounded-circle（楕円形にする）</figcaption>
-            </figure>
-            <figure class="figure" style="width: 300px;">
-                <img src="../img/sample4.jpg" class="figure-img img-fluid badge-pill" alt="figure sample">
-                <figcaption class="figure-caption">badge-pill（ピル型にする）</figcaption>
-            </figure>
-        </div>
-    </div>
-</div>
-
 </body>
 </html>

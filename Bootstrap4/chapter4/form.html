@@ -25,7 +25,7 @@
 
 <body>
 
-<div class="container study_section">
+<div class="study_section">
     <span class="section_title">フォームのスタイル</span>
     <div class="section_description">
         フォーム部品にもBootstarpのスタイルが用意されている。<br>
@@ -51,7 +51,7 @@
         </form>
     </div>
 </div>
-<div class="container study_section">
+<div class="study_section">
     <span class="section_title">ラベルとヒント</span>
     <div class="section_description">
         ■入力フィールドの基本構成
@@ -104,191 +104,202 @@
 <div class="mt-1"></div>
 <hr>
 <div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">form-controlクラスについて</span>
-    <div class="section_description">
-        form-controlを使用した場合の各コントロール類の表示一覧。
-    </div>
-    <div class="row">
-        <form method="post" action="#">
-            <div class="form-group">
-                <label>text</label>
-                <input type="text" class="form-control" placeholder="message">
-            </div>
-            <div class="form-group">
-                <label>email</label>
-                <input type="email" class="form-control" placeholder="mail address">
-            </div>
-            <div class="form-group">
-                <label>password</label>
-                <input type="password" class="form-control" placeholder="password">
-            </div>
-            <div class="form-group">
-                <label>number</label>
-                <input type="number" class="form-control" value="100">
-            </div>
-            <div class="form-group">
-                <label>date</label>
-                <input type="date" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>time</label>
-                <input type="time" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>color</label>
-                <input type="color" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>select(サイズ1)</label>
-                <select class="form-control">
-                    <!--                    form-controlはselectタグにのみ記述-->
-                    <option>one</option>
-                    <option>two</option>
-                    <option>three</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>select(サイズ3)</label>
-                <select class="form-control" size="3">
-                    <!--                    form-controlはselectタグにのみ記述-->
+<div class="container-fruid">
+    <div class="study_section">
+        <span class="section_title">form-controlクラスについて</span>
+        <div class="section_description">
+            form-controlを使用した場合の各コントロール類の表示一覧。
+        </div>
+        <div class="row">
+            <form method="post" action="#">
+                <div class="form-group">
+                    <label>text
+                        <input type="text" class="form-control" placeholder="message">
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>email
+                        <input type="email" class="form-control" placeholder="mail address">
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>password
+                        <input type="password" class="form-control" placeholder="password">
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>number
+                        <input type="number" class="form-control" value="100">
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>date
+                        <input type="date" class="form-control">
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>time
+                        <input type="time" class="form-control">
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>color
+                        <input type="color" class="form-control">
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>select(サイズ1)
+                        <select class="form-control">
+                            <!--                    form-controlはselectタグにのみ記述-->
+                            <option>one</option>
+                            <option>two</option>
+                            <option>three</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>select(サイズ3)
+                        <select class="form-control" size="3">
+                            <!--                    form-controlはselectタグにのみ記述-->
 
-                    <option>one</option>
-                    <option>two</option>
-                    <option>three</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>textarea</label>
-                <textarea class="form-control"></textarea>
-            </div>
-        </form>
+                            <option>one</option>
+                            <option>two</option>
+                            <option>three</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>textarea
+                        <textarea class="form-control"></textarea>
+                    </label>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">チェックボックスとラジオボタン</span>
+        <div class="section_description">
+            この2つにはform-control以外のクラスが用意されている。<br>
+            チェックボックスとラジオボタンのグループ：form-check<br>
+            チェックボックスとラジオボタンのラベル：form-check-label<br>
+            チェックボックスとラジオボタンのコントロール：form-check-input<br>
+            を使用する。<br>
+            Bootstrap4からクラスのdisabledは不要になった為記述はinputタグのみ。（<a
+                href="https://cccabinet.jpn.org/bootstrap4/components/forms">詳細</a>）
+        </div>
+        <div class="row">
+            <form method="post" action="#">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        checkbox control
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="radio">
+                        radio button A
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="radio">
+                        radio button B
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="radio" disabled>
+                        radio button C (disabled)
+                    </label>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">コントロールのサイズ指定</span>
+        <div class="section_description">
+            入力フィールドの高さ(height)は3種類用意されている。
+        </div>
+        <div class="row">
+            <form method="post" action="#">
+                <div class="form-group">
+                    <label>form-control-lg
+                        <input type="text" class="form-control form-control-lg">
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>form-control
+                        <input type="text" class="form-control">
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>form-control-sm
+                        <input type="text" class="form-control form-control-sm">
+                    </label>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">ボタンのサイズ指定</span>
+        <div class="section_description">
+            ボタンの高さ(height)は3種類用意されている。
+        </div>
+        <div class="row">
+            <form method="post" action="#">
+                <div class="form-group">
+                    <input type="submit" class="btn btn-lg btn-primary" value="btn-lg">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="btn">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-sm btn-primary" value="btn-sm">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">フォームを利用不可にする</span>
+        <div class="section_description">
+            コントロールのタグにdisabledを追加すると必要に応じて使えないように出来る。
+        </div>
+        <div class="row">
+            <form method="post" action="#">
+                ・利用可
+                <div class="form-group">
+                    <label>
+                        <input type="text" class="form-control">
+                    </label>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="send">
+                </div>
+                ・利用不可
+                <div class="form-group">
+                    <label>
+                        <input type="text" class="form-control" disabled>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="send" disabled>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">チェックボックスとラジオボタン</span>
-    <div class="section_description">
-        この2つにはform-control以外のクラスが用意されている。<br>
-        チェックボックスとラジオボタンのグループ：form-check<br>
-        チェックボックスとラジオボタンのラベル：form-check-label<br>
-        チェックボックスとラジオボタンのコントロール：form-check-input<br>
-        を使用する。<br>
-        Bootstrap4からクラスのdisabledは不要になった為記述はinputタグのみ。（<a
-            href="https://cccabinet.jpn.org/bootstrap4/components/forms">詳細</a>）
-    </div>
-    <div class="row">
-        <form method="post" action="#">
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input">
-                    checkbox control
-                </label>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="radio">
-                    radio button A
-                </label>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="radio">
-                    radio button B
-                </label>
-            </div>
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="radio" disabled>
-                    radio button C (disabled)
-                </label>
-            </div>
-        </form>
-    </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">コントロールのサイズ指定</span>
-    <div class="section_description">
-        入力フィールドの高さ(height)は3種類用意されている。
-    </div>
-
-    <div class="row">
-        <form method="post" action="#">
-            <div class="form-group">
-                <label>form-control-lg</label>
-                <input type="text" class="form-control form-control-lg">
-            </div>
-            <div class="form-group">
-                <label>form-control</label>
-                <input type="text" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>form-control-sm</label>
-                <input type="text" class="form-control form-control-sm">
-            </div>
-        </form>
-    </div>
-
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">ボタンのサイズ指定</span>
-    <div class="section_description">
-        ボタンの高さ(height)は3種類用意されている。
-    </div>
-
-    <div class="row">
-        <form method="post" action="#">
-            <div class="form-group">
-                <input type="submit" class="btn btn-lg btn-primary" value="btn-lg">
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="btn">
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-sm btn-primary" value="btn-sm">
-            </div>
-        </form>
-    </div>
-
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">フォームを利用不可にする</span>
-    <div class="section_description">
-        コントロールのタグにdisabledを追加すると必要に応じて使えないように出来る。
-    </div>
-
-    <div class="row">
-        <form method="post" action="#">
-            ・利用可
-            <div class="form-group">
-                <input type="text" class="form-control">
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="send">
-            </div>
-            ・利用不可
-            <div class="form-group">
-                <input type="text" class="form-control" disabled>
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="send" disabled>
-            </div>
-        </form>
-    </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
 </body>
 </html>

@@ -24,14 +24,14 @@
 </head>
 
 <body>
-
-<div class="container study_section">
-    <span class="section_title">リストグループの項目追加</span>
-    <div class="section_description">
-        リストグループの項目もスクリプト操作によって追加することが出来る。<br>
-        event.preventDefault();は重要で、これを行わないと生成がやり直され、追加した項目が消える。<br>
-        ■Scriptの内容
-        <pre class="table-bordered border-primary pl-2 pt-2">
+<div class="container-fruid">
+    <div class="study_section">
+        <span class="section_title">リストグループの項目追加</span>
+        <div class="section_description">
+            リストグループの項目もスクリプト操作によって追加することが出来る。<br>
+            event.preventDefault();は重要で、これを行わないと生成がやり直され、追加した項目が消える。<br>
+            ■Scriptの内容
+            <pre class="table-bordered border-primary pl-2 pt-2">
 <span class="text-success">//要素をクリックしたときの処理</span>
 $('&lt;button&gt;').click(function (event) {
     let input = $('&lt;input&gt;')
@@ -46,40 +46,40 @@ $('&lt;button&gt;').click(function (event) {
     event.preventDefault();<span class="text-success">// イベント中断</span>
     input.val('');<span class="text-success">// inputの値を空にする</span>
 });</pre>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-12">
-            <div>
-                <ul id="listGroup1" class="list-group">
-                    <li class="list-group-item">Windows</li>
-                    <li class="list-group-item">macOS</li>
-                    <li class="list-group-item">Linux</li>
-                </ul>
-            </div>
-            <div class="mt-5">
-                <form class="form-inline">
-                    <label>
-                        <input type="text" id="input1" class="form-control mr-2">
-                    </label>
-                    <button class="btn btn-primary" id="addItemBtn">Add Item</button>
-                </form>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <div>
+                    <ul id="listGroup1" class="list-group">
+                        <li class="list-group-item">Windows</li>
+                        <li class="list-group-item">macOS</li>
+                        <li class="list-group-item">Linux</li>
+                    </ul>
+                </div>
+                <div class="mt-5">
+                    <form class="form-inline">
+                        <label>
+                            <input type="text" id="input1" class="form-control mr-2">
+                        </label>
+                        <button class="btn btn-primary" id="addItemBtn">Add Item</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">リストグループの項目の並び順操作</span>
-    <div class="section_description">
-        すでに組み込まれているリストグループの並び順は<br>
-        項目を配列として取り出し、並び順を操作してから再びappendで組み込む。<br>
-        .toArray()：要素を取り出す<br>
-        .reverse()：逆順にする<br>
-        ■Scriptの内容
-        <pre class="table-bordered border-primary pl-2 pt-2">
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">リストグループの項目の並び順操作</span>
+        <div class="section_description">
+            すでに組み込まれているリストグループの並び順は<br>
+            項目を配列として取り出し、並び順を操作してから再びappendで組み込む。<br>
+            .toArray()：要素を取り出す<br>
+            .reverse()：逆順にする<br>
+            ■Scriptの内容
+            <pre class="table-bordered border-primary pl-2 pt-2">
 <span class="text-success">// 要素をクリックした時の処理</span>
 $('&lt;button&gt;').click(function (event) {
     $('&lt;selector&gt;')
@@ -90,21 +90,22 @@ $('&lt;button&gt;').click(function (event) {
     );
     event.preventDefault();<span class="text-success">// イベント中断</span>
 });</pre>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-12">
-            <div>
-                <ul id="listGroup2" class="list-group">
-                    <li class="list-group-item">Windows</li>
-                    <li class="list-group-item">macOS</li>
-                    <li class="list-group-item">Linux</li>
-                </ul>
-            </div>
-            <div class="mt-5">
-                <form class="form-inline">
-                    <button class="btn btn-primary" id="listItemBtn">click</button>
-                </form>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <div>
+                    <ul id="listGroup2" class="list-group">
+                        <li class="list-group-item">Windows</li>
+                        <li class="list-group-item">macOS</li>
+                        <li class="list-group-item">Linux</li>
+                    </ul>
+                </div>
+                <div class="mt-5">
+                    <form class="form-inline">
+                        <button class="btn btn-primary" id="listItemBtn">click</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
