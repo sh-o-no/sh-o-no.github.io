@@ -24,65 +24,67 @@
 </head>
 
 <body>
-
-<div class="container study_section">
-    <span class="section_title">Navのタブ表示を切り替える</span>
-    <div class="section_description">
-        Navのタブ表示を切り替えたい場合にはtebメソッドを使うことで可能となる。<br>
-        tabメソッドの引数に'show'を指定して呼び出すとそのタブが選択される。<br>
-        下記のサンプルはwindows以外を選択している場合でもボタンをクリックするとwindowsタブに戻る。<br>
-        ■Scriptの内容
-        <pre class="table-bordered border-primary pl-2 pt-2">
+<div class="container-fruid">
+    <div class="study_section">
+        <span class="section_title">Navのタブ表示を切り替える</span>
+        <div class="section_description">
+            Navのタブ表示を切り替えたい場合にはtebメソッドを使うことで可能となる。<br>
+            tabメソッドの引数に'show'を指定して呼び出すとそのタブが選択される。<br>
+            下記のサンプルはwindows以外を選択している場合でもボタンをクリックするとwindowsタブに戻る。<br>
+            ■Scriptの内容
+            <pre class="table-bordered border-primary pl-2 pt-2">
 <span class="text-success">// 要素をクリックしたときの処理</span>
 $('&lt;selector&gt;').click(function () {
     $('&lt;tab&gt;').tab('show');<span class="text-success">// 指定のタブを選択する</span>
 });</pre>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <div class="row m-3">
-                <div class="col-12">
-                    <div class="nav nav-tabs" role="tablist" id="tab1">
-                        <a class="nav-link active" id="link-windows1" data-toggle="tab" href="#list-content-windows1"
-                           role="tab">Windows</a>
-                        <a class="nav-link" id="link-mac1" data-toggle="tab" href="#list-content-mac1"
-                           role="tab">macOS</a>
-                        <a class="nav-link" id="link-linux1" data-toggle="tab" href="#list-content-linux1" role="tab">Linux</a>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="row m-3">
+                    <div class="col-12">
+                        <div class="nav nav-tabs" role="tablist" id="tab1">
+                            <a class="nav-link active" id="link-windows1" data-toggle="tab"
+                               href="#list-content-windows1"
+                               role="tab">Windows</a>
+                            <a class="nav-link" id="link-mac1" data-toggle="tab" href="#list-content-mac1"
+                               role="tab">macOS</a>
+                            <a class="nav-link" id="link-linux1" data-toggle="tab" href="#list-content-linux1"
+                               role="tab">Linux</a>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="list-content-windows1" role="tabpanel">
+                                This is content for Windows. This is content for Windows.
+                                This is content for Windows. This is content for Windows.
+                            </div>
+                            <div class="tab-pane fade" id="list-content-mac1" role="tabpanel">
+                                This is content for macOS. This is content for macOS.
+                                This is content for macOS. This is content for macOS.
+                            </div>
+                            <div class="tab-pane fade" id="list-content-linux1" role="tabpanel">
+                                This is content for Linux. This is content for Linux.
+                                This is content for Linux. This is content for Linux.
+                            </div>
+                        </div>
+                        <hr>
+                        <button class="btn btn-primary" id="navBtn1">default tab</button>
                     </div>
-                    <div class="tab-content">
-                        <div class="tab-pane fade show active" id="list-content-windows1" role="tabpanel">
-                            This is content for Windows. This is content for Windows.
-                            This is content for Windows. This is content for Windows.
-                        </div>
-                        <div class="tab-pane fade" id="list-content-mac1" role="tabpanel">
-                            This is content for macOS. This is content for macOS.
-                            This is content for macOS. This is content for macOS.
-                        </div>
-                        <div class="tab-pane fade" id="list-content-linux1" role="tabpanel">
-                            This is content for Linux. This is content for Linux.
-                            This is content for Linux. This is content for Linux.
-                        </div>
-                    </div>
-                    <hr>
-                    <button class="btn btn-primary" id="navBtn1">default tab</button>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">タブの切替イベント</span>
-    <div class="section_description">
-        タブの切替に関する独自のイベントが4種類用意されている。<br>
-        show.bs.tab：タブが選択された（切り替わりの開始）<br>
-        shown.bs.tab：タブが選択された状態に切り替わった（切り替わりの完了）<br>
-        hide.bs.tab：タブが非選択になった（切り替わりの開始）<br>
-        hidden.bs.tab：タブが非選択状態に切り替わった（切り替わりの完了）<br>
-        ■Scriptの内容
-        <pre class="table-bordered border-primary pl-2 pt-2">
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">タブの切替イベント</span>
+        <div class="section_description">
+            タブの切替に関する独自のイベントが4種類用意されている。<br>
+            show.bs.tab：タブが選択された（切り替わりの開始）<br>
+            shown.bs.tab：タブが選択された状態に切り替わった（切り替わりの完了）<br>
+            hide.bs.tab：タブが非選択になった（切り替わりの開始）<br>
+            hidden.bs.tab：タブが非選択状態に切り替わった（切り替わりの完了）<br>
+            ■Scriptの内容
+            <pre class="table-bordered border-primary pl-2 pt-2">
 (function () {
     <span class="text-success">// タブの背景色をつける</span>
     let tab_list = $('&lt;selector&gt;');
@@ -105,30 +107,33 @@ $('&lt;selector&gt;').click(function () {
             .removeClass('bg-primary text-white');<span class="text-success">// 更にクラスの削除</span>
     });
 })();</pre>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <div class="row m-3">
-                <div class="col-12">
-                    <div class="nav nav-tabs" role="tablist" id="tab2">
-                        <a class="nav-link active" id="link-windows2" data-toggle="tab" href="#list-content-windows2"
-                           role="tab">Windows</a>
-                        <a class="nav-link" id="link-mac2" data-toggle="tab" href="#list-content-mac2"
-                           role="tab">macOS</a>
-                        <a class="nav-link" id="link-linux2" data-toggle="tab" href="#list-content-linux2" role="tab">Linux</a>
-                    </div>
-                    <div class="tab-content">
-                        <div class="tab-pane fade show active" id="list-content-windows2" role="tabpanel">
-                            This is content for Windows. This is content for Windows.
-                            This is content for Windows. This is content for Windows.
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="row m-3">
+                    <div class="col-12">
+                        <div class="nav nav-tabs" role="tablist" id="tab2">
+                            <a class="nav-link active" id="link-windows2" data-toggle="tab"
+                               href="#list-content-windows2"
+                               role="tab">Windows</a>
+                            <a class="nav-link" id="link-mac2" data-toggle="tab" href="#list-content-mac2"
+                               role="tab">macOS</a>
+                            <a class="nav-link" id="link-linux2" data-toggle="tab" href="#list-content-linux2"
+                               role="tab">Linux</a>
                         </div>
-                        <div class="tab-pane fade" id="list-content-mac2" role="tabpanel">
-                            This is content for macOS. This is content for macOS.
-                            This is content for macOS. This is content for macOS.
-                        </div>
-                        <div class="tab-pane fade" id="list-content-linux2" role="tabpanel">
-                            This is content for Linux. This is content for Linux.
-                            This is content for Linux. This is content for Linux.
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="list-content-windows2" role="tabpanel">
+                                This is content for Windows. This is content for Windows.
+                                This is content for Windows. This is content for Windows.
+                            </div>
+                            <div class="tab-pane fade" id="list-content-mac2" role="tabpanel">
+                                This is content for macOS. This is content for macOS.
+                                This is content for macOS. This is content for macOS.
+                            </div>
+                            <div class="tab-pane fade" id="list-content-linux2" role="tabpanel">
+                                This is content for Linux. This is content for Linux.
+                                This is content for Linux. This is content for Linux.
+                            </div>
                         </div>
                     </div>
                 </div>

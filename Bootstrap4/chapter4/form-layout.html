@@ -24,390 +24,407 @@
 </head>
 
 <body>
-
-<div class="container study_section">
-    <span class="section_title">グリッドレイアウトとフォーム</span>
-    <div class="section_description">
-        「フォームの基本」でのフォームはcolクラスの指定をしていない場合の形である。<br>
-        colクラスを指定すると下記のように幅が自動調整される。
-    </div>
-
-    <div class="row">
-        <div class="col-sm-12">
-            <form method="post" action="#">
-                <div class="form-group">
-                    <label>Email address</label>
-                    <input type="email" class="form-control" placeholder="your address">
-                </div>
-                <div class="form-group">
-                    <label>Pass word</label>
-                    <input type="password" class="form-control" placeholder="password">
-                </div>
-                <div class="form-group">
-                    <input type="submit" class="btn btn-primary" value="send" aria-describedby="btn-tip">
-                </div>
-            </form>
-
-        </div>
-
-    </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">フォームのグリッド表示</span>
-    <div class="section_description">
-        フォームのコントロール類を必要に応じてcolタグ内に配置していくことで<br>
-        グリッドレイアウトに沿ってフォームをレイアウトすることが出来る。
-    </div>
-
-    <form method="post" action="#">
-        <div class="row">
-            <div class="col">
-                <div class="form-group">
-                    <label>Email address</label>
-                    <input type="email" class="form-control" placeholder="your address">
-                </div>
-            </div>
-            <div class="col">
-                <div class="form-group">
-                    <label>Pass word</label>
-                    <input type="password" class="form-control" placeholder="password">
-                </div>
-            </div>
+<div class="container-fruid">
+    <div class="study_section">
+        <span class="section_title">グリッドレイアウトとフォーム</span>
+        <div class="section_description">
+            「フォームの基本」でのフォームはcolクラスの指定をしていない場合の形である。<br>
+            colクラスを指定すると下記のように幅が自動調整される。
         </div>
         <div class="row">
-            <div class="col">
-                <div class="form-group">
-                    <label>First Name</label>
-                    <input type="text" class="form-control">
-                </div>
-            </div>
-            <div class="col">
-                <div class="form-group">
-                    <label>Second Name</label>
-                    <input type="text" class="form-control">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="form-group">
-                    <input type="submit" class="btn btn-primary" value="send" aria-describedby="btn-tip">
-                </div>
-            </div>
-            <div class="col text-right text-danger">だがしかし、こうは使わない！</div>
-        </div>
-    </form>
-</div>
+            <div class="col-sm-12">
+                <form method="post" action="#">
+                    <div class="form-group">
+                        <label>Email address
+                            <input type="email" class="form-control" placeholder="your address">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>Pass word
+                            <input type="password" class="form-control" placeholder="password">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" value="send" aria-describedby="btn-tip">
+                    </div>
+                </form>
 
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">form-rowによるrow設定</span>
-    <div class="section_description">
-        「フォームのグリッド表示」の記述はrowの外側にformを置く構成になっているが<br>
-        この構成はグリッドレイアウトの設計の外側にタグを置くということである。<br>
-        本来formはグリッドレイアウト上にコントロール類を表示していくやり方になる為<br>
-        この構成では気持ち悪くなってしまう。<br>
-        そこでform-rowというクラスを使うと構成にも違和感なくフォーム内をグリッドレイアウトすることが出来るようになる。
-    </div>
+            </div>
 
-    <div class="row">
-        <div class="col">
-            <form method="post" action="#">
-                <div class="form-row">
-                    <div class="col">
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input type="password" class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="col">
-                        <div class="form-group">
-                            <label>First Name</label>
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-group">
-                            <label>Second Name</label>
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="col">
-                        <div class="form-group">
-                            <input type="submit" class="btn btn-primary" value="send">
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="col-sm-3 p-3 table-secondary">
-            <p>this is form layout sample with form-row.</p>
         </div>
     </div>
-</div>
-
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">ボタンのブロック化</span>
-    <div class="section_description">
-        ボタンはインラインのコントロールのためグリッドレイアウトによる<br>
-        サイズ調整が効かない。サイズを自動調整したい場合には<br>
-        ボタンのスタイルにbtn-blockクラスを適応することでボタンがブロック要素になる。
-    </div>
-
-    <div class="row">
-        <div class="col-sm-12">
-            <form method="post" action="#">
-                <div class="form-group">
-                    <input type="text" class="form-control">
-                </div>
-                <div class="form-group">
-                    <input type="submit" class="btn btn-block btn-primary" value="send">
-                </div>
-            </form>
-        </div>
-    </div>
-
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">インライン表示について</span>
-    <div class="section_description">
-        Bootstrapのクラスを指定したコントロールは全て縦に並べられるようになっている。<br>
-        インライン表示にすることで、横一列に並ぶようになる。<br>
-        clearfixを使用する場合は、formタグにform-inlineを使ってはいけない。<br>
-        inputタグにform-check-inlineでコントロールに個別に指定しなければ使用は不可。
-    </div>
-
-    <p>・フォーム全体にインライン指定(formタグ内にform-inlineクラス指定)</p>
-    <div class="row">
-        <form method="post" action="#" class="form-inline">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="input 1">
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="input 2">
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="input 3">
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="send">
-            </div>
-        </form>
-    </div>
+    <div class="mt-1"></div>
     <hr>
-    ・個別にインライン指定(inputタグにform-check-inline指定)
-    <div class="row">
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">フォームのグリッド表示</span>
+        <div class="section_description">
+            フォームのコントロール類を必要に応じてcolタグ内に配置していくことで<br>
+            グリッドレイアウトに沿ってフォームをレイアウトすることが出来る。
+        </div>
+
         <form method="post" action="#">
-            <div class="form-check form-check-inline">
-                <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input">
-                    checkbox control
-                </label>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label>Email address
+                            <input type="email" class="form-control" placeholder="your address">
+                        </label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label>Pass word
+                            <input type="password" class="form-control" placeholder="password">
+                        </label>
+                    </div>
+                </div>
             </div>
-            <div class="form-check form-check-inline">
-                <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input">
-                    checkbox control
-                </label>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label>First Name
+                            <input type="text" class="form-control">
+                        </label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label>Second Name
+                            <input type="text" class="form-control">
+                        </label>
+                    </div>
+                </div>
             </div>
-            （ここでclearfixを使用している）
-            <div class="clearfix"></div>
-            <div class="form-check form-check-inline">
-                <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="radio">
-                    radio button A
-                </label>
-            </div>
-            <div class="form-check form-check-inline">
-                <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="radio">
-                    radio button B
-                </label>
-            </div>
-            <div class="form-check form-check-inline" disabled>
-                <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="radio" disabled>
-                    radio button C
-                </label>
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="send">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" value="send" aria-describedby="btn-tip">
+                    </div>
+                </div>
+                <div class="col text-right text-danger">だがしかし、こうは使わない！</div>
             </div>
         </form>
     </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">コラム幅の指定</span>
-    <div class="section_description">
-        入力フィールドはcolに列数を指定すると調整できる。
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">form-rowによるrow設定</span>
+        <div class="section_description">
+            「フォームのグリッド表示」の記述はrowの外側にformを置く構成になっているが<br>
+            この構成はグリッドレイアウトの設計の外側にタグを置くということである。<br>
+            本来formはグリッドレイアウト上にコントロール類を表示していくやり方になる為<br>
+            この構成では気持ち悪くなってしまう。<br>
+            そこでform-rowというクラスを使うと構成にも違和感なくフォーム内をグリッドレイアウトすることが出来るようになる。
+        </div>
+        <div class="row">
+            <div class="col">
+                <form method="post" action="#">
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Email
+                                    <input type="email" class="form-control">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Password
+                                    <input type="password" class="form-control">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label>First Name
+                                    <input type="text" class="form-control">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Second Name
+                                    <input type="text" class="form-control">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary" value="send">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-3 p-3 table-secondary">
+                <p>this is form layout sample with form-row.</p>
+            </div>
+        </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <form method="post" action="#">
-                <div class="form-row">
-                    <div class="col-4 form-group">
-                        <label>Email(col-4)</label>
-                        <input type="email" class="form-control">
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">ボタンのブロック化</span>
+        <div class="section_description">
+            ボタンはインラインのコントロールのためグリッドレイアウトによる<br>
+            サイズ調整が効かない。サイズを自動調整したい場合には<br>
+            ボタンのスタイルにbtn-blockクラスを適応することでボタンがブロック要素になる。
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <form method="post" action="#">
+                    <div class="form-group">
+                        <label>
+                            <input type="text" class="form-control">
+                        </label>
                     </div>
-                    <div class="col-2 form-group">
-                        <label>Pass(col-2)</label>
-                        <input type="password" class="form-control">
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-block btn-primary" value="send">
                     </div>
-                    <div class="col-3 form-group">
-                        <label>First Name(col-3)</label>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="col-3 form-group">
-                        <label>Second Name(col-3)</label>
-                        <input type="text" class="form-control">
-                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">インライン表示について</span>
+        <div class="section_description">
+            Bootstrapのクラスを指定したコントロールは全て縦に並べられるようになっている。<br>
+            インライン表示にすることで、横一列に並ぶようになる。<br>
+            clearfixを使用する場合は、formタグにform-inlineを使ってはいけない。<br>
+            inputタグにform-check-inlineでコントロールに個別に指定しなければ使用は不可。
+        </div>
+        <p>・フォーム全体にインライン指定(formタグ内にform-inlineクラス指定)</p>
+        <div class="row">
+            <form method="post" action="#" class="form-inline">
+                <div class="form-group">
+                    <label>
+                        <input type="text" class="form-control" placeholder="input 1">
+                    </label>
                 </div>
-                <div class="form-row">
-                    <div class="col form-group">
-                        <input type="submit" class="btn btn-primary" value="send">
-                    </div>
+                <div class="form-group">
+                    <label>
+                        <input type="text" class="form-control" placeholder="input 2">
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="text" class="form-control" placeholder="input 3">
+                    </label>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="send">
+                </div>
+            </form>
+        </div>
+        <hr>
+        ・個別にインライン指定(inputタグにform-check-inline指定)
+        <div class="row">
+            <form method="post" action="#">
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        checkbox control
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        checkbox control
+                    </label>
+                </div>
+                （ここでclearfixを使用している）
+                <div class="clearfix"></div>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="radio">
+                        radio button A
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="radio">
+                        radio button B
+                    </label>
+                </div>
+                <div class="form-check form-check-inline" disabled>
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="radio" disabled>
+                        radio button C
+                    </label>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="send">
                 </div>
             </form>
         </div>
     </div>
-
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">インプットグループについて</span>
-    <div class="section_description">
-        インプットグループを使えば今までラベルとフォームで改行されていたものが<br>
-        input-groupを使うことで、一行で表示されるようになる。<br>
-        ラベルにはdivタグを使用
-    </div>
-
-    <div class="row">
-        <div class="col">
-            <form method="post" action="#">
-                ・input-group使用時
-                <div class="form-row my-3">
-                    <div class="col input-group">
-                        <div class="mx-2">Email</div>
-                        <input type="email" class="form-control">
-                    </div>
-                    <div class="col input-group align-items-center">
-                        <div class="mx-2">Password</div>
-                        <input type="password" class="form-control">
-                    </div>
-                </div>
-                ・input-group + input-group-prepend 使用時
-                <div class="form-row my-3">
-                    <div class="col input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">First Name</span>
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">コラム幅の指定</span>
+        <div class="section_description">
+            入力フィールドはcolに列数を指定すると調整できる。
+        </div>
+        <div class="row">
+            <div class="col">
+                <form method="post" action="#">
+                    <div class="form-row">
+                        <div class="col-4 form-group">
+                            <label>Email(col-4)
+                                <input type="email" class="form-control">
+                            </label>
                         </div>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="col input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Second Name</span>
+                        <div class="col-2 form-group">
+                            <label>Pass(col-2)
+                                <input type="password" class="form-control">
+                            </label>
                         </div>
-                        <input type="text" class="form-control">
+                        <div class="col-3 form-group">
+                            <label>First Name(col-3)
+                                <input type="text" class="form-control">
+                            </label>
+                        </div>
+                        <div class="col-3 form-group">
+                            <label>Second Name(col-3)
+                                <input type="text" class="form-control">
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <div class="form-row my-3">
-                    <div class="col input-group">
+                    <div class="form-row">
                         <div class="col form-group">
                             <input type="submit" class="btn btn-primary" value="send">
                         </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">インプットグループについて</span>
+        <div class="section_description">
+            インプットグループを使えば今までラベルとフォームで改行されていたものが<br>
+            input-groupを使うことで、一行で表示されるようになる。<br>
+            ラベルにはdivタグを使用
+        </div>
+        <div class="row">
+            <div class="col">
+                <form method="post" action="#">
+                    ・input-group使用時
+                    <div class="form-row my-3">
+                        <div class="col input-group">
+                            <div class="mx-2">Email</div>
+                            <label>
+                                <input type="email" class="form-control">
+                            </label>
+                        </div>
+                        <div class="col input-group align-items-center">
+                            <div class="mx-2">Password</div>
+                            <label>
+                                <input type="password" class="form-control">
+                            </label>
+                        </div>
+                    </div>
+                    ・input-group + input-group-prepend 使用時
+                    <div class="form-row my-3">
+                        <div class="col input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">First Name</span>
+                            </div>
+                            <label>
+                                <input type="text" class="form-control">
+                            </label>
+                        </div>
+                        <div class="col input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Second Name</span>
+                            </div>
+                            <label>
+                                <input type="text" class="form-control">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-row my-3">
+                        <div class="col input-group">
+                            <div class="col form-group">
+                                <input type="submit" class="btn btn-primary" value="send">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">カスタムコントロール</span>
+        <div class="section_description">
+            あらゆるデバイスで同じGUIを表示するカスタムフォームが用意されている。<br>
+            ただし、この機能を使ってコントロールを表示するためには<br>
+            決められた形でタグを構築していかなければいけない。主にcustom-のクラスを使用する。
+        </div>
+        <div class="row">
+            <div class="col">
+                <form method="post" action="#">
+                    <div class="form-row my-3">
+                        <div class="col">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" id="cb1" class="custom-control-input">
+                                <label class="custom-control-label" for="cb1">check box</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row my-3">
+                        <div class="col">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="rb1" name="radio" class="custom-control-input">
+                                <label class="custom-control-label" for="rb1">radio A</label>
+                            </div>
+
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="rb2" name="radio" class="custom-control-input">
+                                <label class="custom-control-label" for="rb2">radio B</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row my-3">
+                        <div class="col">
+                            <div class="input-group">
+                                <label>
+                                    <select class="custom-select">
+                                        <option>one</option>
+                                        <option>two</option>
+                                        <option>three</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row my-3">
+                        <div class="col form-group">
+                            <input type="submit" class="btn btn-primary" value="send form">
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">カスタムコントロール</span>
-    <div class="section_description">
-        あらゆるデバイスで同じGUIを表示するカスタムフォームが用意されている。<br>
-        ただし、この機能を使ってコントロールを表示するためには<br>
-        決められた形でタグを構築していかなければいけない。主にcustom-のクラスを使用する。
-    </div>
-
-    <div class="row">
-        <div class="col">
-            <form method="post" action="#">
-                <div class="form-row my-3">
-                    <div class="col">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" id="cb1" class="custom-control-input">
-                            <label class="custom-control-label" for="cb1">check box</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-row my-3">
-                    <div class="col">
-                        <div class="custom-control custom-radio">
-                            <input type="radio" id="rb1" name="radio" class="custom-control-input">
-                            <label class="custom-control-label" for="rb1">radio A</label>
-                        </div>
-
-                        <div class="custom-control custom-radio">
-                            <input type="radio" id="rb2" name="radio" class="custom-control-input">
-                            <label class="custom-control-label" for="rb2">radio B</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-row my-3">
-                    <div class="col">
-                        <div class="input-group">
-                            <select class="custom-select">
-                                <option>one</option>
-                                <option>two</option>
-                                <option>three</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-row my-3">
-                    <div class="col form-group">
-                        <input type="submit" class="btn btn-primary" value="send form">
-                    </div>
-                </div>
-
-            </form>
-        </div>
-    </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
 </body>
 </html>

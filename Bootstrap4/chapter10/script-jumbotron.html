@@ -24,16 +24,16 @@
 </head>
 
 <body>
-
-<div class="container study_section">
-    <span class="section_title">ジャンボトロンの表示</span>
-    <div class="section_description">
-        ジャンボトロンは大きな画面で表示させるようなインパクトのあるコンテンツなので<br>
-        常時表示されていたら邪魔になる場合がある。<br>
-        そういった場合にクラスを操作し、ジャンボトロンにしたり<br>
-        そうでなくしたりすることが出来る。<br>
-        ■Scriptの構成
-        <pre class="table-bordered border-primary pl-2 pt-2">
+<div class="container-fruid">
+    <div class="study_section">
+        <span class="section_title">ジャンボトロンの表示</span>
+        <div class="section_description">
+            ジャンボトロンは大きな画面で表示させるようなインパクトのあるコンテンツなので<br>
+            常時表示されていたら邪魔になる場合がある。<br>
+            そういった場合にクラスを操作し、ジャンボトロンにしたり<br>
+            そうでなくしたりすることが出来る。<br>
+            ■Scriptの構成
+            <pre class="table-bordered border-primary pl-2 pt-2">
 let flg = false;
 $('ID').click(function () {<span class="text-success">// 指定のIDの要素をクリックしたときの処理</span>
     flg = !flg;
@@ -49,18 +49,19 @@ $('ID').click(function () {<span class="text-success">// 指定のIDの要素を
         $('#jumbo div p').removeClass('lead');
      }
 });</pre>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-12">
-            <div id="jumbo">
-                <div>
-                    <h3>Fluid jumbotron</h3>
-                    <p>This is a jumbotron context.</p>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <div id="jumbo">
+                    <div>
+                        <h3>Fluid jumbotron</h3>
+                        <p>This is a jumbotron context.</p>
+                    </div>
                 </div>
-            </div>
-            <div>
-                <button type="button" class="btn btn-primary" id="jumbotronBtn">Click</button>
+                <div>
+                    <button type="button" class="btn btn-primary" id="jumbotronBtn">Click</button>
+                </div>
             </div>
         </div>
     </div>

@@ -24,15 +24,15 @@
 </head>
 
 <body>
-
-<div class="container study_section">
-    <span class="section_title">モーダルダイアログの表示</span>
-    <div class="section_description">
-        モーダルダイアログは最初から表示されているわけでなく、予め隠れた状態で用意される。<br>
-        表示させるにはHTMLで属性を用意する、もしくはスクリプトでも操作が可能である。<br>
-    </div>
-    ■scriptの内容
-    <pre class="table-bordered border-primary pl-2 pt-2">
+<div class="container-fruid">
+    <div class="study_section">
+        <span class="section_title">モーダルダイアログの表示</span>
+        <div class="section_description">
+            モーダルダイアログは最初から表示されているわけでなく、予め隠れた状態で用意される。<br>
+            表示させるにはHTMLで属性を用意する、もしくはスクリプトでも操作が可能である。<br>
+        </div>
+        ■scriptの内容
+        <pre class="table-bordered border-primary pl-2 pt-2">
 $(function () {<span class="text-success">// DOM構造が解析された後に動く</span>
 
     $('#ボタンのID').click(function () {<span class="text-success">// 指定のIDを持つ要素をクリックしたときの処理</span>
@@ -40,43 +40,43 @@ $(function () {<span class="text-success">// DOM構造が解析された後に�
     });
 
 });</pre>
-    <hr>
-    <div class="row">
-        <div class="col-12">
-            <div class="modal fade" id="dialog1">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Modal Dialog!</h5>
-                        </div>
-                        <div class="modal-body">
-                            <p>this is modal dialog sample.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Click me!</button>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <div class="modal fade" id="dialog1">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Modal Dialog!</h5>
+                            </div>
+                            <div class="modal-body">
+                                <p>this is modal dialog sample.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Click me!</button>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <button class="btn btn-primary" id="modalBtn1">click</button>
             </div>
-            <button class="btn btn-primary" id="modalBtn1">click</button>
         </div>
     </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">ダイアログの入力値を利用する</span>
-    <div class="section_description">
-        モーダルダイアログには独自のイベントが設定されている。<br>
-        show.bs.modal：画面に表示しようとした時<br>
-        shown.bs.modal：画面に表示されたあと<br>
-        hide.bs.modal：非表示にしようとした時<br>
-        hidden.bs.modal：非表示にしたあと<br>
-        下記はダイアログに入力された値を非表示にしたときに表示させるサンプルである。<br>
-    </div>
-    ■scriptの内容
-    <pre class="table-bordered border-primary pl-2 pt-2">
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">ダイアログの入力値を利用する</span>
+        <div class="section_description">
+            モーダルダイアログには独自のイベントが設定されている。<br>
+            show.bs.modal：画面に表示しようとした時<br>
+            shown.bs.modal：画面に表示されたあと<br>
+            hide.bs.modal：非表示にしようとした時<br>
+            hidden.bs.modal：非表示にしたあと<br>
+            下記はダイアログに入力された値を非表示にしたときに表示させるサンプルである。<br>
+        </div>
+        ■scriptの内容
+        <pre class="table-bordered border-primary pl-2 pt-2">
 $(function () {<span class="text-success">// DOM構造が解析された後に動く</span>
 
     <span class="text-success">// イベントに関数を設定、結果表示のタグの初期化</span>
@@ -86,7 +86,7 @@ $(function () {<span class="text-success">// DOM構造が解析された後に�
             $('#ID').text('Please click button...');<span class="text-success">// 指定のIDの要素にテキストを指定</span>
         });
         dialog.on('hide.bs.modal', function () {<span
-        class="text-success">// ダイアログを非表示にしようとした時</span>
+                class="text-success">// ダイアログを非表示にしようとした時</span>
             $('#input1').val('');<span class="text-success">// 指定のIDの要素の値を空に</span>
         });
     })();
@@ -103,50 +103,50 @@ $(function () {<span class="text-success">// DOM構造が解析された後に�
     });
 
 });</pre>
-    <hr>
-    <div class="row">
-        <div class="col-12">
-            <p id="msg1">please click button...</p>
-            <div class="modal fade" id="dialog2">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Modal Dialog!</h5>
-                        </div>
-                        <div class="modal-body">
-                            <label>
-                                this is modal dialog sample.
-                                <input type="text" id="input1" class="form-control">
-                            </label>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="modalOkBtn1">OK!
-                            </button>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <p id="msg1">please click button...</p>
+                <div class="modal fade" id="dialog2">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Modal Dialog!</h5>
+                            </div>
+                            <div class="modal-body">
+                                <label>
+                                    this is modal dialog sample.
+                                    <input type="text" id="input1" class="form-control">
+                                </label>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal" id="modalOkBtn1">OK!
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <button class="btn btn-primary" id="modalBtn2">button</button>
             </div>
-            <button class="btn btn-primary" id="modalBtn2">button</button>
         </div>
     </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">完全なモーダルにするには？</span>
-    <div class="section_description">
-        モーダルダイアログは本来ダイアログが消えるまで他の操作はできないものである。<br>
-        しかし上記のサンプルはダイアログ以外をクリックすると<br>
-        ダイアログが消えてしまうことがわかる。<br>
-        モーダルダイアログの動作も設定することで自由に扱える。<br>
-        backdrop：背景部分の挙動。trueならデフォルト、falseならグレーにしない。staticは背景をクリックしても消えない。<br>
-        keyboard：trueならEscキーでダイアログを消せる。ダイアログのフィールドが入力状態のときに機能。<br>
-        focus：trueにするとモーダルダイアログにフォーカスを移動させる。falseだとボタンにフォーカスが残る。<br>
-        show：trueにすると初期化時にモーダルを表示、単体で指定する時は.modal(show)でtrueになる。falseは表示しない。<br>
-    </div>
-    ■scriptの内容
-    <pre class="table-bordered border-primary pl-2 pt-2">
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">完全なモーダルにするには？</span>
+        <div class="section_description">
+            モーダルダイアログは本来ダイアログが消えるまで他の操作はできないものである。<br>
+            しかし上記のサンプルはダイアログ以外をクリックすると<br>
+            ダイアログが消えてしまうことがわかる。<br>
+            モーダルダイアログの動作も設定することで自由に扱える。<br>
+            backdrop：背景部分の挙動。trueならデフォルト、falseならグレーにしない。staticは背景をクリックしても消えない。<br>
+            keyboard：trueならEscキーでダイアログを消せる。ダイアログのフィールドが入力状態のときに機能。<br>
+            focus：trueにするとモーダルダイアログにフォーカスを移動させる。falseだとボタンにフォーカスが残る。<br>
+            show：trueにすると初期化時にモーダルを表示、単体で指定する時は.modal(show)でtrueになる。falseは表示しない。<br>
+        </div>
+        ■scriptの内容
+        <pre class="table-bordered border-primary pl-2 pt-2">
 $('#ダイアログを表示させるボタンのID').click(function () {
     $('#dialog2').modal(
         {
@@ -157,30 +157,31 @@ $('#ダイアログを表示させるボタンのID').click(function () {
     );
 });
     </pre>
-    <hr>
-    <div class="row">
-        <div class="col-12">
-            <p id="msg2">please click button...</p>
-            <div class="modal fade" id="dialog3">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Modal Dialog!</h5>
-                        </div>
-                        <div class="modal-body">
-                            <label>
-                                this is modal dialog sample.
-                                <input type="text" id="input2" class="form-control">
-                            </label>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="modalOkBtn2">OK!
-                            </button>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <p id="msg2">please click button...</p>
+                <div class="modal fade" id="dialog3">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Modal Dialog!</h5>
+                            </div>
+                            <div class="modal-body">
+                                <label>
+                                    this is modal dialog sample.
+                                    <input type="text" id="input2" class="form-control">
+                                </label>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal" id="modalOkBtn2">OK!
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <button class="btn btn-primary" id="modalBtn3">button</button>
             </div>
-            <button class="btn btn-primary" id="modalBtn3">button</button>
         </div>
     </div>
 </div>
@@ -228,7 +229,7 @@ $('#ダイアログを表示させるボタンのID').click(function () {
 
         // モーダルを表示、非表示にするときのイベントの設定
         (function () {
-            let  dialog = $('#dialog3');
+            let dialog = $('#dialog3');
             dialog.on('show.bs.modal', function () {
                 $('#msg2').text('Please click button...');
             });

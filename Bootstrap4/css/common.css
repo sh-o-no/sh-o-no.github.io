@@ -1,6 +1,7 @@
 .study_section {
     /*padding: 0.5em 1em;*/
-    margin: 12px;
+    margin: 0.5em;
+    padding: 0.5em;
     border: double 5px #4ec4d3;
 }
 

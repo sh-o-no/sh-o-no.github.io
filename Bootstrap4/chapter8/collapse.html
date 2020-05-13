@@ -24,101 +24,98 @@
 </head>
 
 <body>
-
-<div class="container study_section">
-    <span class="section_title">コラプスとは</span>
-    <div class="section_description">
-        ポップオーバーと同じように、テキストなどのメッセージを表示するインターフェイスである。<br>
-        ただしコラプスはポップアップして現れるわけでなく、追加表示されるイメージ。<br>
-        ボタンなどを押してコンテンツを広げるといった形である。<br>
-        collapseクラスの中にコンテンツを記述し、その中にコンテンツを用意する。<br>
-        コンテンツを広げるボタンは別で用意し、IDで紐付ける。<br>
-        collapseクラスに続けてshowクラスを記述すると開いた状態で表示される。<br>
-        ■構成
-        <pre class="table-bordered border-primary pl-2 pt-2">
+<div class="container-fruid">
+    <div class="study_section">
+        <span class="section_title">コラプスとは</span>
+        <div class="section_description">
+            ポップオーバーと同じように、テキストなどのメッセージを表示するインターフェイスである。<br>
+            ただしコラプスはポップアップして現れるわけでなく、追加表示されるイメージ。<br>
+            ボタンなどを押してコンテンツを広げるといった形である。<br>
+            collapseクラスの中にコンテンツを記述し、その中にコンテンツを用意する。<br>
+            コンテンツを広げるボタンは別で用意し、IDで紐付ける。<br>
+            collapseクラスに続けてshowクラスを記述すると開いた状態で表示される。<br>
+            ■構成
+            <pre class="table-bordered border-primary pl-2 pt-2">
 &lt;div class="collapse <span class="text-info">show</span>" id="<span class="text-danger">ID名</span>"&gt;
 
     ･･･コンテンツの内容･･･
 
 &lt;/div&gt;</pre>
-        ■表示用ボタン
-        <pre class="table-bordered border-primary pl-2 pt-2">
+            ■表示用ボタン
+            <pre class="table-bordered border-primary pl-2 pt-2">
 &lt;button class="btn" data-toggle="collapse" data-target="#<span class="text-danger">コプラスと紐付けるID</span>"&gt;
         </pre>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <p>
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse1">Hide
+                        collapse
+                    </button>
+                </p>
+                <div class="collapse show" id="collapse1">
+                    <div class="card card-body">
+                        <h4>collapse</h4>
+                        <p>this is collapse sample.</p>
+                    </div>
+                </div>
+                <p class="mt-3">
+                    this is sample content.
+                    this is sample content.
+                    this is sample content.
+                    this is sample content.
+                </p>
+            </div>
+        </div>
     </div>
+    <div class="mt-1"></div>
     <hr>
-    <div class="row">
-        <div class="col-12">
-            <p>
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse1">Hide
-                    collapse
-                </button>
-            </p>
-            <div class="collapse show" id="collapse1">
-                <div class="card card-body">
-                    <h4>collapse</h4>
-                    <p>this is collapse sample.</p>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">コラプスが消えた後</span>
+        <div class="section_description">
+            下記のサンプルでコラプスが消えた後はスペースが詰められることがわかる。
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-6">
+                <div class="collapse show" id="a-1" data-toggle="collapse" data-target="#a-1">
+                    <div class="card card-body">
+                        <h4>Collapse A-1</h4>
+                        <p>this is collapse sample</p>
+                    </div>
                 </div>
             </div>
-            <p class="mt-3">
-                this is sample content.
-                this is sample content.
-                this is sample content.
-                this is sample content.
-            </p>
+            <div class="col-6">
+                <div class="collapse show" id="a-2" data-toggle="collapse" data-target="#a-2">
+                    <div class="card card-body">
+                        <h4>Collapse A-2</h4>
+                        <p>this is collapse sample</p>
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="collapse show" id="b-1" data-toggle="collapse" data-target="#b-1">
+                    <div class="card card-body">
+                        <h4>Collapse B-1</h4>
+                        <p>this is collapse sample</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="collapse show" id="b-2" data-toggle="collapse" data-target="#b-2">
+                    <div class="card card-body">
+                        <h4>Collapse B-2</h4>
+                        <p>this is collapse sample</p>
+                    </div>
+                </div>
+            </div>
 
+        </div>
     </div>
 </div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">コラプスが消えた後</span>
-    <div class="section_description">
-    下記のサンプルでコラプスが消えた後はスペースが詰められることがわかる。
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-6">
-            <div class="collapse show" id="a-1" data-toggle="collapse" data-target="#a-1">
-                <div class="card card-body">
-                    <h4>Collapse A-1</h4>
-                    <p>this is collapse sample</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-6">
-            <div class="collapse show" id="a-2" data-toggle="collapse" data-target="#a-2">
-                <div class="card card-body">
-                    <h4>Collapse A-2</h4>
-                    <p>this is collapse sample</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-6">
-            <div class="collapse show" id="b-1" data-toggle="collapse" data-target="#b-1">
-                <div class="card card-body">
-                    <h4>Collapse B-1</h4>
-                    <p>this is collapse sample</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-6">
-            <div class="collapse show" id="b-2" data-toggle="collapse" data-target="#b-2">
-                <div class="card card-body">
-                    <h4>Collapse B-2</h4>
-                    <p>this is collapse sample</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
 </body>
 </html>

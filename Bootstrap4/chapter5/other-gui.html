@@ -24,15 +24,15 @@
 </head>
 
 <body>
-
-<div class="container study_section">
-    <span class="section_title">ドロップダウンメニュー</span>
-    <div class="section_description">
-        隠れているメニューがボタンクリックの操作で表示される。<br>
-        「メニューを呼び出すためのボタン」と「メニューとして現れる項目類」から構成される。
-    </div>
-    ■ドロップダウンメニューの構造
-    <pre  class="table-bordered border-primary pl-2 pt-2 small">
+<div class="container-fruid">
+    <div class="study_section">
+        <span class="section_title">ドロップダウンメニュー</span>
+        <div class="section_description">
+            隠れているメニューがボタンクリックの操作で表示される。<br>
+            「メニューを呼び出すためのボタン」と「メニューとして現れる項目類」から構成される。
+        </div>
+        ■ドロップダウンメニューの構造
+        <pre class="table-bordered border-primary pl-2 pt-2 small">
 &lt;div class="dropdown"&gt;
     &lt;button class="btn dropdown-toggle" id="項目に紐づくID" data-toggle="dropdown" aria-haspopup="true"
     aria-expanded="false"&gt;ボタンの表示&lt;/button&gt;
@@ -43,93 +43,97 @@
             .
     &lt;/div&gt;
 &lt;/div&gt;</pre>
-    <div class="row m-3">
-        <div class="col-12">
-            ・通常時
-            <div class="dropdown">
-                <button class="btn btn-info dropdown-toggle" id="dropdown1" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">Dropdown
-                </button>
-                <!-- class:ボタンとして表示するためのbtn、ドロップダウンメニューを表示するための専用クラスのdropdown-toggle
-                     data=toggle="dropdown":dataで始まる属性は独自のデータを追加する場合に用いる。
-                                            ドロップダウン用のボタンはdropdownを指定
-                     aria-haspopup="true":ドロップダウンメニューをもつタグを示す
-                     aria-expanded="false":要素の開閉状態を示す                       -->
-                <div class="dropdown-menu" aria-labelledby="dropdown1">
-                    <!--                    class:dropdown-menu
-                                            aria-labelledby:メニューを呼び出すID値を指定-->
-                    <button class="dropdown-item">Action 1</button>
-                    <button class="dropdown-item">Action 2</button>
-                    <button class="dropdown-item">Action 3</button>
+        <div class="row m-3">
+            <div class="col-12">
+                ・通常時
+                <div class="dropdown">
+                    <button class="btn btn-info dropdown-toggle" id="dropdown1" data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false">Dropdown
+                    </button>
+                    <!-- class:ボタンとして表示するためのbtn、ドロップダウンメニューを表示するための専用クラスのdropdown-toggle
+                         data=toggle="dropdown":dataで始まる属性は独自のデータを追加する場合に用いる。
+                                                ドロップダウン用のボタンはdropdownを指定
+                         aria-haspopup="true":ドロップダウンメニューをもつタグを示す
+                         aria-expanded="false":要素の開閉状態を示す                       -->
+                    <div class="dropdown-menu" aria-labelledby="dropdown1">
+                        <!--                    class:dropdown-menu
+                                                aria-labelledby:メニューを呼び出すID値を指定-->
+                        <button class="dropdown-item">Action 1</button>
+                        <button class="dropdown-item">Action 2</button>
+                        <button class="dropdown-item">Action 3</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <hr>
-    <div class="row m-3">
-        <div class="col-12">
-            ・メニューヘッダー付き
-            <div class="dropdown">
-                <button class="btn btn-info dropdown-toggle" id="dropdown2" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">Dropdown
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdown2">
-                    <h6 class="dropdown-header">Dropdown header</h6>
-                    <button class="dropdown-item">Action 1</button>
-                    <button class="dropdown-item">Action 2</button>
-                    <button class="dropdown-item">Action 3</button>
+        <hr>
+        <div class="row m-3">
+            <div class="col-12">
+                ・メニューヘッダー付き
+                <div class="dropdown">
+                    <button class="btn btn-info dropdown-toggle" id="dropdown2" data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false">Dropdown
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdown2">
+                        <h6 class="dropdown-header">Dropdown header</h6>
+                        <button class="dropdown-item">Action 1</button>
+                        <button class="dropdown-item">Action 2</button>
+                        <button class="dropdown-item">Action 3</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <hr>
-    <div class="row m-3">
-        <div class="col-12">
-            ・仕切り付き
-            <div class="dropdown">
-                <button class="btn btn-info dropdown-toggle" id="dropdown5" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">Dropdown
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdown5">
-                    <button class="dropdown-item">Action 1</button>
-                    <div class="dropdown-divider"></div>
+        <hr>
+        <div class="row m-3">
+            <div class="col-12">
+                ・仕切り付き
+                <div class="dropdown">
+                    <button class="btn btn-info dropdown-toggle" id="dropdown5" data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false">Dropdown
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdown5">
+                        <button class="dropdown-item">Action 1</button>
+                        <div class="dropdown-divider"></div>
 
-                    <button class="dropdown-item">Action 2</button>
-                    <div class="dropdown-divider"></div>
-                    <button class="dropdown-item">Action 3</button>
+                        <button class="dropdown-item">Action 2</button>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item">Action 3</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row m-3">
+            <div class="col-12">
+                ・ディスエーブル(Action 2のみdisable)
+                <div class="dropdown">
+                    <button class="btn btn-info dropdown-toggle" id="dropdown4" data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false">Dropdown
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdown4">
+                        <button class="dropdown-item">Action 1</button>
+                        <button class="dropdown-item disabled">Action 2</button>
+                        <button class="dropdown-item">Action 3</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="mt-1"></div>
     <hr>
-    <div class="row m-3">
-        <div class="col-12">
-            ・ディスエーブル(Action 2のみdisable)
-            <div class="dropdown">
-                <button class="btn btn-info dropdown-toggle" id="dropdown4" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">Dropdown
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdown4">
-                    <button class="dropdown-item">Action 1</button>
-                    <button class="dropdown-item disabled">Action 2</button>
-                    <button class="dropdown-item">Action 3</button>
-                </div>
-            </div>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">スプリットボタン</span>
+        <div class="section_description">
+            ドロップダウンメニューを呼び出すボタンの場合<br>
+            ボタンの右側に▼が表示され、この部分をクリックすると<br>
+            メニューが表示されるものもある。
         </div>
-    </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">スプリットボタン</span>
-    <div class="section_description">
-        ドロップダウンメニューを呼び出すボタンの場合<br>
-        ボタンの右側に▼が表示され、この部分をクリックすると<br>
-        メニューが表示されるものもある。
-    </div>
-    ■スプリットボタンの構造
-    <pre  class="table-bordered border-primary pl-2 pt-2 small">
+        ■スプリットボタンの構造
+        <pre class="table-bordered border-primary pl-2 pt-2 small">
 &lt;div class="dropdown btn-group"&gt;
     &lt;button class="btn"&gt;ボタンの表示&lt;/button&gt;
         &lt;button data-toggle="dropdown" aria-haspopup="true"
@@ -142,115 +146,114 @@
             .
     &lt;/div&gt;
 &lt;/div&gt;</pre>
-<hr>
-    <div class="row">
-        <div class="col-12">
+        <hr>
+        <div class="row">
+            <div class="col-12">
                 <!--                １つのボタングループにしている-->
-            <div class="dropdown btn-group">
-                <!--                左側のボタン-->
-                <button class="btn btn-info">Dropdown</button>
-                <!--                右側のボタン dropdown-toggle-splitを追加すると▼が表示される-->
-                <button data-toggle="dropdown" aria-haspopup="true"
-                        class="btn btn-info dropdown-toggle dropdown-toggle-split" id="dropdown3"
-                        aria-expanded="false"></button>
-                <div class="dropdown-menu" aria-labelledby="dropdown3">
-                    <button class="dropdown-item">Action 1</button>
-                    <button class="dropdown-item">Action 2</button>
-                    <div class="dropdown-divider"></div>
-                    <button class="dropdown-item">Action 3</button>
+                <div class="dropdown btn-group">
+                    <!--                左側のボタン-->
+                    <button class="btn btn-info">Dropdown</button>
+                    <!--                右側のボタン dropdown-toggle-splitを追加すると▼が表示される-->
+                    <button data-toggle="dropdown" aria-haspopup="true"
+                            class="btn btn-info dropdown-toggle dropdown-toggle-split" id="dropdown3"
+                            aria-expanded="false"></button>
+                    <div class="dropdown-menu" aria-labelledby="dropdown3">
+                        <button class="dropdown-item">Action 1</button>
+                        <button class="dropdown-item">Action 2</button>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item">Action 3</button>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">プログレスバー</span>
+        <div class="section_description">
+            進捗状況を管理出来る、％で表されるバーのこと。<br>
+            HTMLのみでもprogressタグを使えば表示できるが、Bootstrapを使うと<br>
+            プラットフォームやブラウザで統一されたプログレスバーを表示できる。
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <p>・HTMLのみ</p>
+                <progress value="50" max="100">50%</progress>
+                <p>・Bootstrapクラス適応</p>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50"
+                         aria-valuemin="0"
+                         aria-valuemax="100">50%
+                    </div>
+                </div>
+                <p>・ストライプ付き(progress-bar-striped)</p>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%;"
+                         aria-valuenow="50"
+                         aria-valuemin="0" aria-valuemax="100">50%
+                    </div>
+                </div>
+                <p>・ストライプ+アニメーション付き(progress-bar-striped progress-bar-animated)</p>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                         style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%
+                    </div>
+                </div>
+                <p>・マルチバー(progressクラスの中にprogress-barクラスを増やしていく)</p>
+                <div class="progress">
+                    <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" role="progressbar"
+                         style="width: 15%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">15%
+                    </div>
+                    <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar"
+                         style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%
+                    </div>
+                    <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar"
+                         style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">バッジ</span>
+        <div class="section_description">
+            文章や単語の右に小さく出ている文字などのこと。<br>
+            インラインで組み込むのでspanを使う。<br>
+            classにbadgeとbadge-色名を指定、badgeだけだと背景色がつかずただのテキストになる。<br>
+            バッジのサイズはテキストに合わされる為指定は不要。<br>
+        </div>
+        <hr>
+        <div class="row m-3">
+            <div class="col-12">
+                <p>・文章との組み合わせ</p>
+                <h3>this is Badge sample. <span class="badge badge-primary">New!</span></h3>
+                <h5> this is Badge sample. <span class="badge badge-danger">!?</span></h5>
+                <p>this is Badge sample. <span class="badge badge-secondary">ok.</span></p>
+            </div>
+        </div>
+        <hr>
+        <div class="row m-3">
+            <div class="col-12">
+                <p>・ボタンとの組み合わせ</p>
+                <button class="btn btn-lg btn-primary">&lt;button&gt; <span class="badge badge-dark">click</span>
+                </button>
+                <a href="javascript:undefined" class="btn btn-lg btn-secondary">&lt;a&gt; <span
+                        class="badge badge-light">click</span> </a>
+            </div>
+        </div>
+        <hr>
+        <div class="row m-3">
+            <div class="col-12">
+                <p>・ピル型バッジ badge-pillを適用</p>
+                <p>this is badge sample. <span class="badge badge-pill badge-warning">badge</span></p>
             </div>
         </div>
     </div>
 </div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">プログレスバー</span>
-    <div class="section_description">
-        進捗状況を管理出来る、％で表されるバーのこと。<br>
-        HTMLのみでもprogressタグを使えば表示できるが、Bootstrapを使うと<br>
-        プラットフォームやブラウザで統一されたプログレスバーを表示できる。
-    </div>
-
-    <div class="row">
-        <div class="col-12">
-            <p>・HTMLのみ</p>
-            <progress value="50" max="100">50%</progress>
-            <p>・Bootstrapクラス適応</p>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0"
-                     aria-valuemax="100">50%
-                </div>
-            </div>
-            <p>・ストライプ付き(progress-bar-striped)</p>
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 50%;" aria-valuenow="50"
-                     aria-valuemin="0" aria-valuemax="100">50%
-                </div>
-            </div>
-            <p>・ストライプ+アニメーション付き(progress-bar-striped progress-bar-animated)</p>
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                     style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%
-                </div>
-            </div>
-            <p>・マルチバー(progressクラスの中にprogress-barクラスを増やしていく)</p>
-            <div class="progress">
-                <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" role="progressbar"
-                     style="width: 15%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">15%
-                </div>
-                <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar"
-                     style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%
-                </div>
-                <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar"
-                     style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">バッジ</span>
-    <div class="section_description">
-        文章や単語の右に小さく出ている文字などのこと。<br>
-        インラインで組み込むのでspanを使う。<br>
-        classにbadgeとbadge-色名を指定、badgeだけだと背景色がつかずただのテキストになる。<br>
-        バッジのサイズはテキストに合わされる為指定は不要。<br>
-    </div>
-<hr>
-    <div class="row m-3">
-        <div class="col-12">
-            <p>・文章との組み合わせ</p>
-            <h3>this is Badge sample. <span class="badge badge-primary">New!</span> </h3>
-            <h5> this is Badge sample. <span class="badge badge-danger">!?</span> </h5>
-            <p>this is Badge sample. <span class="badge badge-secondary">ok.</span> </p>
-        </div>
-    </div>
-<hr>
-    <div class="row m-3">
-        <div class="col-12">
-            <p>・ボタンとの組み合わせ</p>
-            <button class="btn btn-lg btn-primary">&lt;button&gt; <span class="badge badge-dark">click</span> </button>
-            <a href="javascript:undefined" class="btn btn-lg btn-secondary">&lt;a&gt; <span class="badge badge-light">click</span> </a>
-        </div>
-    </div>
-<hr>
-    <div class="row m-3">
-        <div class="col-12">
-            <p>・ピル型バッジ badge-pillを適用</p>
-            <p>this is badge sample. <span class="badge badge-pill badge-warning">badge</span> </p>
-        </div>
-    </div>
-
-
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
 </body>
 </html>

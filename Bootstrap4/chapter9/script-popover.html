@@ -24,45 +24,45 @@
 </head>
 
 <body>
-
-<div class="container study_section">
-    <span class="section_title">ポップオーバーの表示</span>
-    <div class="section_description">
-        ポップオーバーはpopoverメソッドを使って設定される。<br>
-        placement：位置（top,bottom,left,rightのいずれか）<br>
-        title：ポップオーバーのタイトルテキスト<br>
-        content：ポップオーバーのコンテンツ<br>
-        ■scriptの内容
-        <pre class="table-bordered border-primary pl-2 pt-2">
+<div class="container-fruid">
+    <div class="study_section">
+        <span class="section_title">ポップオーバーの表示</span>
+        <div class="section_description">
+            ポップオーバーはpopoverメソッドを使って設定される。<br>
+            placement：位置（top,bottom,left,rightのいずれか）<br>
+            title：ポップオーバーのタイトルテキスト<br>
+            content：ポップオーバーのコンテンツ<br>
+            ■scriptの内容
+            <pre class="table-bordered border-primary pl-2 pt-2">
 $('&lt;selector&gt;')<span class="text-success">// 要素を取得</span>
     .popover({<span class="text-success">// ポップオーバーにする</span>
         'placement': 'bottom', <span class="text-success">// 位置</span>
         'title': 'This is Popover!',<span class="text-success">// コンテンツタイトル</span>
         'content': 'This is popover sample content.'<span class="text-success">// コンテンツ</span>
     });</pre>
-    </div>
-    <hr>
-    <div class="row">
-        <div id="popoverBtn" class="col-12">
-            <button type="button" class="btn btn-secondary">popover button</button>
-            <button type="button" class="btn btn-secondary">popover button</button>
-            <button type="button" class="btn btn-secondary">popover button</button>
-            <button type="button" class="btn btn-secondary">popover button</button>
+        </div>
+        <hr>
+        <div class="row">
+            <div id="popoverBtn" class="col-12">
+                <button type="button" class="btn btn-secondary">popover button</button>
+                <button type="button" class="btn btn-secondary">popover button</button>
+                <button type="button" class="btn btn-secondary">popover button</button>
+                <button type="button" class="btn btn-secondary">popover button</button>
+            </div>
         </div>
     </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">フォーカスによる非表示</span>
-    <div class="section_description">
-        本来のポップオーバーはボタンを再度クリックしないと<br>
-        ポップオーバーが消えなくなっている。<br>
-        data-trigger属性にfocusを指定することで<br>
-        ボタン以外の場所をクリックするだけでポップオーバーを非表示にできる。<br>
-        ■scriptの内容
-        <pre class="table-bordered border-primary pl-2 pt-2">
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">フォーカスによる非表示</span>
+        <div class="section_description">
+            本来のポップオーバーはボタンを再度クリックしないと<br>
+            ポップオーバーが消えなくなっている。<br>
+            data-trigger属性にfocusを指定することで<br>
+            ボタン以外の場所をクリックするだけでポップオーバーを非表示にできる。<br>
+            ■scriptの内容
+            <pre class="table-bordered border-primary pl-2 pt-2">
 $('&lt;selector&gt;')<span class="text-success">// 要素を取得</span>
     .popover({<span class="text-success">// ポップオーバーにする</span>
         'placement': 'bottom', <span class="text-success">// 位置</span>
@@ -70,28 +70,28 @@ $('&lt;selector&gt;')<span class="text-success">// 要素を取得</span>
         'title': 'This is Popover!',<span class="text-success">// コンテンツタイトル</span>
         'content': 'This is popover sample content.'<span class="text-success">// コンテンツ</span>
     })</pre>
-    </div>
-    <hr>
-    <div class="row">
-        <div id="popoverBtn2" class="col-12">
-            <button type="button" class="btn btn-secondary">popover button</button>
-            <button type="button" class="btn btn-secondary">popover button</button>
-            <button type="button" class="btn btn-secondary">popover button</button>
-            <button type="button" class="btn btn-secondary">popover button</button>
+        </div>
+        <hr>
+        <div class="row">
+            <div id="popoverBtn2" class="col-12">
+                <button type="button" class="btn btn-secondary">popover button</button>
+                <button type="button" class="btn btn-secondary">popover button</button>
+                <button type="button" class="btn btn-secondary">popover button</button>
+                <button type="button" class="btn btn-secondary">popover button</button>
+            </div>
         </div>
     </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">HTMLを利用したポップオーバーの表示</span>
-    <div class="section_description">
-        ポップオーバーの内容にHTMLを操作しなくてもscriptの操作のみで可能。<br>
-        引数に指定するもので変数名が入る場合は「''」は不要である。<br>
-        'html':trueを指定するとtitleやcontentにHTMLコードを記述出来るようになる。（「''」不要）<br>
-        ■scriptの内容
-        <pre class="table-bordered border-primary pl-2 pt-2">
+    <div class="mt-1"></div>
+    <hr>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">HTMLを利用したポップオーバーの表示</span>
+        <div class="section_description">
+            ポップオーバーの内容にHTMLを操作しなくてもscriptの操作のみで可能。<br>
+            引数に指定するもので変数名が入る場合は「''」は不要である。<br>
+            'html':trueを指定するとtitleやcontentにHTMLコードを記述出来るようになる。（「''」不要）<br>
+            ■scriptの内容
+            <pre class="table-bordered border-primary pl-2 pt-2">
 (function () {<span class="text-success">// 即時関数を利用</span>
     <span class="text-success">// 変数を定義</span>
     let img = '&lt;img id="popoverImg" src="../img/sample.jpg" alt="sample" style="width: 75px;"&gt;';
@@ -110,18 +110,19 @@ $('&lt;selector&gt;')<span class="text-success">// 要素を取得</span>
         -------------------------------------------------------------------------
     });
 })();</pre>
-    </div>
-    <hr>
-    <div class="row">
-        <div id="popoverBtn3" class="col-12">
-            <button type="button" class="btn btn-secondary">popover button</button>
-            <button type="button" class="btn btn-secondary">popover button</button>
-            <button type="button" class="btn btn-secondary">popover button</button>
-            <button type="button" class="btn btn-secondary">popover button</button>
         </div>
-    </div>
-    <div class="row">
-        <div id="tmp" class="col-12"></div>
+        <hr>
+        <div class="row">
+            <div id="popoverBtn3" class="col-12">
+                <button type="button" class="btn btn-secondary">popover button</button>
+                <button type="button" class="btn btn-secondary">popover button</button>
+                <button type="button" class="btn btn-secondary">popover button</button>
+                <button type="button" class="btn btn-secondary">popover button</button>
+            </div>
+        </div>
+        <div class="row">
+            <div id="tmp" class="col-12"></div>
+        </div>
     </div>
 </div>
 </body>
@@ -134,7 +135,7 @@ $('&lt;selector&gt;')<span class="text-success">// 要素を取得</span>
         // ポップオーバーの表示
         //--------------------------
         let elements = $('#popoverBtn > button');
-        let placements = ['top','bottom','left','right'];
+        let placements = ['top', 'bottom', 'left', 'right'];
         elements.each(function (i) {
             $(this).popover({
                 'placement': placements[i],//位置

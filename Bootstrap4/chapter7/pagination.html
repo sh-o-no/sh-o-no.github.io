@@ -24,16 +24,16 @@
 </head>
 
 <body>
-
-<div class="container study_section">
-    <span class="section_title">ページネーションとは</span>
-    <div class="section_description">
-        多量のデータなどを表示するページの場合、データを一定数に切り分けて<br>
-        複数ページに表示することことがあるが、このときページ移動などの<br>
-        ナビゲーションを行う仕組みをページネーションという。<br>
-        ページネーションもol,ulを使用する方法と、divでまとめる方法がある。<br>
-        ■構成（ol または ulを使用）
-        <pre class="table-bordered border-primary pl-2 pt-2">
+<div class="container-fruid">
+    <div class="study_section">
+        <span class="section_title">ページネーションとは</span>
+        <div class="section_description">
+            多量のデータなどを表示するページの場合、データを一定数に切り分けて<br>
+            複数ページに表示することことがあるが、このときページ移動などの<br>
+            ナビゲーションを行う仕組みをページネーションという。<br>
+            ページネーションもol,ulを使用する方法と、divでまとめる方法がある。<br>
+            ■構成（ol または ulを使用）
+            <pre class="table-bordered border-primary pl-2 pt-2">
 &lt;nav&gt;
     &lt;ol または ul class="pagination"&gt;
       &lt;li class="page-item"&gt;&lt;a class="page-link" href="#"&gt;リンク&lt;/a&gt;&lt;/li&gt;
@@ -42,8 +42,8 @@
 
     &lt;/ol または ul&gt;
 &lt;/nav&gt;</pre>
-        ■構成（divを使用）
-        <pre class="table-bordered border-primary pl-2 pt-2">
+            ■構成（divを使用）
+            <pre class="table-bordered border-primary pl-2 pt-2">
 &lt;nav&gt;
     &lt;div class="pagination"&gt;
         &lt;a class="page-item page-link" href="#"&gt;リンク&lt;/a&gt;
@@ -52,155 +52,156 @@
 
     &lt;/div&gt;
 &lt;/nav&gt;</pre>
-    </div>
-    <hr>
-    ・ol,ul（角が丸い）
-    <div class="row">
-        <div class="col-12">
-            <nav>
-                <ul class="pagination">
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">&laquo; Prev</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">1</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">2</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">3</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">Next &raquo;</a></li>
-                </ul>
-            </nav>
+        </div>
+        <hr>
+        ・ol,ul（角が丸い）
+        <div class="row">
+            <div class="col-12">
+                <nav>
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">&laquo; Prev</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">1</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">2</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">3</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">Next &raquo;</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <hr>
+        ・div（角が四角）
+        <div class="row">
+            <div class="col-12">
+                <nav>
+                    <div class="pagination">
+                        <a class="page-item page-link" href="javascript:undefined">&laquo; Prev</a>
+                        <a class="page-item page-link" href="javascript:undefined">1</a>
+                        <a class="page-item page-link" href="javascript:undefined">2</a>
+                        <a class="page-item page-link" href="javascript:undefined">3</a>
+                        <a class="page-item page-link" href="javascript:undefined">Next &raquo;</a>
+                    </div>
+                </nav>
+            </div>
         </div>
     </div>
+    <div class="mt-1"></div>
     <hr>
-    ・div（角が四角）
-    <div class="row">
-        <div class="col-12">
-            <nav>
-                <div class="pagination">
-                    <a class="page-item page-link" href="javascript:undefined">&laquo; Prev</a>
-                    <a class="page-item page-link" href="javascript:undefined">1</a>
-                    <a class="page-item page-link" href="javascript:undefined">2</a>
-                    <a class="page-item page-link" href="javascript:undefined">3</a>
-                    <a class="page-item page-link" href="javascript:undefined">Next &raquo;</a>
-                </div>
-            </nav>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">activeとdisabled</span>
+        <div class="section_description">
+            ページの表示は全て同じであれば良いというわけではなく<br>
+            現在の表示してるページが1ページ目だとするとPrevボタンはdisabled状態にするべきであるし<br>
+            現在の表示してるページを、active状態で表すとより分かりやすくなる。<br>
+            下記のサンプルはPrevにdisable、2にactiveを指定している。<br>
+            ※ここで使う場合disabledもクラス指定になる。
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <nav>
+                    <ul class="pagination">
+                        <li class="page-item disabled"><a class="page-link" href="javascript:undefined">&laquo; Prev</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">1</a></li>
+                        <li class="page-item active"><a class="page-link" href="javascript:undefined">2</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">3</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">Next &raquo;</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">activeとdisabled</span>
-    <div class="section_description">
-        ページの表示は全て同じであれば良いというわけではなく<br>
-        現在の表示してるページが1ページ目だとするとPrevボタンはdisabled状態にするべきであるし<br>
-        現在の表示してるページを、active状態で表すとより分かりやすくなる。<br>
-        下記のサンプルはPrevにdisable、2にactiveを指定している。<br>
-        ※ここで使う場合disabledもクラス指定になる。
-    </div>
+    <div class="mt-1"></div>
     <hr>
-    <div class="row">
-        <div class="col-12">
-            <nav>
-                <ul class="pagination">
-                    <li class="page-item disabled"><a class="page-link" href="javascript:undefined">&laquo; Prev</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">1</a></li>
-                    <li class="page-item active"><a class="page-link" href="javascript:undefined">2</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">3</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">Next &raquo;</a></li>
-                </ul>
-            </nav>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">ページネーションのサイズ</span>
+        <div class="section_description">
+            サイズは自動調整されるが、サイズ変更したい場合は下記のクラスを指定する。<br>
+            pagination-lg：大きく<br>
+            pagination-sm：小さく<br>
+            ※paginationクラスは消さない<br>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <nav>
+                    ・pagination-lg
+                    <ul class="pagination pagination-lg">
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">&laquo; Prev</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">1</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">2</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">3</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">Next &raquo;</a></li>
+                    </ul>
+                    ・pagination
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">&laquo; Prev</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">1</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">2</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">3</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">Next &raquo;</a></li>
+                    </ul>
+                    ・pagination-sm
+                    <ul class="pagination pagination-sm">
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">&laquo; Prev</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">1</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">2</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">3</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">Next &raquo;</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">ページネーションのサイズ</span>
-    <div class="section_description">
-        サイズは自動調整されるが、サイズ変更したい場合は下記のクラスを指定する。<br>
-        pagination-lg：大きく<br>
-        pagination-sm：小さく<br>
-        ※paginationクラスは消さない<br>
-    </div>
+    <div class="mt-1"></div>
     <hr>
-    <div class="row">
-        <div class="col-12">
-            <nav>
-                ・pagination-lg
-                <ul class="pagination pagination-lg">
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">&laquo; Prev</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">1</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">2</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">3</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">Next &raquo;</a></li>
-                </ul>
-                ・pagination
-                <ul class="pagination">
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">&laquo; Prev</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">1</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">2</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">3</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">Next &raquo;</a></li>
-                </ul>
-                ・pagination-sm
-                <ul class="pagination pagination-sm">
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">&laquo; Prev</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">1</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">2</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">3</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">Next &raquo;</a></li>
-                </ul>
-            </nav>
+    <div class="mb-1"></div>
+    <div class="study_section">
+        <span class="section_title">ページネーションの位置揃え</span>
+        <div class="section_description">
+            デフォルトではページの左に表示される。<br>
+            これを中央揃え、右揃えにしたい場合は下記のクラスを指定する。<br>
+            ・justify-content-center：中央揃え<br>
+            ・justify-content-end：右揃え
         </div>
-    </div>
-</div>
-<div class="mt-1"></div>
-<hr>
-<div class="mb-1"></div>
-<div class="container study_section">
-    <span class="section_title">ページネーションの位置揃え</span>
-    <div class="section_description">
-        デフォルトではページの左に表示される。<br>
-        これを中央揃え、右揃えにしたい場合は下記のクラスを指定する。<br>
-        ・justify-content-center：中央揃え<br>
-        ・justify-content-end：右揃え
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-12">
-            <nav>
-                ・pagination
-                <ul class="pagination">
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">&laquo; Prev</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">1</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">2</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">3</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">Next &raquo;</a></li>
-                </ul>
-                ・pagination-center
-                <ul class="pagination justify-content-center">
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">&laquo; Prev</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">1</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">2</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">3</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">Next &raquo;</a></li>
-                </ul>
-                ・pagination-end
-                <ul class="pagination justify-content-end">
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">&laquo; Prev</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">1</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">2</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">3</a></li>
-                    <li class="page-item"><a class="page-link" href="javascript:undefined">Next &raquo;</a></li>
-                </ul>
-            </nav>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <nav>
+                    ・pagination
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">&laquo; Prev</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">1</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">2</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">3</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">Next &raquo;</a></li>
+                    </ul>
+                    ・pagination-center
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">&laquo; Prev</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">1</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">2</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">3</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">Next &raquo;</a></li>
+                    </ul>
+                    ・pagination-end
+                    <ul class="pagination justify-content-end">
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">&laquo; Prev</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">1</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">2</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">3</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:undefined">Next &raquo;</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </div>
 </div>

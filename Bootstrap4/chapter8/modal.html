@@ -24,13 +24,13 @@
 </head>
 
 <body>
-
-<div class="container study_section">
-    <span class="section_title">モーダル表示</span>
-    <div class="section_description">
-        モーダルとは表示されている間、他の処理を停止することを示す。<br>
-        ■構成
-        <pre class="table-bordered border-primary pl-2 pt-2">
+<div class="container-fruid">
+    <div class="study_section">
+        <span class="section_title">モーダル表示</span>
+        <div class="section_description">
+            モーダルとは表示されている間、他の処理を停止することを示す。<br>
+            ■構成
+            <pre class="table-bordered border-primary pl-2 pt-2">
 &lt;button type="button" class="btn btn-primary" data-toggle="modal"data-target="#<span class="text-danger">表示するコンテンツに紐付けるID</span>"&gt;呼び出しボタン&lt;/button&gt;
 &lt;div class="modal fade" id="<span class="text-danger">ID名</span>"&gt;
     &lt;div class="modal-dialog" role="document"&gt;
@@ -39,65 +39,66 @@
 
     &lt;/div&gt;
 &lt;/div&gt;</pre>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-12">
-            ・modal dialog<br>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#dialog1">
-                Modal Dialog
-            </button>
-            <div class="modal fade" id="dialog1">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Modal Dialog Title</h5>
-                        </div>
-                        <div class="modal-body">
-                            <p>
-                                this is modal dialog sample.<br>
-                                this is modal dialog sample.<br>
-                                this is modal dialog sample.
-                            </p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Click me</button>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                ・modal dialog<br>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#dialog1">
+                    Modal Dialog
+                </button>
+                <div class="modal fade" id="dialog1">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Modal Dialog Title</h5>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                    this is modal dialog sample.<br>
+                                    this is modal dialog sample.<br>
+                                    this is modal dialog sample.
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Click me</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-12">
-            ・alert(modal-dialogクラスを指定した、下の階層にalertクラスを指定)<br>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alert1">
-                alert modal
-            </button>
-            <div class="modal fade" id="alert1">
-                <div class="modal-dialog" role="document">
-                    <div class="alert alert-warning" role="alert">
-                        <h5 class="alert-heading">alert-heading</h5>
-                        <p>sample</p>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                ・alert(modal-dialogクラスを指定した、下の階層にalertクラスを指定)<br>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alert1">
+                    alert modal
+                </button>
+                <div class="modal fade" id="alert1">
+                    <div class="modal-dialog" role="document">
+                        <div class="alert alert-warning" role="alert">
+                            <h5 class="alert-heading">alert-heading</h5>
+                            <p>sample</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-12">
-            ・popover(modal-dialogクラスを指定した、下の階層にalertクラスを指定)<br>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popover1">
-                popover modal
-            </button>
-            <div class="modal fade" id="popover1">
-                <div class="modal-dialog" role="document">
-                    <div class="popover">
-                        <h5 class="popover-header">popover-header</h5>
-                        <div class="popover-body">
-                            <p>popover-body</p>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                ・popover(modal-dialogクラスを指定した、下の階層にalertクラスを指定)<br>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#popover1">
+                    popover modal
+                </button>
+                <div class="modal fade" id="popover1">
+                    <div class="modal-dialog" role="document">
+                        <div class="popover">
+                            <h5 class="popover-header">popover-header</h5>
+                            <div class="popover-body">
+                                <p>popover-body</p>
+                            </div>
                         </div>
                     </div>
                 </div>
