@@ -35,3 +35,7 @@ h2 {
   padding-bottom: 8px;
   border-bottom: dotted 2px #0e6edf;
 }
+
+.a5-input::placeholder ,.a5-textarea::placeholder{
+  color: red;
+}
