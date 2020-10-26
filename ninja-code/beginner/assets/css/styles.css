@@ -56,3 +56,35 @@ h2 {
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
+
+.cat-red {
+  color: red;
+}
+
+#catBlue {
+  color: blue;
+}
+
+input::placeholder {
+  color: green;
+}
+
+div[data-text="target"] {
+  color: pink;
+}
+
+.a7 {
+  list-style: none;
+}
+
+.a7 li:first-child {
+  color: red;
+}
+
+.a7 li:nth-child(5) {
+  color: green;
+}
+
+.a7 li:last-child {
+  color: blue;
+}
