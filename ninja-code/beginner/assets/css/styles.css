@@ -29,3 +29,9 @@ h2 {
   box-shadow: 10px 10px 10px 0 gray;
   border: solid 3px #000000;
 }
+
+.a4 {
+  display: inline-block;
+  padding-bottom: 8px;
+  border-bottom: dotted 2px #0e6edf;
+}
