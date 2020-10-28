@@ -100,3 +100,19 @@ div[data-text="target"] {
 .a8::after {
   content: "－";
 }
+
+.a9-dt {
+  text-align: left;
+  float: left;
+  clear: left;
+  margin-left: 20%;
+  width: 120px;
+}
+
+.a9-dd {
+  width: 300px;
+  text-align: left;
+  float: left;
+  margin-left: 3px;
+  border-bottom: dotted 2px #000000;
+}
