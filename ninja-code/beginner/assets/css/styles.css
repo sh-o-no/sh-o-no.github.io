@@ -88,3 +88,15 @@ div[data-text="target"] {
 .a7 li:last-child {
   color: blue;
 }
+
+.before-cat::before {
+  content: "▼";
+}
+
+.a8::before {
+  content: "－";
+}
+
+.a8::after {
+  content: "－";
+}
