@@ -116,3 +116,15 @@ div[data-text="target"] {
   margin-left: 3px;
   border-bottom: dotted 2px #000000;
 }
+
+.text-wrap {
+  width: 300px;
+  border: 1px solid;
+  padding: 12px;
+  margin: auto;
+}
+
+.text-wrap > p {
+  padding-left: 1em;
+  text-indent: -1em;
+}
