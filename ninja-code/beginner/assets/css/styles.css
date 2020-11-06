@@ -143,12 +143,20 @@ div[data-text="target"] {
   height: 60px;
   border: 1px solid;
   padding: 12px;
+  margin: auto;
 }
 .a12 > span {
   position: absolute;
   top: 50%;
+  transform: translateX(-50%);
   width: 400px;
   height: 1px;
   display: inline-block;
   background: #0e6edf;
+}
+
+.a12 > div {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
