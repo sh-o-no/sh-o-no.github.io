@@ -65,7 +65,7 @@ h2 {
   color: blue;
 }
 
-input::placeholder {
+.placeholder-green::placeholder {
   color: green;
 }
 
@@ -127,4 +127,12 @@ div[data-text="target"] {
 .text-wrap > p {
   padding-left: 1em;
   text-indent: -1em;
+}
+
+.a11 {
+  font-weight: bold;
+}
+
+.a11::placeholder {
+  font-weight: normal;
 }
