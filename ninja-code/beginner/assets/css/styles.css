@@ -170,3 +170,23 @@ div[data-text="target"] {
 .key-visual > img {
   margin: auto;
 }
+
+.a14-ul {
+  list-style: none;
+}
+
+.a14-ul > li:nth-child(odd) {
+  color: red;
+}
+
+.a14-ul > li:nth-child(even) {
+  color: green;
+}
+
+.a14-div > span + span {
+  font-weight: bold;
+}
+
+.a14-i , .a14-p {
+  color: blue;
+}
