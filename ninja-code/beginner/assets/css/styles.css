@@ -160,3 +160,13 @@ div[data-text="target"] {
   top: 50%;
   transform: translateY(-50%);
 }
+
+.key-visual {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.key-visual > img {
+  margin: auto;
+}
