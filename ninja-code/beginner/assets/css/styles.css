@@ -1,0 +1,206 @@
+h1 {
+  text-align: center;
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 30px;
+  text-decoration: underline;
+}
+
+.a1:link {
+  color: #000000;
+  text-decoration: none;
+}
+
+.a2 {
+  cursor: pointer;
+}
+
+.a2:hover {
+  opacity: 50%;
+}
+
+.a3 {
+  margin: auto;
+  width: 50%;
+  height: 300px;
+  background-color: tomato;
+  box-shadow: 10px 10px 10px 0 gray;
+  border: solid 3px #000000;
+}
+
+.a4 {
+  display: inline-block;
+  padding-bottom: 8px;
+  border-bottom: dotted 2px #0e6edf;
+}
+
+.a5-input::placeholder ,.a5-textarea::placeholder{
+  color: red;
+}
+
+.a6 {
+  margin: auto;
+  width: 50%;
+  height: 300px;
+  background-color: royalblue;
+  border: solid 3px #000000;
+  color: #ffffff;
+  position: relative;
+}
+
+.a6-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.cat-red {
+  color: red;
+}
+
+#catBlue {
+  color: blue;
+}
+
+.placeholder-green::placeholder {
+  color: green;
+}
+
+div[data-text="target"] {
+  color: pink;
+}
+
+.a7 {
+  list-style: none;
+}
+
+.a7 li:first-child {
+  color: red;
+}
+
+.a7 li:nth-child(5) {
+  color: green;
+}
+
+.a7 li:last-child {
+  color: blue;
+}
+
+.before-cat::before {
+  content: "▼";
+}
+
+.a8::before {
+  content: "－";
+}
+
+.a8::after {
+  content: "－";
+}
+
+.a9-dt {
+  text-align: left;
+  float: left;
+  clear: left;
+  margin-left: 20%;
+  width: 120px;
+}
+
+.a9-dd {
+  width: 300px;
+  text-align: left;
+  float: left;
+  margin-left: 3px;
+  border-bottom: dotted 2px #000000;
+}
+
+.text-wrap {
+  width: 300px;
+  border: 1px solid;
+  padding: 12px;
+  margin: auto;
+}
+
+.text-wrap > p {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+.a11 {
+  font-weight: bold;
+}
+
+.a11::placeholder {
+  font-weight: normal;
+}
+
+.a12 {
+  position: relative;
+  width: 400px;
+  height: 60px;
+  border: 1px solid;
+  padding: 12px;
+  margin: auto;
+}
+.a12 > span {
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 1px;
+  display: inline-block;
+  background: #0e6edf;
+}
+
+.a12 > div {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.key-visual {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.key-visual > img {
+  margin: auto;
+}
+
+.a14-ul {
+  list-style: none;
+}
+
+.a14-ul > li:nth-child(odd) {
+  color: red;
+}
+
+.a14-ul > li:nth-child(even) {
+  color: green;
+}
+
+.a14-div > span + span {
+  font-weight: bold;
+}
+
+.a14-i , .a14-p {
+  color: blue;
+}
+
+.a15 {
+  margin: auto;
+  overflow: hidden;
+  text-align: left;
+}
+
+.a16{
+  margin: auto;
+}
+
+.a17 {
+  color: blue!important;
+}
