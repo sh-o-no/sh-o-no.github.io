@@ -5,7 +5,17 @@ import "./index.css";
 class Square extends React.Component {
   render() {
     // 渡された値を表示する
-    return <button className="square">{this.props.value}</button>;
+    return (
+      <button
+      //Squareがクリックされたらアラートを表示
+        className="square"
+        onClick={() => {
+          alert("click");
+        }}
+      >
+        {this.props.value}
+      </button>
+    );
   }
 }
 
