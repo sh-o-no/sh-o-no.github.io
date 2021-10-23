@@ -4,13 +4,15 @@ import "./index.css";
 
 class Square extends React.Component {
   render() {
-    return <button className="square">{/* TODO */}</button>;
+    // 渡された値を表示する
+    return <button className="square">{this.props.value}</button>;
   }
 }
 
 class Board extends React.Component {
   renderSquare(i) {
-    return <Square />;
+    // value という名前の値を Square に渡す
+    return <Square value={i} />;
   }
 
   render() {
