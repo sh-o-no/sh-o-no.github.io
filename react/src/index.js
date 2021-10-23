@@ -3,17 +3,26 @@ import ReactDOM from "react-dom";
 import "./index.css";
 
 class Square extends React.Component {
+  constructor(props) {
+    // super()を呼ばないとthisが使えない
+    super(props);
+    this.state = {
+      value: null,
+    };
+  }
   render() {
     // 渡された値を表示する
     return (
       <button
-      //Squareがクリックされたらアラートを表示
+        //Squareがクリックされたらアラートを表示
         className="square"
         onClick={() => {
-          alert("click");
+          // クリック時にstateを更新(Xへ)→レンダリングが走る
+          this.setState({ value: "X" });
         }}
       >
-        {this.props.value}
+        {this.state.value}
+        
       </button>
     );
   }
