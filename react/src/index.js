@@ -3,35 +3,46 @@ import ReactDOM from "react-dom";
 import "./index.css";
 
 class Square extends React.Component {
-  constructor(props) {
-    // super()を呼ばないとthisが使えない
-    super(props);
-    this.state = {
-      value: null,
-    };
-  }
+  // Boardで更新するようになったのでsquareでは不要な処理を削除、変更
   render() {
-    // 渡された値を表示する
     return (
       <button
-        //Squareがクリックされたらアラートを表示
         className="square"
         onClick={() => {
-          // クリック時にstateを更新(Xへ)→レンダリングが走る
-          this.setState({ value: "X" });
+          // boardから渡されているthis.handleClick(i)が呼ばれる
+          this.props.onClick();
         }}
       >
-        {this.state.value}
-        
+        {this.props.value}
       </button>
     );
   }
 }
 
 class Board extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      // 9個の配列を用意して中身をすべてnullに
+      squares: Array(9).fill(null),
+    };
+  }
+
+  handleClick(i) {
+    // 配列squaresのコピーを作成して定数squaresに入れてる...
+    const squares = this.state.squares.slice();
+    // クリックされたマス目の値がXになる
+    squares[i] = 'X';
+    // squareを更新
+    this.setState({squares: squares});
+  }
   renderSquare(i) {
-    // value という名前の値を Square に渡す
-    return <Square value={i} />;
+    return (
+      <Square
+        value={this.state.squares[i]}
+        onClick={() => this.handleClick(i)}
+      />
+    );
   }
 
   render() {
