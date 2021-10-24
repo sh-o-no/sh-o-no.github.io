@@ -2,21 +2,19 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-class Square extends React.Component {
-  // Boardで更新するようになったのでsquareでは不要な処理を削除、変更
-  render() {
-    return (
-      <button
-        className="square"
-        onClick={() => {
-          // boardから渡されているthis.handleClick(i)が呼ばれる
-          this.props.onClick();
-        }}
-      >
-        {this.props.value}
-      </button>
-    );
-  }
+// 関数コンポーネントに書き換え
+function Square(props) {
+  return (
+    <button
+      className="square"
+      onClick={
+        // boardから渡されているthis.handleClick(i)が呼ばれる
+        props.onClick
+      }
+    >
+      {props.value}
+    </button>
+  );
 }
 
 class Board extends React.Component {
@@ -32,9 +30,9 @@ class Board extends React.Component {
     // 配列squaresのコピーを作成して定数squaresに入れてる...
     const squares = this.state.squares.slice();
     // クリックされたマス目の値がXになる
-    squares[i] = 'X';
+    squares[i] = "X";
     // squareを更新
-    this.setState({squares: squares});
+    this.setState({ squares: squares });
   }
   renderSquare(i) {
     return (
