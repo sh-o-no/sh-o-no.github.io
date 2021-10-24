@@ -31,10 +31,14 @@ class Board extends React.Component {
   handleClick(i) {
     // 配列squaresのコピーを作成して定数squaresに入れてる...
     const squares = this.state.squares.slice();
+    // 勝負がついた場合や、クリックしたところが埋まってた場合はリターン
+    if (calculateWinner(squares) || squares[i]) {
+      return;
+    }
     // Xを入れたら次はO
-    squares[i] = this.state.xIsNext ? 'X' : 'O';
+    squares[i] = this.state.xIsNext ? "X" : "O";
     // squareを更新
-    this.setState({ 
+    this.setState({
       squares: squares,
       // 現在とは逆の状態（X↔O）
       xIsNext: !this.state.xIsNext,
@@ -50,8 +54,16 @@ class Board extends React.Component {
   }
 
   render() {
-    // next playerを毎回更新
-    const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+    // 勝負がついたか判断
+    const winner = calculateWinner(this.state.squares);
+    let status;
+    if (winner) {
+      // ついてたらwinnerを表示
+      status = "winner: " + winner;
+    } else {
+      // まだなら次のプレーヤーを表示
+      status = "Next player: " + (this.state.xIsNext ? "X" : "O");
+    }
 
     return (
       <div>
@@ -95,3 +107,23 @@ class Game extends React.Component {
 // ========================================
 
 ReactDOM.render(<Game />, document.getElementById("root"));
+
+function calculateWinner(squares) {
+  const lines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+  for (let i = 0; i < lines.length; i++) {
+    const [a, b, c] = lines[i];
+    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+      return squares[a];
+    }
+  }
+  return null;
+}
