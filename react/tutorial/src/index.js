@@ -50,7 +50,8 @@ class Board extends React.Component {
   }
 
   render() {
-    const status = "Next player: X";
+    // next playerを毎回更新
+    const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
 
     return (
       <div>
