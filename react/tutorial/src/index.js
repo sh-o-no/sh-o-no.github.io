@@ -18,56 +18,18 @@ function Square(props) {
 }
 
 class Board extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      // 9個の配列を用意して中身をすべてnullに
-      squares: Array(9).fill(null),
-      // 初期値はtrue
-      xIsNext: true,
-    };
-  }
-
-  handleClick(i) {
-    // 配列squaresのコピーを作成して定数squaresに入れてる...
-    const squares = this.state.squares.slice();
-    // 勝負がついた場合や、クリックしたところが埋まってた場合はリターン
-    if (calculateWinner(squares) || squares[i]) {
-      return;
-    }
-    // Xを入れたら次はO
-    squares[i] = this.state.xIsNext ? "X" : "O";
-    // squareを更新
-    this.setState({
-      squares: squares,
-      // 現在とは逆の状態（X↔O）
-      xIsNext: !this.state.xIsNext,
-    });
-  }
   renderSquare(i) {
     return (
       <Square
-        value={this.state.squares[i]}
-        onClick={() => this.handleClick(i)}
+        value={this.props.squares[i]}
+        onClick={() => this.props.onClick(i)}
       />
     );
   }
 
   render() {
-    // 勝負がついたか判断
-    const winner = calculateWinner(this.state.squares);
-    let status;
-    if (winner) {
-      // ついてたらwinnerを表示
-      status = "winner: " + winner;
-    } else {
-      // まだなら次のプレーヤーを表示
-      status = "Next player: " + (this.state.xIsNext ? "X" : "O");
-    }
-
     return (
       <div>
-        <div className="status">{status}</div>
         <div className="board-row">
           {this.renderSquare(0)}
           {this.renderSquare(1)}
@@ -89,14 +51,50 @@ class Board extends React.Component {
 }
 
 class Game extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      history: [{ squares: Array(9).fill(null) }],
+      xIsNext: true,
+    };
+  }
+
+  handleClick(i) {
+    const history = this.state.history;
+    const current = history[history.length - 1];
+    const squares = current.squares.slice();
+    if (calculateWinner(squares) || squares[i]) {
+      return;
+    }
+    // Xを入れたら次はO
+    squares[i] = this.state.xIsNext ? "X" : "O";
+    // squareを更新
+    this.setState({
+      history: history.concat([{ squares: squares }]),
+      // 現在とは逆の状態（X↔O）
+      xIsNext: !this.state.xIsNext,
+    });
+  }
   render() {
+    const history = this.state.history;
+    const current = history[history.length - 1];
+    const winner = calculateWinner(current.squares);
+    let status;
+    if (winner) {
+      status = "Winner: " + winner;
+    } else {
+      status = "Next player: " + (this.state.xIsNext ? "X" : "O");
+    }
     return (
       <div className="game">
         <div className="game-board">
-          <Board />
+          <Board
+            squares={current.squares}
+            onClick={(i) => this.handleClick(i)}
+          />
         </div>
         <div className="game-info">
-          <div>{/* status */}</div>
+          <div>{status}</div>
           <ol>{/* TODO */}</ol>
         </div>
       </div>
