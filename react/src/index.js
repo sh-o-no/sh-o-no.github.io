@@ -23,16 +23,22 @@ class Board extends React.Component {
     this.state = {
       // 9個の配列を用意して中身をすべてnullに
       squares: Array(9).fill(null),
+      // 初期値はtrue
+      xIsNext: true,
     };
   }
 
   handleClick(i) {
     // 配列squaresのコピーを作成して定数squaresに入れてる...
     const squares = this.state.squares.slice();
-    // クリックされたマス目の値がXになる
-    squares[i] = "X";
+    // Xを入れたら次はO
+    squares[i] = this.state.xIsNext ? 'X' : 'O';
     // squareを更新
-    this.setState({ squares: squares });
+    this.setState({ 
+      squares: squares,
+      // 現在とは逆の状態（X↔O）
+      xIsNext: !this.state.xIsNext,
+    });
   }
   renderSquare(i) {
     return (
